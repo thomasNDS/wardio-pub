@@ -56,6 +56,8 @@
     "weaknesses": "Points faibles",
     "insights": "Points clés",
     "tips": "Conseils",
+    "abilities": "Capacités",
+    "hoverAbility": "Survolez une compétence pour les détails.",
     "counter": "Contre",
     "favourable": "Favorable",
     "noMatchup": "Pas encore de données de matchup.",

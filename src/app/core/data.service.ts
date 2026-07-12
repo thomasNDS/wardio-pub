@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import {
+  AbilityRow,
   Champ,
   DatasetRaw,
   Detail,
@@ -268,6 +269,52 @@ export class DataService {
 
   roleLabel(r: Role): string {
     return ROLE_LABEL[r];
+  }
+
+  private readonly abilitiesCache = new Map<string, AbilityRow[]>();
+
+  /** Per-champion abilities (passive + Q/W/E/R) from the full Data Dragon
+   * champion file, cached. Empty on any failure. */
+  async abilities(key: string): Promise<AbilityRow[]> {
+    if (!this.version) return [];
+    const champ =
+      this.champByKey.get(key) ??
+      [...this.champByKey.values()].find((c) => eqKey(c.key, key));
+    const realKey = champ?.key ?? key;
+    const cached = this.abilitiesCache.get(realKey);
+    if (cached) return cached;
+    try {
+      const cdn = `${DDRAGON}/cdn/${this.version}`;
+      const doc = await this.json<any>(
+        `${cdn}/data/en_US/champion/${realKey}.json`,
+      );
+      const c = doc.data[realKey];
+      const strip = (s: string): string =>
+        (s ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      const rows: AbilityRow[] = [];
+      if (c.passive)
+        rows.push({
+          slot: 'P',
+          name: c.passive.name,
+          description: strip(c.passive.description),
+          cooldown: '',
+          icon: `${cdn}/img/passive/${c.passive.image.full}`,
+        });
+      const slots = ['Q', 'W', 'E', 'R'];
+      (c.spells ?? []).forEach((sp: any, i: number) =>
+        rows.push({
+          slot: slots[i] ?? '',
+          name: sp.name,
+          description: strip(sp.description),
+          cooldown: sp.cooldownBurn ?? '',
+          icon: `${cdn}/img/spell/${sp.image.full}`,
+        }),
+      );
+      this.abilitiesCache.set(realKey, rows);
+      return rows;
+    } catch {
+      return [];
+    }
   }
 
   private similarByTags(champ: Champ): Champ[] {

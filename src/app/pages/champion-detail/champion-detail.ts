@@ -11,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { DataService } from '../../core/data.service';
-import { Detail, Role, ROLE_LABEL } from '../../core/models';
+import { AbilityRow, Detail, Role, ROLE_LABEL } from '../../core/models';
 
 @Component({
   selector: 'app-champion-detail',
@@ -215,6 +215,50 @@ import { Detail, Role, ROLE_LABEL } from '../../core/models';
             </section>
           }
 
+          @if (abilities().length) {
+            <section class="hex-panel p-4">
+              <h2 class="section-title">{{ 'detail.abilities' | transloco }}</h2>
+              <div class="mt-2 flex flex-wrap gap-2">
+                @for (a of abilities(); track $index) {
+                  <div
+                    class="relative h-12 w-12 rounded-md border"
+                    [class]="abilityHovered() === $index ? 'border-gold' : 'border-line'"
+                    (mouseenter)="abilityHovered.set($index)"
+                    (mouseleave)="abilityHovered.set(-1)"
+                  >
+                    <img [src]="a.icon" alt="" class="h-full w-full rounded-md" />
+                    <span
+                      class="absolute -bottom-1 -left-1 grid h-4 w-4 place-items-center rounded border border-gold/60 bg-bg text-[9px] font-black text-gold"
+                      >{{ a.slot }}</span
+                    >
+                  </div>
+                }
+              </div>
+              @if (abilityHovered() >= 0 && abilityHovered() < abilities().length) {
+                <div class="mt-3 rounded-hex border border-line bg-card p-3">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold"
+                      >{{ abilities()[abilityHovered()].slot }} ·
+                      {{ abilities()[abilityHovered()].name }}</span
+                    >
+                    @if (abilities()[abilityHovered()].cooldown) {
+                      <span class="ml-auto text-xs font-semibold text-cyan"
+                        >CD {{ abilities()[abilityHovered()].cooldown }}</span
+                      >
+                    }
+                  </div>
+                  <p class="mt-1 text-xs text-dim">
+                    {{ abilities()[abilityHovered()].description }}
+                  </p>
+                </div>
+              } @else {
+                <p class="mt-2 text-[11px] text-dim">
+                  {{ 'detail.hoverAbility' | transloco }}
+                </p>
+              }
+            </section>
+          }
+
           @if (d.strengths.length || d.weaknesses.length) {
             <div class="grid gap-4 sm:grid-cols-2">
               @if (d.strengths.length) {
@@ -336,6 +380,8 @@ export class ChampionDetail {
   readonly key = input.required<string>();
   readonly role = signal<Role | null>(null);
   readonly page = signal(0);
+  readonly abilities = signal<AbilityRow[]>([]);
+  readonly abilityHovered = signal(-1);
   private readonly pageSize = 10;
 
   readonly detail = computed(() => {
@@ -351,9 +397,7 @@ export class ChampionDetail {
     effect(() => {
       const d = this.detail();
       if (!d) return;
-      this.title.setTitle(
-        `${d.champ.name} build, runes & counters — Wardio`,
-      );
+      this.title.setTitle(`${d.champ.name} build, runes & counters — Wardio`);
       const wr = d.winRate != null ? `, ${d.winRate.toFixed(1)}% win rate` : '';
       this.meta.updateTag({
         name: 'description',
@@ -361,6 +405,14 @@ export class ChampionDetail {
           `${d.champ.name} ${ROLE_LABEL[d.role]} build: best runes, items, ` +
           `skill order and counters${d.tier ? ` (${d.tier} tier${wr})` : ''}.`,
       });
+    });
+    // Load per-champion abilities once static data is in.
+    effect(() => {
+      const k = this.key();
+      if (this.data.loading()) return;
+      this.abilityHovered.set(-1);
+      this.abilities.set([]);
+      void this.data.abilities(k).then((a) => this.abilities.set(a));
     });
   }
 

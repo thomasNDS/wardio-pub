@@ -56,6 +56,8 @@
     "weaknesses": "Weaknesses",
     "insights": "Key insights",
     "tips": "Tips",
+    "abilities": "Abilities",
+    "hoverAbility": "Hover an ability for details.",
     "counter": "Counter",
     "favourable": "Favourable",
     "noMatchup": "No matchup data yet.",

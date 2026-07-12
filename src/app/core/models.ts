@@ -127,6 +127,14 @@ export interface SpellRow {
   icon: string;
 }
 
+export interface AbilityRow {
+  slot: string; // P · Q · W · E · R
+  name: string;
+  description: string;
+  cooldown: string; // "12/11/10/9/8" or ""
+  icon: string;
+}
+
 export interface Detail {
   champ: Champ;
   role: Role;
