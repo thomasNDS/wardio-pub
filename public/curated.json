@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "patch": "16.13",
+  "patch": "16.13.1",
   "tiers": {
     "top": [
       {
@@ -1827,6 +1827,6 @@
       ]
     }
   ],
-  "generated_at": "2026-07-12T08:41:48.429Z",
-  "source": "curated"
+  "generated_at": "2026-07-12T10:40:42.078Z",
+  "source": "curated+ddragon"
 }

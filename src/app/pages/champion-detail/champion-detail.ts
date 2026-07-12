@@ -2,7 +2,7 @@ import { Component, computed, inject, input, signal } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { DataService } from '../../core/data.service';
-import { Role, ROLE_LABEL } from '../../core/models';
+import { Detail, Role, ROLE_LABEL } from '../../core/models';
 
 @Component({
   selector: 'app-champion-detail',
@@ -92,6 +92,34 @@ import { Role, ROLE_LABEL } from '../../core/models';
       <div class="mt-4 grid gap-4 lg:grid-cols-[3fr_2fr]">
         <!-- Left: build -->
         <div class="flex flex-col gap-4">
+          <!-- Champion stats (real Data Dragon): ratings + base stats. -->
+          <section class="rounded-hex border border-line bg-surface p-4">
+            <h2 class="section-title">Champion stats</h2>
+            <div class="mt-3 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+              @for (r of ratings(d); track r.label) {
+                <div class="flex items-center gap-3">
+                  <span class="w-20 text-xs text-dim">{{ r.label }}</span>
+                  <div class="h-2 flex-1 overflow-hidden rounded-full bg-card">
+                    <div
+                      class="h-full rounded-full"
+                      [class]="r.color"
+                      [style.width.%]="r.value * 10"
+                    ></div>
+                  </div>
+                  <span class="w-5 text-right text-xs font-semibold">{{ r.value }}</span>
+                </div>
+              }
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-4">
+              @for (s of baseStats(d); track s.label) {
+                <div class="flex items-baseline justify-between border-b border-line/60 pb-1">
+                  <span class="text-[11px] uppercase tracking-wide text-dim">{{ s.label }}</span>
+                  <span class="text-sm font-semibold">{{ s.value }}</span>
+                </div>
+              }
+            </div>
+          </section>
+
           @if (d.runes.length) {
             <section class="rounded-hex border border-line bg-surface p-4">
               <h2 class="section-title">
@@ -323,6 +351,29 @@ export class ChampionDetail {
   }
   label(r: Role): string {
     return ROLE_LABEL[r];
+  }
+
+  ratings(d: Detail): { label: string; value: number; color: string }[] {
+    const r = d.champ.ratings;
+    return [
+      { label: 'Attack', value: r.attack, color: 'bg-neg' },
+      { label: 'Defense', value: r.defense, color: 'bg-pos' },
+      { label: 'Magic', value: r.magic, color: 'bg-cyan' },
+      { label: 'Difficulty', value: r.difficulty, color: 'bg-gold' },
+    ];
+  }
+  baseStats(d: Detail): { label: string; value: string }[] {
+    const s = d.champ.stats;
+    const n = (v: number): string => (Number.isInteger(v) ? `${v}` : v.toFixed(0));
+    return [
+      { label: 'HP', value: n(s.hp) },
+      { label: 'Armor', value: n(s.armor) },
+      { label: 'MR', value: n(s.mr) },
+      { label: 'AD', value: n(s.ad) },
+      { label: 'AS', value: s.as.toFixed(3) },
+      { label: 'MS', value: n(s.ms) },
+      { label: 'Range', value: n(s.range) },
+    ];
   }
 
   tab(active: boolean): string {

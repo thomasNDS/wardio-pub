@@ -58,12 +58,28 @@ export class DataService {
       ]);
 
       for (const c of Object.values<any>(champs.data)) {
+        const s = c.stats ?? {};
         this.champByKey.set(c.id, {
           key: c.id,
           name: c.name,
           title: c.title ?? '',
           tags: c.tags ?? [],
           portrait: `${cdn}/img/champion/${c.image.full}`,
+          ratings: {
+            attack: c.info?.attack ?? 0,
+            defense: c.info?.defense ?? 0,
+            magic: c.info?.magic ?? 0,
+            difficulty: c.info?.difficulty ?? 0,
+          },
+          stats: {
+            hp: s.hp ?? 0,
+            armor: s.armor ?? 0,
+            mr: s.spellblock ?? 0,
+            ad: s.attackdamage ?? 0,
+            as: s.attackspeed ?? 0,
+            ms: s.movespeed ?? 0,
+            range: s.attackrange ?? 0,
+          },
         });
       }
       for (const [id, it] of Object.entries<any>(items.data)) {

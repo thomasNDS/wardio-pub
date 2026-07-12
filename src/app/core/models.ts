@@ -60,12 +60,31 @@ export interface DatasetRaw {
 
 // Resolved shapes for the UI (names/icons from Data Dragon).
 
+export interface ChampRatings {
+  attack: number;
+  defense: number;
+  magic: number;
+  difficulty: number;
+}
+
+export interface ChampStats {
+  hp: number;
+  armor: number;
+  mr: number;
+  ad: number;
+  as: number;
+  ms: number;
+  range: number;
+}
+
 export interface Champ {
   key: string;
   name: string;
   title: string;
   tags: string[];
   portrait: string;
+  ratings: ChampRatings;
+  stats: ChampStats;
 }
 
 export interface TierRow {
