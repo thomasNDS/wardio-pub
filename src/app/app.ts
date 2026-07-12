@@ -85,14 +85,16 @@ export class App implements OnInit {
   readonly lang = signal(this.transloco.getActiveLang());
 
   ngOnInit(): void {
-    void this.data.load();
+    // Set the language (and Data Dragon locale) before the first data load.
     this.setLang(this.detectLang());
+    void this.data.load();
   }
 
   setLang(l: string): void {
     this.transloco.setActiveLang(l);
     this.lang.set(l);
     document.documentElement.lang = l;
+    this.data.setActiveLang(l);
     try {
       localStorage.setItem('wardio.lang', l);
     } catch {

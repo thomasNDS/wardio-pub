@@ -30,6 +30,8 @@ export class DataService {
 
   private dataset: DatasetRaw | null = null;
   private version = '';
+  private locale = 'en_US';
+  private ddLoaded = false;
   private readonly champByKey = new Map<string, Champ>();
   private readonly itemById = new Map<number, ItemRow>();
   private readonly spellById = new Map<number, SpellRow>();
@@ -37,6 +39,25 @@ export class DataService {
   private readonly treeById = new Map<number, string>();
   private readonly keystoneIds = new Set<number>();
   private started = false;
+
+  private localeFor(lang: string): string {
+    return (
+      { en: 'en_US', fr: 'fr_FR', es: 'es_ES' }[lang] ?? 'en_US'
+    );
+  }
+
+  /** Switch the Data Dragon locale; re-fetches and re-resolves once loaded so
+   * champion titles, item / rune / spell names and ability text follow the UI
+   * language. Toggling `loading` makes the components' computeds re-run. */
+  setActiveLang(lang: string): void {
+    const loc = this.localeFor(lang);
+    if (loc === this.locale) return;
+    this.locale = loc;
+    if (this.ddLoaded) {
+      this.loading.set(true);
+      void this.loadDdragon().finally(() => this.loading.set(false));
+    }
+  }
 
   async load(): Promise<void> {
     if (this.started) return;
@@ -49,16 +70,34 @@ export class DataService {
       ]);
       this.dataset = ds;
       this.version = versions[0];
-      const cdn = `${DDRAGON}/cdn/${this.version}`;
+      await this.loadDdragon();
+      this.patch.set(ds.patch || this.version);
+      this.ddLoaded = true;
+    } catch (e: unknown) {
+      this.error.set(e instanceof Error ? e.message : 'failed to load data');
+    } finally {
+      this.loading.set(false);
+    }
+  }
 
-      const [champs, items, summoners, runes] = await Promise.all([
-        this.json<any>(`${cdn}/data/en_US/champion.json`),
-        this.json<any>(`${cdn}/data/en_US/item.json`),
-        this.json<any>(`${cdn}/data/en_US/summoner.json`),
-        this.json<any[]>(`${cdn}/data/en_US/runesReforged.json`),
-      ]);
+  private async loadDdragon(): Promise<void> {
+    const cdn = `${DDRAGON}/cdn/${this.version}`;
+    const loc = this.locale;
+    const [champs, items, summoners, runes] = await Promise.all([
+      this.json<any>(`${cdn}/data/${loc}/champion.json`),
+      this.json<any>(`${cdn}/data/${loc}/item.json`),
+      this.json<any>(`${cdn}/data/${loc}/summoner.json`),
+      this.json<any[]>(`${cdn}/data/${loc}/runesReforged.json`),
+    ]);
+    this.champByKey.clear();
+    this.itemById.clear();
+    this.spellById.clear();
+    this.runeById.clear();
+    this.treeById.clear();
+    this.keystoneIds.clear();
+    this.abilitiesCache.clear();
 
-      for (const c of Object.values<any>(champs.data)) {
+    for (const c of Object.values<any>(champs.data)) {
         const s = c.stats ?? {};
         this.champByKey.set(c.id, {
           key: c.id,
@@ -96,24 +135,18 @@ export class DataService {
           icon: `${cdn}/img/spell/${s.image.full}`,
         });
       }
-      for (const tree of runes) {
-        this.treeById.set(tree.id, tree.name);
-        tree.slots.forEach((slot: any, si: number) => {
-          for (const rune of slot.runes) {
-            this.runeById.set(rune.id, {
-              name: rune.name,
-              icon: `${DDRAGON}/cdn/img/${rune.icon}`,
-              treeId: tree.id,
-            });
-            if (si === 0) this.keystoneIds.add(rune.id);
-          }
-        });
-      }
-      this.patch.set(ds.patch || this.version);
-    } catch (e: unknown) {
-      this.error.set(e instanceof Error ? e.message : 'failed to load data');
-    } finally {
-      this.loading.set(false);
+    for (const tree of runes) {
+      this.treeById.set(tree.id, tree.name);
+      tree.slots.forEach((slot: any, si: number) => {
+        for (const rune of slot.runes) {
+          this.runeById.set(rune.id, {
+            name: rune.name,
+            icon: `${DDRAGON}/cdn/img/${rune.icon}`,
+            treeId: tree.id,
+          });
+          if (si === 0) this.keystoneIds.add(rune.id);
+        }
+      });
     }
   }
 
@@ -286,7 +319,7 @@ export class DataService {
     try {
       const cdn = `${DDRAGON}/cdn/${this.version}`;
       const doc = await this.json<any>(
-        `${cdn}/data/en_US/champion/${realKey}.json`,
+        `${cdn}/data/${this.locale}/champion/${realKey}.json`,
       );
       const c = doc.data[realKey];
       const strip = (s: string): string =>
