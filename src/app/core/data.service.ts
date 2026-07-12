@@ -1,12 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 import {
   AbilityRow,
+  BuildVariant,
   Champ,
   DatasetRaw,
   Detail,
   DuelRow,
   ItemRow,
   Role,
+  RoleStat,
   ROLES,
   ROLE_LABEL,
   RuneRow,
@@ -212,41 +214,74 @@ export class DataService {
     const activeRole = rec?.role ?? wanted ?? rolesPlayed[0] ?? 'mid';
     const tierRow = (tiers[activeRole] ?? []).find((t) => eqKey(t.champion, key));
 
-    const runes: RuneRow[] = (rec?.runes?.rune_ids ?? [])
-      .map((id) => {
-        const m = this.runeById.get(id);
-        if (!m) return null;
-        return {
-          name: m.name,
-          tree: this.treeById.get(m.treeId) ?? '',
-          keystone: this.keystoneIds.has(id),
-          icon: m.icon,
-        } as RuneRow;
-      })
-      .filter((r): r is RuneRow => !!r);
-
-    const spells: SpellRow[] = (rec?.spell_ids ?? [])
-      .map((id) => this.spellById.get(id))
-      .filter((s): s is SpellRow => !!s);
+    // --- Build variants (Blitz-style, sorted by win rate best-first) ---------
     const items = (ids?: number[]): ItemRow[] =>
       (ids ?? [])
         .map((id) => this.itemById.get(id))
         .filter((it): it is ItemRow => !!it);
+    const spellsOf = (ids?: number[]): SpellRow[] =>
+      (ids ?? [])
+        .map((id) => this.spellById.get(id))
+        .filter((s): s is SpellRow => !!s);
+    const runesOf = (rn?: RecRaw['runes']): RuneRow[] =>
+      (rn?.rune_ids ?? [])
+        .map((id) => {
+          const m = this.runeById.get(id);
+          if (!m) return null;
+          return {
+            name: m.name,
+            tree: this.treeById.get(m.treeId) ?? '',
+            keystone: this.keystoneIds.has(id),
+            icon: m.icon,
+          } as RuneRow;
+        })
+        .filter((r): r is RuneRow => !!r);
+    const resolveBuild = (b: any, i: number): BuildVariant => ({
+      name: b.name || (i === 0 ? 'Build' : `Build ${i + 1}`),
+      winRate: b.win_rate,
+      primaryTree: this.treeById.get(b.runes?.primary_tree_id ?? -1) ?? '',
+      secondaryTree: this.treeById.get(b.runes?.secondary_tree_id ?? -1) ?? '',
+      runes: runesOf(b.runes),
+      spells: spellsOf(b.spell_ids),
+      starting: items(b.starting_item_ids),
+      core: items(b.core_item_ids),
+      situational: items(b.situational_item_ids),
+      skillPriority: (b.skill_order ?? '').split(''),
+      skillLevels: (b.skill_levels
+        ? b.skill_levels
+        : deriveSkillLevels(b.skill_order ?? '')
+      ).split(''),
+    });
+    const rawBuilds = rec?.builds?.length
+      ? rec.builds
+      : rec
+        ? [
+            {
+              runes: rec.runes,
+              spell_ids: rec.spell_ids,
+              starting_item_ids: rec.starting_item_ids,
+              core_item_ids: rec.core_item_ids,
+              situational_item_ids: rec.situational_item_ids,
+              skill_order: rec.skill_order,
+              skill_levels: rec.skill_levels,
+            },
+          ]
+        : [];
+    const variants = rawBuilds
+      .map((b, i) => resolveBuild(b, i))
+      .sort((a, b) => (b.winRate ?? 0) - (a.winRate ?? 0))
+      .slice(0, 3);
 
-    const skillPriority = (rec?.skill_order ?? '').split('');
-    const skillLevels = (rec?.skill_levels
-      ? rec.skill_levels
-      : deriveSkillLevels(rec?.skill_order ?? '')
-    ).split('');
-
-    // Counters (worst first) + inverted favourable matchups from other recs.
-    const weak: DuelRow[] = (rec?.counters ?? []).map((c) => ({
-      key: c.champion,
-      name: this.name(c.champion),
-      portrait: this.portrait(c.champion),
-      winRate: c.win_rate,
-      favourable: c.win_rate >= 50,
-    }));
+    // --- Matchups: counters (weak) + strong-against (inverted) ---------------
+    const weak: DuelRow[] = (rec?.counters ?? [])
+      .map((c) => ({
+        key: c.champion,
+        name: this.name(c.champion),
+        portrait: this.portrait(c.champion),
+        winRate: c.win_rate,
+        favourable: c.win_rate >= 50,
+      }))
+      .sort((a, b) => a.winRate - b.winRate);
     const seen = new Set(weak.map((d) => d.key.toLowerCase()));
     const strong: DuelRow[] = [];
     for (const other of recs) {
@@ -262,7 +297,7 @@ export class DataService {
         });
       }
     }
-    const duels = [...weak, ...strong].sort((a, b) => a.winRate - b.winRate);
+    strong.sort((a, b) => b.winRate - a.winRate);
 
     const similar: Champ[] =
       rec?.similar && rec.similar.length
@@ -271,27 +306,35 @@ export class DataService {
             .filter((c): c is Champ => !!c)
         : this.similarByTags(champ);
 
+    // Win rate at each position the champion is played.
+    const roleStats: RoleStat[] = rolesPlayed.map((r) => {
+      const tr = (tiers[r] ?? []).find((t) => eqKey(t.champion, key));
+      return { role: r, tier: tr?.tier, winRate: tr?.win_rate };
+    });
+
     return {
       champ,
       role: activeRole,
       roles: rolesPlayed.length ? rolesPlayed : [activeRole],
+      roleStats: roleStats.length
+        ? roleStats
+        : [{ role: activeRole, tier: tierRow?.tier, winRate: tierRow?.win_rate }],
       tier: tierRow?.tier,
       winRate: tierRow?.win_rate,
       wrChange: tierRow?.wr_change,
       pickRate: tierRow?.pick_rate,
       banRate: tierRow?.ban_rate,
       matches: tierRow?.matches,
-      primaryTree: this.treeById.get(rec?.runes?.primary_tree_id ?? -1) ?? '',
-      secondaryTree:
-        this.treeById.get(rec?.runes?.secondary_tree_id ?? -1) ?? '',
-      runes,
-      spells,
-      starting: items(rec?.starting_item_ids),
-      core: items(rec?.core_item_ids),
-      situational: items(rec?.situational_item_ids),
-      skillPriority,
-      skillLevels,
-      duels,
+      variants,
+      damage: rec?.damage_share
+        ? {
+            physical: rec.damage_share.physical ?? 0,
+            magic: rec.damage_share.magic ?? 0,
+            true: rec.damage_share.true ?? 0,
+          }
+        : undefined,
+      weak,
+      strong,
       strengths: rec?.strengths ?? [],
       weaknesses: rec?.weaknesses ?? [],
       insights: rec?.insights ?? [],

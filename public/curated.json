@@ -292,6 +292,87 @@
       ],
       "skill_order": "QEW",
       "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "builds": [
+        {
+          "name": "Sundered Sky",
+          "win_rate": 51.8,
+          "games": 92300,
+          "runes": {
+            "primary_tree_id": 8000,
+            "secondary_tree_id": 8400,
+            "rune_ids": [
+              8010,
+              9111,
+              9104,
+              8299,
+              8444,
+              8453
+            ]
+          },
+          "spell_ids": [
+            4,
+            12
+          ],
+          "starting_item_ids": [
+            1054,
+            2003
+          ],
+          "core_item_ids": [
+            6610,
+            3047,
+            3053
+          ],
+          "situational_item_ids": [
+            3026,
+            3742,
+            3065
+          ],
+          "skill_order": "QEW",
+          "skill_levels": "QEQWQRQEQEREEWWRWW"
+        },
+        {
+          "name": "Bruiser",
+          "win_rate": 50.3,
+          "games": 28100,
+          "runes": {
+            "primary_tree_id": 8000,
+            "secondary_tree_id": 8300,
+            "rune_ids": [
+              8010,
+              9111,
+              9105,
+              8299,
+              8345,
+              8347
+            ]
+          },
+          "spell_ids": [
+            4,
+            6
+          ],
+          "starting_item_ids": [
+            1054,
+            2003
+          ],
+          "core_item_ids": [
+            6631,
+            3047,
+            3053
+          ],
+          "situational_item_ids": [
+            3065,
+            3742,
+            3143
+          ],
+          "skill_order": "QWE",
+          "skill_levels": "QWEQQRQWQWRWWEEREE"
+        }
+      ],
+      "damage_share": {
+        "physical": 78,
+        "magic": 16,
+        "true": 6
+      },
       "counters": [
         {
           "champion": "Fiora",
@@ -1827,6 +1908,6 @@
       ]
     }
   ],
-  "generated_at": "2026-07-12T10:40:42.078Z",
+  "generated_at": "2026-07-12T18:57:29.145Z",
   "source": "curated+ddragon"
 }

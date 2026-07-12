@@ -32,9 +32,27 @@ export interface RunesRaw {
   shard_ids?: number[];
 }
 
+// One build variant (Blitz-style, e.g. "AP" vs "Heal & Shield"), each with its
+// own runes / spells / items / skill order and a win rate.
+export interface BuildVariantRaw {
+  name?: string;
+  win_rate?: number;
+  games?: number;
+  runes?: RunesRaw;
+  spell_ids?: number[];
+  starting_item_ids?: number[];
+  core_item_ids?: number[];
+  situational_item_ids?: number[];
+  skill_order?: string;
+  skill_levels?: string;
+}
+
 export interface RecRaw {
   champion: string;
   role: Role;
+  // Multiple named build variants (preferred). When absent, the top-level
+  // fields below form a single unnamed build (backward compatible).
+  builds?: BuildVariantRaw[];
   runes?: RunesRaw;
   spell_ids?: number[];
   starting_item_ids?: number[];
@@ -43,6 +61,8 @@ export interface RecRaw {
   skill_order?: string;
   skill_levels?: string;
   counters?: CounterRaw[];
+  // Average damage-to-champions split (percentages), from Riot match data.
+  damage_share?: { physical?: number; magic?: number; true?: number };
   strengths?: string[];
   weaknesses?: string[];
   insights?: string[];
@@ -135,16 +155,10 @@ export interface AbilityRow {
   icon: string;
 }
 
-export interface Detail {
-  champ: Champ;
-  role: Role;
-  roles: Role[];
-  tier?: string;
+// A resolved build variant for the UI.
+export interface BuildVariant {
+  name: string;
   winRate?: number;
-  wrChange?: number;
-  pickRate?: number;
-  banRate?: number;
-  matches?: number;
   primaryTree: string;
   secondaryTree: string;
   runes: RuneRow[];
@@ -154,7 +168,33 @@ export interface Detail {
   situational: ItemRow[];
   skillPriority: string[];
   skillLevels: string[];
-  duels: DuelRow[];
+}
+
+// Win rate (and tier) for one position the champion is played in.
+export interface RoleStat {
+  role: Role;
+  tier?: string;
+  winRate?: number;
+}
+
+export interface Detail {
+  champ: Champ;
+  role: Role;
+  roles: Role[];
+  // Win rate at each position, for the position selector.
+  roleStats: RoleStat[];
+  tier?: string;
+  winRate?: number;
+  wrChange?: number;
+  pickRate?: number;
+  banRate?: number;
+  matches?: number;
+  // Build variants for the selected role, sorted by win rate (best first).
+  variants: BuildVariant[];
+  // Damage split (physical / magic / true, percentages summing ~100).
+  damage?: { physical: number; magic: number; true: number };
+  weak: DuelRow[]; // champions that counter this one (worst first)
+  strong: DuelRow[]; // champions this one is strong against (best first)
   strengths: string[];
   weaknesses: string[];
   insights: string[];

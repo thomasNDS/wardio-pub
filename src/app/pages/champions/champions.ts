@@ -146,7 +146,8 @@ export class Champions {
     'rounded-hex border border-line bg-card px-3 py-1.5 text-sm font-semibold ' +
     'text-ink shadow-[inset_0_0_0_1px_rgba(240,192,90,0.08)] ' +
     'hover:border-gold/40 focus:border-gold/60 focus:outline-none';
-  private readonly sortCol = signal<SortCol | null>(null);
+  // Default: sort by win rate, highest first.
+  private readonly sortCol = signal<SortCol | null>('win');
   private readonly sortDesc = signal(true);
 
   readonly rows = computed<TierRow[]>(() => {
