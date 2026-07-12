@@ -1,789 +1,1884 @@
 {
   "format": 1,
   "patch": "16.13.1",
+  "generated_at": "2026-07-12T20:24:20.147Z",
+  "source": "aggregated+ddragon",
+  "sample": {
+    "players": 30,
+    "matches": 303
+  },
   "tiers": {
     "top": [
       {
-        "champion": "Aatrox",
+        "champion": "KSante",
         "tier": "S",
-        "win_rate": 51.8,
-        "wr_change": 0.4,
-        "pick_rate": 7.4,
-        "ban_rate": 12.1,
-        "matches": 142300
+        "win_rate": 59.1,
+        "pick_rate": 4.6,
+        "ban_rate": 2.3,
+        "matches": 14
+      },
+      {
+        "champion": "Jayce",
+        "tier": "S",
+        "win_rate": 57.8,
+        "pick_rate": 11.2,
+        "ban_rate": 26.1,
+        "matches": 34
       },
       {
         "champion": "Darius",
         "tier": "A",
-        "win_rate": 51.1,
-        "wr_change": 0.2,
-        "pick_rate": 8.9,
-        "ban_rate": 15.3,
-        "matches": 168900
+        "win_rate": 57.5,
+        "pick_rate": 3.3,
+        "ban_rate": 4,
+        "matches": 10
       },
       {
-        "champion": "Camille",
+        "champion": "Jax",
         "tier": "A",
-        "win_rate": 50.6,
-        "wr_change": -0.3,
-        "pick_rate": 5.2,
-        "ban_rate": 4.7,
-        "matches": 98400
+        "win_rate": 57.5,
+        "pick_rate": 3.3,
+        "ban_rate": 8.3,
+        "matches": 10
       },
       {
-        "champion": "Sett",
+        "champion": "Sylas",
+        "tier": "A",
+        "win_rate": 56.8,
+        "pick_rate": 2.3,
+        "ban_rate": 23.8,
+        "matches": 7
+      },
+      {
+        "champion": "Yasuo",
         "tier": "B",
-        "win_rate": 50.2,
-        "wr_change": 0.1,
-        "pick_rate": 6.1,
-        "ban_rate": 3.9,
-        "matches": 116700
+        "win_rate": 56.1,
+        "pick_rate": 3.6,
+        "ban_rate": 15.5,
+        "matches": 11
+      },
+      {
+        "champion": "Singed",
+        "tier": "B",
+        "win_rate": 56,
+        "pick_rate": 6.6,
+        "ban_rate": 19.8,
+        "matches": 20
+      },
+      {
+        "champion": "Chogath",
+        "tier": "B",
+        "win_rate": 55.3,
+        "pick_rate": 2.6,
+        "ban_rate": 0.3,
+        "matches": 8
+      },
+      {
+        "champion": "Locke",
+        "tier": "B",
+        "win_rate": 55.3,
+        "pick_rate": 2.6,
+        "ban_rate": 76.9,
+        "matches": 8
+      },
+      {
+        "champion": "Anivia",
+        "tier": "B",
+        "win_rate": 54.5,
+        "pick_rate": 4.6,
+        "ban_rate": 6.6,
+        "matches": 14
+      },
+      {
+        "champion": "Vladimir",
+        "tier": "C",
+        "win_rate": 54.1,
+        "pick_rate": 2.3,
+        "ban_rate": 5,
+        "matches": 7
       },
       {
         "champion": "Teemo",
         "tier": "C",
-        "win_rate": 49.4,
-        "wr_change": -0.5,
-        "pick_rate": 3.8,
-        "ban_rate": 6.2,
-        "matches": 72500
+        "win_rate": 52.9,
+        "pick_rate": 1.3,
+        "ban_rate": 0,
+        "matches": 4
+      },
+      {
+        "champion": "Annie",
+        "tier": "C",
+        "win_rate": 52.6,
+        "pick_rate": 2.6,
+        "ban_rate": 9.9,
+        "matches": 8
+      },
+      {
+        "champion": "Akali",
+        "tier": "D",
+        "win_rate": 52.4,
+        "pick_rate": 4,
+        "ban_rate": 12.9,
+        "matches": 12
+      },
+      {
+        "champion": "Garen",
+        "tier": "D",
+        "win_rate": 52.2,
+        "pick_rate": 5.3,
+        "ban_rate": 0.3,
+        "matches": 16
       }
     ],
     "jungle": [
       {
-        "champion": "Viego",
+        "champion": "Qiyana",
         "tier": "S",
-        "win_rate": 51.6,
-        "wr_change": 0.6,
-        "pick_rate": 9.1,
-        "ban_rate": 10.4,
-        "matches": 173400
+        "win_rate": 58.8,
+        "pick_rate": 6.9,
+        "ban_rate": 11.6,
+        "matches": 21
       },
       {
         "champion": "LeeSin",
+        "tier": "S",
+        "win_rate": 56.8,
+        "pick_rate": 14.5,
+        "ban_rate": 4.6,
+        "matches": 44
+      },
+      {
+        "champion": "Vi",
         "tier": "A",
-        "win_rate": 49.8,
-        "wr_change": -0.2,
-        "pick_rate": 11.7,
-        "ban_rate": 6,
-        "matches": 221800
+        "win_rate": 55.8,
+        "pick_rate": 4.3,
+        "ban_rate": 0.7,
+        "matches": 13
+      },
+      {
+        "champion": "Olaf",
+        "tier": "A",
+        "win_rate": 55.6,
+        "pick_rate": 2,
+        "ban_rate": 0.3,
+        "matches": 6
+      },
+      {
+        "champion": "DrMundo",
+        "tier": "A",
+        "win_rate": 55,
+        "pick_rate": 3.3,
+        "ban_rate": 1,
+        "matches": 10
+      },
+      {
+        "champion": "Shaco",
+        "tier": "B",
+        "win_rate": 54.7,
+        "pick_rate": 7.6,
+        "ban_rate": 38.6,
+        "matches": 23
+      },
+      {
+        "champion": "Jayce",
+        "tier": "B",
+        "win_rate": 52.9,
+        "pick_rate": 1.3,
+        "ban_rate": 26.1,
+        "matches": 4
+      },
+      {
+        "champion": "Ivern",
+        "tier": "B",
+        "win_rate": 52.6,
+        "pick_rate": 2.6,
+        "ban_rate": 0.7,
+        "matches": 8
+      },
+      {
+        "champion": "Skarner",
+        "tier": "B",
+        "win_rate": 52.5,
+        "pick_rate": 3.3,
+        "ban_rate": 0,
+        "matches": 10
+      },
+      {
+        "champion": "Nidalee",
+        "tier": "B",
+        "win_rate": 51.9,
+        "pick_rate": 7.9,
+        "ban_rate": 3,
+        "matches": 24
+      },
+      {
+        "champion": "Lillia",
+        "tier": "C",
+        "win_rate": 51.4,
+        "pick_rate": 1.7,
+        "ban_rate": 0,
+        "matches": 5
+      },
+      {
+        "champion": "Elise",
+        "tier": "C",
+        "win_rate": 51.3,
+        "pick_rate": 3,
+        "ban_rate": 2,
+        "matches": 9
+      },
+      {
+        "champion": "Quinn",
+        "tier": "C",
+        "win_rate": 51,
+        "pick_rate": 6.3,
+        "ban_rate": 1,
+        "matches": 19
+      },
+      {
+        "champion": "Naafiri",
+        "tier": "D",
+        "win_rate": 50.8,
+        "pick_rate": 9.6,
+        "ban_rate": 14.9,
+        "matches": 29
       },
       {
         "champion": "Khazix",
-        "tier": "A",
-        "win_rate": 51,
-        "wr_change": 0.3,
-        "pick_rate": 6.4,
-        "ban_rate": 5.1,
-        "matches": 121500
-      },
-      {
-        "champion": "Warwick",
-        "tier": "B",
-        "win_rate": 51.3,
-        "wr_change": 0,
-        "pick_rate": 4.9,
-        "ban_rate": 2.2,
-        "matches": 92700
-      },
-      {
-        "champion": "Amumu",
-        "tier": "C",
-        "win_rate": 50.1,
-        "wr_change": -0.1,
-        "pick_rate": 3.2,
-        "ban_rate": 1.5,
-        "matches": 60800
+        "tier": "D",
+        "win_rate": 50,
+        "pick_rate": 7.3,
+        "ban_rate": 5.6,
+        "matches": 22
       }
     ],
     "mid": [
       {
-        "champion": "Syndra",
+        "champion": "Kassadin",
         "tier": "S",
-        "win_rate": 52.1,
-        "wr_change": 0.5,
-        "pick_rate": 6.3,
-        "ban_rate": 2.1,
-        "matches": 119200
+        "win_rate": 56.8,
+        "pick_rate": 2.3,
+        "ban_rate": 0.7,
+        "matches": 7
       },
       {
-        "champion": "Viktor",
+        "champion": "Azir",
         "tier": "S",
-        "win_rate": 52.8,
-        "wr_change": 0.7,
-        "pick_rate": 4.8,
-        "ban_rate": 3,
-        "matches": 91500
+        "win_rate": 55.9,
+        "pick_rate": 1.3,
+        "ban_rate": 0.3,
+        "matches": 4
       },
       {
-        "champion": "Ahri",
+        "champion": "TwistedFate",
         "tier": "A",
-        "win_rate": 51.4,
-        "wr_change": 0.2,
-        "pick_rate": 8.7,
-        "ban_rate": 4.2,
-        "matches": 164900
+        "win_rate": 55.8,
+        "pick_rate": 4.3,
+        "ban_rate": 0,
+        "matches": 13
       },
       {
-        "champion": "Orianna",
+        "champion": "Hwei",
         "tier": "A",
-        "win_rate": 50.9,
-        "wr_change": -0.1,
-        "pick_rate": 5.1,
-        "ban_rate": 1.4,
-        "matches": 96700
+        "win_rate": 55.6,
+        "pick_rate": 5,
+        "ban_rate": 1,
+        "matches": 15
       },
       {
-        "champion": "Zed",
+        "champion": "Lissandra",
+        "tier": "A",
+        "win_rate": 55.3,
+        "pick_rate": 2.6,
+        "ban_rate": 0.3,
+        "matches": 8
+      },
+      {
+        "champion": "Galio",
         "tier": "B",
-        "win_rate": 49.7,
-        "wr_change": -0.4,
-        "pick_rate": 9.9,
-        "ban_rate": 22.4,
-        "matches": 187600
+        "win_rate": 55.1,
+        "pick_rate": 6.3,
+        "ban_rate": 1.3,
+        "matches": 19
       },
       {
-        "champion": "Yasuo",
+        "champion": "Leblanc",
+        "tier": "B",
+        "win_rate": 55,
+        "pick_rate": 3.3,
+        "ban_rate": 12.9,
+        "matches": 10
+      },
+      {
+        "champion": "Diana",
+        "tier": "B",
+        "win_rate": 54.3,
+        "pick_rate": 1.7,
+        "ban_rate": 0.7,
+        "matches": 5
+      },
+      {
+        "champion": "Mel",
+        "tier": "B",
+        "win_rate": 54.1,
+        "pick_rate": 2.3,
+        "ban_rate": 13.5,
+        "matches": 7
+      },
+      {
+        "champion": "Akshan",
+        "tier": "B",
+        "win_rate": 53.5,
+        "pick_rate": 4.3,
+        "ban_rate": 13.2,
+        "matches": 13
+      },
+      {
+        "champion": "Aurora",
         "tier": "C",
-        "win_rate": 48.9,
-        "wr_change": -0.6,
-        "pick_rate": 11.2,
-        "ban_rate": 18.6,
-        "matches": 212300
+        "win_rate": 52.3,
+        "pick_rate": 4.6,
+        "ban_rate": 1.3,
+        "matches": 14
+      },
+      {
+        "champion": "Malzahar",
+        "tier": "C",
+        "win_rate": 51.4,
+        "pick_rate": 1.7,
+        "ban_rate": 0.7,
+        "matches": 5
+      },
+      {
+        "champion": "Locke",
+        "tier": "C",
+        "win_rate": 50.8,
+        "pick_rate": 9.6,
+        "ban_rate": 76.9,
+        "matches": 29
+      },
+      {
+        "champion": "Akali",
+        "tier": "D",
+        "win_rate": 50.8,
+        "pick_rate": 9.6,
+        "ban_rate": 12.9,
+        "matches": 29
+      },
+      {
+        "champion": "Jayce",
+        "tier": "D",
+        "win_rate": 50,
+        "pick_rate": 4,
+        "ban_rate": 26.1,
+        "matches": 12
       }
     ],
     "bot": [
       {
-        "champion": "Jinx",
+        "champion": "Karthus",
         "tier": "S",
-        "win_rate": 52.4,
-        "wr_change": 0.5,
-        "pick_rate": 12.8,
-        "ban_rate": 4.1,
-        "matches": 242700
+        "win_rate": 56.3,
+        "pick_rate": 5.9,
+        "ban_rate": 1.7,
+        "matches": 18
       },
       {
-        "champion": "Caitlyn",
+        "champion": "Sivir",
+        "tier": "S",
+        "win_rate": 54.5,
+        "pick_rate": 4.6,
+        "ban_rate": 1,
+        "matches": 14
+      },
+      {
+        "champion": "MasterYi",
         "tier": "A",
-        "win_rate": 50.7,
-        "wr_change": 0.1,
-        "pick_rate": 13.9,
-        "ban_rate": 6.7,
-        "matches": 263400
+        "win_rate": 54.3,
+        "pick_rate": 1.7,
+        "ban_rate": 0.3,
+        "matches": 5
       },
       {
-        "champion": "Ezreal",
+        "champion": "Pantheon",
         "tier": "A",
-        "win_rate": 49.9,
-        "wr_change": -0.2,
-        "pick_rate": 14.2,
-        "ban_rate": 3.3,
-        "matches": 269100
+        "win_rate": 54.3,
+        "pick_rate": 1.7,
+        "ban_rate": 1.3,
+        "matches": 5
       },
       {
-        "champion": "Kaisa",
+        "champion": "Ashe",
+        "tier": "A",
+        "win_rate": 54.3,
+        "pick_rate": 1.7,
+        "ban_rate": 1,
+        "matches": 5
+      },
+      {
+        "champion": "Aphelios",
         "tier": "B",
-        "win_rate": 50.3,
-        "wr_change": 0.2,
-        "pick_rate": 10.1,
-        "ban_rate": 2.8,
-        "matches": 191500
+        "win_rate": 54.1,
+        "pick_rate": 2.3,
+        "ban_rate": 0,
+        "matches": 7
       },
       {
-        "champion": "Draven",
+        "champion": "Sylas",
+        "tier": "B",
+        "win_rate": 53.8,
+        "pick_rate": 3,
+        "ban_rate": 23.8,
+        "matches": 9
+      },
+      {
+        "champion": "Hwei",
+        "tier": "B",
+        "win_rate": 53.7,
+        "pick_rate": 3.6,
+        "ban_rate": 1,
+        "matches": 11
+      },
+      {
+        "champion": "Fiora",
+        "tier": "B",
+        "win_rate": 53.7,
+        "pick_rate": 3.6,
+        "ban_rate": 6.3,
+        "matches": 11
+      },
+      {
+        "champion": "Syndra",
+        "tier": "B",
+        "win_rate": 53.4,
+        "pick_rate": 9.2,
+        "ban_rate": 21.5,
+        "matches": 28
+      },
+      {
+        "champion": "Lucian",
         "tier": "C",
-        "win_rate": 50,
-        "wr_change": -0.3,
-        "pick_rate": 4.2,
-        "ban_rate": 8.9,
-        "matches": 79600
+        "win_rate": 53.2,
+        "pick_rate": 5.6,
+        "ban_rate": 0.3,
+        "matches": 17
+      },
+      {
+        "champion": "Xayah",
+        "tier": "C",
+        "win_rate": 52.8,
+        "pick_rate": 2,
+        "ban_rate": 0,
+        "matches": 6
+      },
+      {
+        "champion": "Twitch",
+        "tier": "C",
+        "win_rate": 52.6,
+        "pick_rate": 2.6,
+        "ban_rate": 1.3,
+        "matches": 8
+      },
+      {
+        "champion": "Jinx",
+        "tier": "D",
+        "win_rate": 52.5,
+        "pick_rate": 3.3,
+        "ban_rate": 0.3,
+        "matches": 10
+      },
+      {
+        "champion": "Kalista",
+        "tier": "D",
+        "win_rate": 52,
+        "pick_rate": 6.6,
+        "ban_rate": 3,
+        "matches": 20
       }
     ],
     "support": [
       {
-        "champion": "Thresh",
+        "champion": "Karma",
         "tier": "S",
-        "win_rate": 51,
-        "wr_change": 0.3,
-        "pick_rate": 11.3,
-        "ban_rate": 9.2,
-        "matches": 214600
+        "win_rate": 57.4,
+        "pick_rate": 7.9,
+        "ban_rate": 8.3,
+        "matches": 24
       },
       {
-        "champion": "Nautilus",
-        "tier": "A",
-        "win_rate": 51.5,
-        "wr_change": 0.2,
-        "pick_rate": 8.6,
-        "ban_rate": 7.4,
-        "matches": 163200
+        "champion": "Brand",
+        "tier": "S",
+        "win_rate": 57.1,
+        "pick_rate": 1.7,
+        "ban_rate": 1,
+        "matches": 5
       },
       {
-        "champion": "Lulu",
+        "champion": "Janna",
         "tier": "A",
-        "win_rate": 51.9,
-        "wr_change": 0.4,
+        "win_rate": 56.9,
         "pick_rate": 6.9,
-        "ban_rate": 3.1,
-        "matches": 131000
+        "ban_rate": 2.6,
+        "matches": 21
       },
       {
-        "champion": "Pyke",
+        "champion": "Annie",
+        "tier": "A",
+        "win_rate": 56.8,
+        "pick_rate": 2.3,
+        "ban_rate": 9.9,
+        "matches": 7
+      },
+      {
+        "champion": "Rell",
+        "tier": "A",
+        "win_rate": 55.8,
+        "pick_rate": 7.3,
+        "ban_rate": 1.7,
+        "matches": 22
+      },
+      {
+        "champion": "Camille",
         "tier": "B",
-        "win_rate": 49.6,
-        "wr_change": -0.2,
-        "pick_rate": 7.1,
-        "ban_rate": 12,
-        "matches": 134700
+        "win_rate": 55.7,
+        "pick_rate": 22.1,
+        "ban_rate": 12.2,
+        "matches": 67
+      },
+      {
+        "champion": "Shen",
+        "tier": "B",
+        "win_rate": 54.1,
+        "pick_rate": 2.3,
+        "ban_rate": 1,
+        "matches": 7
+      },
+      {
+        "champion": "Zilean",
+        "tier": "B",
+        "win_rate": 53.8,
+        "pick_rate": 3,
+        "ban_rate": 0.3,
+        "matches": 9
+      },
+      {
+        "champion": "Sylas",
+        "tier": "B",
+        "win_rate": 53.7,
+        "pick_rate": 3.6,
+        "ban_rate": 23.8,
+        "matches": 11
+      },
+      {
+        "champion": "Senna",
+        "tier": "B",
+        "win_rate": 52.9,
+        "pick_rate": 6.9,
+        "ban_rate": 7.3,
+        "matches": 21
+      },
+      {
+        "champion": "Zoe",
+        "tier": "C",
+        "win_rate": 52.5,
+        "pick_rate": 3.3,
+        "ban_rate": 3.3,
+        "matches": 10
+      },
+      {
+        "champion": "Nami",
+        "tier": "C",
+        "win_rate": 51.4,
+        "pick_rate": 2.3,
+        "ban_rate": 0,
+        "matches": 7
+      },
+      {
+        "champion": "Leona",
+        "tier": "C",
+        "win_rate": 51.1,
+        "pick_rate": 5.6,
+        "ban_rate": 2.3,
+        "matches": 17
       },
       {
         "champion": "Blitzcrank",
-        "tier": "C",
-        "win_rate": 50.4,
-        "wr_change": 0.1,
-        "pick_rate": 5.5,
-        "ban_rate": 14.6,
-        "matches": 104300
+        "tier": "D",
+        "win_rate": 50,
+        "pick_rate": 4,
+        "ban_rate": 2,
+        "matches": 12
       },
       {
-        "champion": "Yuumi",
+        "champion": "Skarner",
         "tier": "D",
-        "win_rate": 47.8,
-        "wr_change": -0.8,
-        "pick_rate": 2.9,
-        "ban_rate": 1.1,
-        "matches": 55100
+        "win_rate": 50,
+        "pick_rate": 1.3,
+        "ban_rate": 0,
+        "matches": 4
       }
     ]
   },
   "recommendations": [
     {
-      "champion": "Aatrox",
+      "champion": "KSante",
       "role": "top",
       "runes": {
-        "primary_tree_id": 8000,
-        "secondary_tree_id": 8400,
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
         "rune_ids": [
-          8010,
-          9111,
-          9104,
-          8299,
+          8437,
+          8401,
           8444,
-          8453
+          8451,
+          8347,
+          8345
+        ],
+        "shard_ids": [
+          5005,
+          5001,
+          5011
         ]
       },
       "spell_ids": [
         4,
         12
       ],
-      "starting_item_ids": [
-        1054,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6610,
         3047,
-        3053
+        1120,
+        6662
       ],
       "situational_item_ids": [
-        3026,
-        3742,
-        3065
+        6665,
+        3075,
+        2504
       ],
-      "skill_order": "QEW",
-      "skill_levels": "QEQWQRQEQEREEWWRWW",
-      "builds": [
+      "skill_order": "",
+      "counters": [
         {
-          "name": "Sundered Sky",
-          "win_rate": 51.8,
-          "games": 92300,
-          "runes": {
-            "primary_tree_id": 8000,
-            "secondary_tree_id": 8400,
-            "rune_ids": [
-              8010,
-              9111,
-              9104,
-              8299,
-              8444,
-              8453
-            ]
-          },
-          "spell_ids": [
-            4,
-            12
-          ],
-          "starting_item_ids": [
-            1054,
-            2003
-          ],
-          "core_item_ids": [
-            6610,
-            3047,
-            3053
-          ],
-          "situational_item_ids": [
-            3026,
-            3742,
-            3065
-          ],
-          "skill_order": "QEW",
-          "skill_levels": "QEQWQRQEQEREEWWRWW"
-        },
-        {
-          "name": "Bruiser",
-          "win_rate": 50.3,
-          "games": 28100,
-          "runes": {
-            "primary_tree_id": 8000,
-            "secondary_tree_id": 8300,
-            "rune_ids": [
-              8010,
-              9111,
-              9105,
-              8299,
-              8345,
-              8347
-            ]
-          },
-          "spell_ids": [
-            4,
-            6
-          ],
-          "starting_item_ids": [
-            1054,
-            2003
-          ],
-          "core_item_ids": [
-            6631,
-            3047,
-            3053
-          ],
-          "situational_item_ids": [
-            3065,
-            3742,
-            3143
-          ],
-          "skill_order": "QWE",
-          "skill_levels": "QWEQQRQWQWRWWEEREE"
+          "champion": "Yone",
+          "win_rate": 50
         }
       ],
       "damage_share": {
-        "physical": 78,
-        "magic": 16,
-        "true": 6
+        "physical": 86,
+        "magic": 9,
+        "true": 5
       },
+      "tips": []
+    },
+    {
+      "champion": "Jayce",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8135,
+          8313,
+          8347
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3142,
+        1055,
+        3042
+      ],
+      "situational_item_ids": [
+        6699,
+        3009,
+        6695
+      ],
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Fiora",
-          "win_rate": 45.3
+          "champion": "Yasuo",
+          "win_rate": 30
+        },
+        {
+          "champion": "Olaf",
+          "win_rate": 60
         },
         {
           "champion": "Vayne",
-          "win_rate": 45.9
+          "win_rate": 62.5
         },
         {
-          "champion": "Quinn",
-          "win_rate": 46.4
+          "champion": "Irelia",
+          "win_rate": 62.5
         },
         {
-          "champion": "Fiddlesticks",
-          "win_rate": 46.8
-        },
-        {
-          "champion": "Darius",
-          "win_rate": 47.2
-        },
-        {
-          "champion": "Kayle",
-          "win_rate": 47.6
-        },
-        {
-          "champion": "Malphite",
-          "win_rate": 48.1
-        },
-        {
-          "champion": "Gwen",
-          "win_rate": 48.5
-        },
-        {
-          "champion": "Poppy",
-          "win_rate": 48.9
-        },
-        {
-          "champion": "Jax",
-          "win_rate": 49.2
-        },
-        {
-          "champion": "Renekton",
-          "win_rate": 49.6
-        },
-        {
-          "champion": "Gnar",
-          "win_rate": 49.9
+          "champion": "Aurora",
+          "win_rate": 66.7
         }
       ],
-      "strengths": [
-        "Strong all-in trades once World Ender is up",
-        "Sustains through waves and fights with Q healing",
-        "Flexible engage and disengage with E dashes"
-      ],
-      "weaknesses": [
-        "Weak in the early levels before item spikes",
-        "Reliant on landing the Q sweet spots",
-        "Kited hard by ranged top laners"
-      ],
-      "insights": [
-        "World Ender's revive resets on a takedown — force fights while it is up.",
-        "Short trades beat extended ones until Sundered Sky completes."
-      ],
-      "tips": [
-        "Land the sweet spots of Q — each cast is your trade window.",
-        "World Ender is a second life: force fights while it lasts.",
-        "Short trades beat extended ones until Sundered Sky completes."
-      ]
+      "damage_share": {
+        "physical": 79,
+        "magic": 17,
+        "true": 4
+      },
+      "tips": []
     },
     {
       "champion": "Darius",
       "role": "top",
       "runes": {
         "primary_tree_id": 8000,
-        "secondary_tree_id": 8400,
+        "secondary_tree_id": 8200,
         "rune_ids": [
           8010,
           9111,
           9104,
           8299,
-          8444,
-          8242
+          8275,
+          8234
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         6
       ],
-      "starting_item_ids": [
-        1054,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6631,
+        3742,
         3047,
-        3053
+        3142
       ],
       "situational_item_ids": [
-        3742,
-        3075,
-        3026
+        6631,
+        3111,
+        1028
       ],
-      "skill_order": "QEW",
-      "counters": [
-        {
-          "champion": "Vayne",
-          "win_rate": 45.8
-        },
-        {
-          "champion": "Quinn",
-          "win_rate": 46.4
-        },
-        {
-          "champion": "Kayle",
-          "win_rate": 47.9
-        }
-      ],
-      "tips": [
-        "Hit the outer ring of Q to heal — inner hits waste the trade.",
-        "Ghost turns any even fight into five stacks and a dunk.",
-        "Track your passive stacks; all-in at three or more."
-      ]
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 82,
+        "magic": 0,
+        "true": 18
+      },
+      "tips": []
     },
     {
-      "champion": "Camille",
+      "champion": "Jax",
       "role": "top",
       "runes": {
-        "primary_tree_id": 8400,
-        "secondary_tree_id": 8000,
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
         "rune_ids": [
-          8437,
-          8446,
-          8444,
-          8451,
+          8008,
           9111,
-          9104
+          9104,
+          8299,
+          8345,
+          8347
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
-        12
+        14
       ],
-      "starting_item_ids": [
-        1054,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
         3078,
-        3047,
-        6610
+        6610,
+        1055
       ],
       "situational_item_ids": [
-        3053,
-        3026,
-        3110
+        3157,
+        3047,
+        1052
       ],
-      "skill_order": "QEW",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Jax",
-          "win_rate": 46.1
-        },
-        {
-          "champion": "Renekton",
-          "win_rate": 47.3
-        },
-        {
-          "champion": "Malphite",
-          "win_rate": 48
+          "champion": "Yone",
+          "win_rate": 37.5
         }
       ],
-      "tips": [
-        "Wait for the second Q proc — the true damage is the trade.",
-        "E through a wall to gank-proof your lane and to engage.",
-        "Ult isolates the carry: save it for their escape, not the engage."
-      ]
+      "damage_share": {
+        "physical": 55,
+        "magic": 41,
+        "true": 4
+      },
+      "tips": []
     },
     {
-      "champion": "Sett",
+      "champion": "Sylas",
       "role": "top",
       "runes": {
         "primary_tree_id": 8000,
         "secondary_tree_id": 8400,
         "rune_ids": [
           8010,
-          9111,
+          8009,
           9105,
           8299,
           8473,
-          8451
+          8453
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
         14
       ],
-      "starting_item_ids": [
-        1054,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6610,
-        3111,
-        3053
+        3152,
+        3158,
+        1082
       ],
       "situational_item_ids": [
-        3068,
-        3075,
-        3026
+        1058,
+        3157,
+        4633
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 2,
+        "magic": 92,
+        "true": 6
+      },
+      "tips": []
+    },
+    {
+      "champion": "Yasuo",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8008,
+          9101,
+          9104,
+          8299,
+          8444,
+          8451
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        3,
+        4
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3006,
+        6673,
+        1086
+      ],
+      "situational_item_ids": [
+        6672,
+        3153,
+        3031
+      ],
+      "skill_order": "",
       "counters": [
         {
           "champion": "Vayne",
-          "win_rate": 44.9
+          "win_rate": 62.5
         },
         {
-          "champion": "Gwen",
-          "win_rate": 47
-        },
-        {
-          "champion": "Kennen",
-          "win_rate": 47.8
+          "champion": "Jayce",
+          "win_rate": 70
         }
       ],
-      "tips": [
-        "Your W shield scales with grit — trade right after taking damage.",
-        "E stuns only when you grab from both sides; position first.",
-        "Suplex the tank into their own carries with R."
-      ]
+      "damage_share": {
+        "physical": 90,
+        "magic": 9,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Singed",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8465,
+          8446,
+          8429,
+          8451,
+          8275,
+          8234
+        ],
+        "shard_ids": [
+          5008,
+          5010,
+          5013
+        ]
+      },
+      "spell_ids": [
+        4,
+        6
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3116,
+        3009,
+        6653
+      ],
+      "situational_item_ids": [
+        1082,
+        1056,
+        2525
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Vladimir",
+          "win_rate": 50
+        },
+        {
+          "champion": "Urgot",
+          "win_rate": 50
+        },
+        {
+          "champion": "Vayne",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 5,
+        "magic": 90,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Chogath",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          9923,
+          8126,
+          8140,
+          8106,
+          8224,
+          8234
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        4633,
+        3152,
+        1056
+      ],
+      "situational_item_ids": [
+        3047,
+        1031,
+        3084
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Akali",
+          "win_rate": 50
+        },
+        {
+          "champion": "Garen",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Anivia",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 18,
+        "magic": 59,
+        "true": 24
+      },
+      "tips": []
+    },
+    {
+      "champion": "Locke",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8135,
+          9111,
+          8017
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3100,
+        4645,
+        3020
+      ],
+      "situational_item_ids": [
+        3089,
+        2510,
+        1056
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 6,
+        "magic": 82,
+        "true": 12
+      },
+      "tips": []
+    },
+    {
+      "champion": "Anivia",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8126,
+          8137,
+          8105,
+          8226,
+          8210
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6657,
+        3009,
+        3118
+      ],
+      "situational_item_ids": [
+        1056,
+        3157,
+        3040
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Chogath",
+          "win_rate": 37.5
+        }
+      ],
+      "damage_share": {
+        "physical": 8,
+        "magic": 87,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Vladimir",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8214,
+          8275,
+          8210,
+          8237,
+          9105,
+          8299
+        ],
+        "shard_ids": [
+          5007,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        6
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3152,
+        3089,
+        3009
+      ],
+      "situational_item_ids": [
+        1082,
+        4646,
+        1052
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Singed",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 4,
+        "magic": 93,
+        "true": 3
+      },
+      "tips": []
     },
     {
       "champion": "Teemo",
       "role": "top",
       "runes": {
-        "primary_tree_id": 8200,
-        "secondary_tree_id": 8100,
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
         "rune_ids": [
-          8214,
-          8226,
-          8210,
-          8237,
-          8139,
-          8106
+          8005,
+          9111,
+          9104,
+          8299,
+          8473,
+          8451
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         14
       ],
-      "starting_item_ids": [
-        1056,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        3115,
-        3020,
-        6653
+        6653,
+        1056,
+        3118
       ],
       "situational_item_ids": [
-        3135,
-        3116,
-        3157
+        3020,
+        3145,
+        1058
       ],
-      "skill_order": "QEW",
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 13,
+        "magic": 78,
+        "true": 10
+      },
+      "tips": []
+    },
+    {
+      "champion": "Annie",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8139,
+          8137,
+          8105,
+          8226,
+          8237
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3152,
+        3118,
+        1056
+      ],
+      "situational_item_ids": [
+        3020,
+        1082,
+        4645
+      ],
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Pantheon",
-          "win_rate": 46.5
+          "champion": "Riven",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 6,
+        "magic": 89,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Akali",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8106,
+          8473,
+          8451
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3146,
+        4645,
+        3020
+      ],
+      "situational_item_ids": [
+        1082,
+        3135,
+        3111
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Chogath",
+          "win_rate": 50
         },
         {
           "champion": "Irelia",
-          "win_rate": 47.2
+          "win_rate": 50
         },
         {
-          "champion": "Akshan",
-          "win_rate": 47.7
+          "champion": "Leblanc",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Blind the auto-attacker before their all-in, not after.",
-        "Seed the river and tri-brush — shrooms win the mid game.",
-        "Never push past the second brush without vision of the jungler."
-      ]
+      "damage_share": {
+        "physical": 6,
+        "magic": 84,
+        "true": 10
+      },
+      "tips": []
     },
     {
-      "champion": "Viego",
-      "role": "jungle",
+      "champion": "Garen",
+      "role": "top",
       "runes": {
         "primary_tree_id": 8000,
-        "secondary_tree_id": 8100,
+        "secondary_tree_id": 8200,
         "rune_ids": [
           8010,
           9111,
-          9104,
-          8014,
+          9105,
+          8299,
+          8224,
+          8234
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6631,
+        3009,
+        3046
+      ],
+      "situational_item_ids": [
+        3142,
+        3033,
+        1120
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Chogath",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Yone",
+          "win_rate": 50
+        },
+        {
+          "champion": "Vayne",
+          "win_rate": 50
+        },
+        {
+          "champion": "Gnar",
+          "win_rate": 66.7
+        }
+      ],
+      "damage_share": {
+        "physical": 74,
+        "magic": 0,
+        "true": 25
+      },
+      "tips": []
+    },
+    {
+      "champion": "Qiyana",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8300,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8369,
+          8304,
+          8313,
+          8347,
           8143,
-          8135
+          8106
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         11
       ],
-      "starting_item_ids": [
-        1102,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6672,
-        3111,
-        3153
+        6699,
+        6698,
+        6694
       ],
       "situational_item_ids": [
-        3053,
-        3026,
-        3091
+        3158,
+        1036,
+        3179
       ],
-      "skill_order": "QEW",
-      "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Belveth",
-          "win_rate": 46.8
+          "champion": "Nidalee",
+          "win_rate": 44.4
         },
         {
-          "champion": "Udyr",
-          "win_rate": 47.5
+          "champion": "MonkeyKing",
+          "win_rate": 55.6
         },
         {
-          "champion": "Rammus",
-          "win_rate": 47.9
+          "champion": "Viego",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Locke",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Naafiri",
+          "win_rate": 62.5
         }
       ],
-      "strengths": [
-        "Snowballs off possession resets in fights",
-        "Duels most junglers after the first item",
-        "High mobility with W wall-dashes"
-      ],
-      "weaknesses": [
-        "Falls off without early takedowns",
-        "Chaining possessions is skill-intensive",
-        "Vulnerable to crowd control before ulting"
-      ],
-      "insights": [
-        "Possession copies the target's items and abilities — take their carry.",
-        "Q's passive marks refund the ability on a hit — weave autos."
-      ],
-      "tips": [
-        "Every possession resets your items and abilities — chain them.",
-        "Open fights on the frontline; finish them as their carry.",
-        "W through walls makes short-range ganks unpredictable."
-      ]
+      "damage_share": {
+        "physical": 81,
+        "magic": 7,
+        "true": 12
+      },
+      "tips": []
     },
     {
       "champion": "LeeSin",
       "role": "jungle",
       "runes": {
         "primary_tree_id": 8000,
-        "secondary_tree_id": 8100,
+        "secondary_tree_id": 8300,
         "rune_ids": [
           8010,
           9111,
           9104,
-          8299,
-          8143,
-          8105
+          8014,
+          8347,
+          8304
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         11
       ],
-      "starting_item_ids": [
-        1102,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
         6610,
-        3111,
-        3071
+        6692,
+        3111
       ],
       "situational_item_ids": [
-        3053,
-        3026,
-        3742
+        6333,
+        3047,
+        2055
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
       "counters": [
         {
+          "champion": "Naafiri",
+          "win_rate": 40
+        },
+        {
+          "champion": "Shaco",
+          "win_rate": 50
+        },
+        {
           "champion": "Poppy",
-          "win_rate": 46.5
+          "win_rate": 50
         },
         {
-          "champion": "Nunu",
-          "win_rate": 47.1
+          "champion": "Ekko",
+          "win_rate": 50
         },
         {
-          "champion": "Rammus",
-          "win_rate": 47.8
+          "champion": "Sylas",
+          "win_rate": 54.5
+        },
+        {
+          "champion": "MonkeyKing",
+          "win_rate": 54.5
+        },
+        {
+          "champion": "Graves",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Nocturne",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Full-clear fast — you out-pace most junglers before 20 minutes.",
-        "Ward-hop over walls to escape or to insec their carry.",
-        "Q second cast executes: cast it when they dip below half."
-      ]
+      "damage_share": {
+        "physical": 80,
+        "magic": 13,
+        "true": 7
+      },
+      "tips": []
     },
     {
-      "champion": "Khazix",
+      "champion": "Vi",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8017,
+          8304,
+          8347
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6610,
+        3047,
+        3078
+      ],
+      "situational_item_ids": [
+        3026,
+        2055,
+        1036
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 95,
+        "magic": 0,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Olaf",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8299,
+          8304,
+          8410
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3047,
+        6631,
+        6333
+      ],
+      "situational_item_ids": [
+        3073,
+        3156,
+        6610
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 66,
+        "magic": 0,
+        "true": 34
+      },
+      "tips": []
+    },
+    {
+      "champion": "DrMundo",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8021,
+          9111,
+          9104,
+          8014,
+          8410,
+          8304
+        ],
+        "shard_ids": [
+          5005,
+          5001,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3084,
+        3065,
+        3742
+      ],
+      "situational_item_ids": [
+        3009,
+        3143,
+        2021
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "JarvanIV",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 47,
+        "magic": 45,
+        "true": 8
+      },
+      "tips": []
+    },
+    {
+      "champion": "Shaco",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          9923,
+          8143,
+          8137,
+          8135,
+          8321,
+          8347
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        11,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6699,
+        3179,
+        3158
+      ],
+      "situational_item_ids": [
+        3036,
+        1082,
+        1036
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Skarner",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Karthus",
+          "win_rate": 50
+        },
+        {
+          "champion": "LeeSin",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nidalee",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 35,
+        "magic": 45,
+        "true": 20
+      },
+      "tips": []
+    },
+    {
+      "champion": "Jayce",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8300,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8369,
+          8321,
+          8313,
+          8347,
+          9105,
+          8017
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6699,
+        6697,
+        3814
+      ],
+      "situational_item_ids": [
+        1001,
+        1036,
+        3047
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 78,
+        "magic": 12,
+        "true": 11
+      },
+      "tips": []
+    },
+    {
+      "champion": "Ivern",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8214,
+          8275,
+          8210,
+          8236,
+          8321,
+          8347
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3158,
+        3100,
+        3107
+      ],
+      "situational_item_ids": [
+        3118,
+        3041,
+        1004
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Nidalee",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 23,
+        "magic": 72,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Skarner",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8437,
+          8401,
+          8429,
+          8451,
+          8410,
+          8304
+        ],
+        "shard_ids": [
+          5007,
+          5001,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2502,
+        2525,
+        3047
+      ],
+      "situational_item_ids": [
+        3143,
+        2055,
+        2524
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Quinn",
+          "win_rate": 50
+        },
+        {
+          "champion": "Shaco",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 59,
+        "magic": 30,
+        "true": 12
+      },
+      "tips": []
+    },
+    {
+      "champion": "Nidalee",
       "role": "jungle",
       "runes": {
         "primary_tree_id": 8100,
@@ -791,284 +1886,676 @@
         "rune_ids": [
           8128,
           8143,
-          8140,
+          8137,
           8135,
-          9111,
+          9105,
           8014
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         11
       ],
-      "starting_item_ids": [
-        1101,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6698,
-        3158,
-        3814
+        3100,
+        3020,
+        4645
       ],
       "situational_item_ids": [
-        6694,
-        6697,
-        3026
+        1082,
+        3157,
+        3152
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Rammus",
-          "win_rate": 45.2
+          "champion": "Shaco",
+          "win_rate": 37.5
         },
         {
-          "champion": "Poppy",
-          "win_rate": 46.9
+          "champion": "Ivern",
+          "win_rate": 50
         },
         {
-          "champion": "Warwick",
-          "win_rate": 47.6
+          "champion": "Khazix",
+          "win_rate": 50
+        },
+        {
+          "champion": "Quinn",
+          "win_rate": 50
+        },
+        {
+          "champion": "Qiyana",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Sylas",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Isolated targets take massive bonus Q damage — hunt stragglers.",
-        "Evolve E when ahead to reset jumps on takedowns.",
-        "Path toward the lane that shoves — their jungler must answer."
-      ]
+      "damage_share": {
+        "physical": 6,
+        "magic": 82,
+        "true": 12
+      },
+      "tips": []
     },
     {
-      "champion": "Warwick",
+      "champion": "Lillia",
       "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8010,
+          9111,
+          9105,
+          8017,
+          8347,
+          8304
+        ],
+        "shard_ids": [
+          5007,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6653,
+        1082,
+        3008
+      ],
+      "situational_item_ids": [
+        3157,
+        8010,
+        4633
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 6,
+        "magic": 75,
+        "true": 19
+      },
+      "tips": []
+    },
+    {
+      "champion": "Elise",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8230,
+          8275,
+          8210,
+          8232,
+          9104,
+          8017
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3020,
+        1082,
+        4645
+      ],
+      "situational_item_ids": [
+        3100,
+        1058,
+        4646
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 7,
+        "magic": 84,
+        "true": 9
+      },
+      "tips": []
+    },
+    {
+      "champion": "Quinn",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8300,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8369,
+          8321,
+          8313,
+          8347,
+          9104,
+          8017
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6698,
+        3036,
+        6697
+      ],
+      "situational_item_ids": [
+        6676,
+        3814,
+        3031
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "MonkeyKing",
+          "win_rate": 50
+        },
+        {
+          "champion": "Skarner",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nidalee",
+          "win_rate": 50
+        },
+        {
+          "champion": "Naafiri",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 87,
+        "magic": 0,
+        "true": 13
+      },
+      "tips": []
+    },
+    {
+      "champion": "Naafiri",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8010,
+          9111,
+          9105,
+          8017,
+          8304,
+          8347
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6699,
+        3071,
+        6333
+      ],
+      "situational_item_ids": [
+        1036,
+        3158,
+        1037
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Graves",
+          "win_rate": 33.3
+        },
+        {
+          "champion": "Quinn",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Qiyana",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Fiddlesticks",
+          "win_rate": 50
+        },
+        {
+          "champion": "JarvanIV",
+          "win_rate": 50
+        },
+        {
+          "champion": "Diana",
+          "win_rate": 50
+        },
+        {
+          "champion": "LeeSin",
+          "win_rate": 60
+        },
+        {
+          "champion": "Aatrox",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 90,
+        "magic": 0,
+        "true": 10
+      },
+      "tips": []
+    },
+    {
+      "champion": "Khazix",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8230,
+          8275,
+          8233,
+          8232,
+          8304,
+          8313
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6699,
+        3179,
+        1036
+      ],
+      "situational_item_ids": [
+        3158,
+        6694,
+        2422
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Sylas",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nidalee",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nocturne",
+          "win_rate": 50
+        },
+        {
+          "champion": "Viego",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Graves",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 83,
+        "magic": 6,
+        "true": 11
+      },
+      "tips": []
+    },
+    {
+      "champion": "Kassadin",
+      "role": "mid",
       "runes": {
         "primary_tree_id": 8000,
         "secondary_tree_id": 8400,
         "rune_ids": [
           8010,
-          9111,
-          9103,
-          8299,
-          8444,
-          8451
-        ]
-      },
-      "spell_ids": [
-        4,
-        11
-      ],
-      "starting_item_ids": [
-        1103,
-        2003
-      ],
-      "core_item_ids": [
-        3153,
-        3047,
-        3091
-      ],
-      "situational_item_ids": [
-        3065,
-        3068,
-        3075
-      ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Kindred",
-          "win_rate": 47.1
-        },
-        {
-          "champion": "Belveth",
-          "win_rate": 47.4
-        },
-        {
-          "champion": "Trundle",
-          "win_rate": 48.2
-        }
-      ],
-      "tips": [
-        "W pings low-health enemies across the map — follow the trail.",
-        "Hold Q's second cast to follow flashes and dashes.",
-        "Your E fear breaks channels; save it for the divers."
-      ]
-    },
-    {
-      "champion": "Amumu",
-      "role": "jungle",
-      "runes": {
-        "primary_tree_id": 8400,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8439,
-          8446,
-          8429,
+          8009,
+          9105,
+          8017,
           8451,
-          8304,
-          8347
-        ]
-      },
-      "spell_ids": [
-        4,
-        11
-      ],
-      "starting_item_ids": [
-        1103,
-        2003
-      ],
-      "core_item_ids": [
-        3068,
-        3111,
-        3075
-      ],
-      "situational_item_ids": [
-        3742,
-        3065,
-        3157
-      ],
-      "skill_order": "EWQ",
-      "counters": [
-        {
-          "champion": "Kindred",
-          "win_rate": 46.3
-        },
-        {
-          "champion": "Graves",
-          "win_rate": 47
-        },
-        {
-          "champion": "Lillia",
-          "win_rate": 47.7
-        }
-      ],
-      "tips": [
-        "You have two Q charges — one to engage, one to follow.",
-        "A three-person Bandage Toss into R wins most objectives.",
-        "Full-clear with E max; you barely lose health to camps."
-      ]
-    },
-    {
-      "champion": "Syndra",
-      "role": "mid",
-      "runes": {
-        "primary_tree_id": 8300,
-        "secondary_tree_id": 8200,
-        "rune_ids": [
-          8369,
-          8304,
-          8345,
-          8347,
-          8226,
-          8237
+          8473
+        ],
+        "shard_ids": [
+          5007,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         12
       ],
-      "starting_item_ids": [
-        1056,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6655,
-        3020,
+        6657,
+        3040,
+        1082
+      ],
+      "situational_item_ids": [
+        3174,
+        3118,
+        3173
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Gwen",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 7,
+        "magic": 90,
+        "true": 3
+      },
+      "tips": []
+    },
+    {
+      "champion": "Azir",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8008,
+          9111,
+          9104,
+          8017,
+          8473,
+          8451
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3115,
+        3089,
         4645
       ],
       "situational_item_ids": [
-        3089,
+        3175,
         3157,
-        3135
+        1082
       ],
-      "skill_order": "QEW",
-      "skill_levels": "QEQWQRQEQEREEWWRWW",
-      "counters": [
-        {
-          "champion": "Fizz",
-          "win_rate": 46.2
-        },
-        {
-          "champion": "Yasuo",
-          "win_rate": 47.5
-        },
-        {
-          "champion": "Kassadin",
-          "win_rate": 47.9
-        }
-      ],
-      "strengths": [
-        "Bursts any carry with a full-stack ultimate",
-        "Long-range point-and-click stun with Q-E",
-        "Controls the wave and zones with tempo"
-      ],
-      "weaknesses": [
-        "Immobile — punished hard by assassins",
-        "Reliant on landing skillshots",
-        "Mana-hungry in the early game"
-      ],
-      "insights": [
-        "Bank spheres before a fight for a bigger, longer-range ultimate.",
-        "A Q-E cast from fog lands the stun instantly."
-      ],
-      "tips": [
-        "Bank splinters — a five-sphere R deletes any carry.",
-        "Q-E from fog: the stun is instant when the sphere lands behind.",
-        "Push level one and keep the wave crashing; you win with tempo."
-      ]
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 2,
+        "magic": 96,
+        "true": 1
+      },
+      "tips": []
     },
     {
-      "champion": "Viktor",
+      "champion": "TwistedFate",
       "role": "mid",
       "runes": {
         "primary_tree_id": 8200,
-        "secondary_tree_id": 8300,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8229,
+          8226,
+          8234,
+          8237,
+          8473,
+          8242
+        ],
+        "shard_ids": [
+          5005,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3100,
+        6657,
+        3094
+      ],
+      "situational_item_ids": [
+        3170,
+        3171,
+        1082
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Galio",
+          "win_rate": 50
+        },
+        {
+          "champion": "Sylas",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 11,
+        "magic": 86,
+        "true": 3
+      },
+      "tips": []
+    },
+    {
+      "champion": "Hwei",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
         "rune_ids": [
           8229,
           8226,
           8210,
           8237,
-          8345,
-          8347
+          9105,
+          8017
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
         12
       ],
-      "starting_item_ids": [
-        1056,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6655,
-        3020,
-        3089
+        2503,
+        3171,
+        3175
       ],
       "situational_item_ids": [
-        3157,
-        3135,
-        3102
+        1082,
+        3152,
+        1056
       ],
-      "skill_order": "QEW",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Fizz",
-          "win_rate": 45.9
+          "champion": "Ahri",
+          "win_rate": 55.6
         },
         {
-          "champion": "Zed",
-          "win_rate": 47.1
-        },
-        {
-          "champion": "Sylas",
-          "win_rate": 47.8
+          "champion": "Riven",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Aim E's laser through the wave into their mid — double value.",
-        "Q's shield and empowered auto win most short trades.",
-        "Upgrade E first; the augment spike is your win condition."
-      ]
+      "damage_share": {
+        "physical": 6,
+        "magic": 93,
+        "true": 2
+      },
+      "tips": []
     },
     {
-      "champion": "Ahri",
+      "champion": "Lissandra",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8139,
+          8140,
+          8106,
+          8226,
+          8210
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        1082,
+        3152,
+        2503
+      ],
+      "situational_item_ids": [
+        3171,
+        3157,
+        1056
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Zed",
+          "win_rate": 50
+        },
+        {
+          "champion": "Leblanc",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 6,
+        "magic": 90,
+        "true": 4
+      },
+      "tips": []
+    },
+    {
+      "champion": "Galio",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8230,
+          8226,
+          8210,
+          8237,
+          8444,
+          8242
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        1082,
+        4005,
+        3173
+      ],
+      "situational_item_ids": [
+        1056,
+        3152,
+        3157
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Jayce",
+          "win_rate": 50
+        },
+        {
+          "champion": "TwistedFate",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ekko",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Aurora",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Cassiopeia",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 1,
+        "magic": 97,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "Leblanc",
       "role": "mid",
       "runes": {
         "primary_tree_id": 8100,
@@ -1080,442 +2567,1239 @@
           8106,
           8226,
           8237
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         14
       ],
-      "starting_item_ids": [
-        1056,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
         6655,
-        3020,
+        3175,
         4645
       ],
       "situational_item_ids": [
-        3089,
-        3157,
-        3135
+        1082,
+        1056,
+        4646
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Fizz",
-          "win_rate": 44.1
+          "champion": "Lissandra",
+          "win_rate": 37.5
         },
         {
-          "champion": "Kassadin",
-          "win_rate": 46.8
-        },
-        {
-          "champion": "Malzahar",
-          "win_rate": 47.5
+          "champion": "Ahri",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Level 1–2 you're weak — respect trades until you hit 3.",
-        "Use Charm (E) defensively vs all-ins, not just to engage.",
-        "Ward the river at 2:30 to spot the first jungle gank."
-      ]
+      "damage_share": {
+        "physical": 7,
+        "magic": 84,
+        "true": 9
+      },
+      "tips": []
     },
     {
-      "champion": "Orianna",
+      "champion": "Diana",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8010,
+          8009,
+          9105,
+          8299,
+          8401,
+          8451
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3175,
+        1056,
+        2510
+      ],
+      "situational_item_ids": [
+        1082,
+        4630,
+        3157
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Syndra",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 10,
+        "magic": 86,
+        "true": 4
+      },
+      "tips": []
+    },
+    {
+      "champion": "Mel",
       "role": "mid",
       "runes": {
         "primary_tree_id": 8200,
-        "secondary_tree_id": 8300,
+        "secondary_tree_id": 8000,
         "rune_ids": [
           8229,
           8226,
           8210,
-          8236,
-          8345,
-          8347
+          8237,
+          8014,
+          8009
+        ],
+        "shard_ids": [
+          5007,
+          5008,
+          5001
         ]
       },
       "spell_ids": [
         4,
         12
       ],
-      "starting_item_ids": [
-        1056,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
+        3171,
         6655,
-        3020,
-        3003
+        1056
       ],
       "situational_item_ids": [
+        3152,
         3089,
-        3157,
-        3135
+        2503
       ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Fizz",
-          "win_rate": 46
-        },
-        {
-          "champion": "Yasuo",
-          "win_rate": 47.2
-        },
-        {
-          "champion": "Naafiri",
-          "win_rate": 47.7
-        }
-      ],
-      "tips": [
-        "The ball zones as hard as it damages — park it where they farm.",
-        "Shield the diver, not yourself: E carries your ball to them.",
-        "A two-person Shockwave is enough; don't greed for five."
-      ]
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 8,
+        "magic": 91,
+        "true": 1
+      },
+      "tips": []
     },
     {
-      "champion": "Zed",
+      "champion": "Akshan",
       "role": "mid",
-      "runes": {
-        "primary_tree_id": 8100,
-        "secondary_tree_id": 8000,
-        "rune_ids": [
-          8112,
-          8143,
-          8140,
-          8105,
-          9111,
-          8014
-        ]
-      },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
-      "core_item_ids": [
-        3142,
-        3158,
-        6696
-      ],
-      "situational_item_ids": [
-        6694,
-        3814,
-        3026
-      ],
-      "skill_order": "QEW",
-      "counters": [
-        {
-          "champion": "Kayle",
-          "win_rate": 45.5
-        },
-        {
-          "champion": "Malphite",
-          "win_rate": 46.9
-        },
-        {
-          "champion": "Lissandra",
-          "win_rate": 47.3
-        }
-      ],
-      "tips": [
-        "Double-Q through the wave with your shadow for poke energy.",
-        "Hold W after ulting — it's your only escape once R ends.",
-        "Roam on crashed waves; bot lane rarely respects your speed."
-      ]
-    },
-    {
-      "champion": "Yasuo",
-      "role": "mid",
-      "runes": {
-        "primary_tree_id": 8000,
-        "secondary_tree_id": 8400,
-        "rune_ids": [
-          8008,
-          9111,
-          9104,
-          8299,
-          8473,
-          8242
-        ]
-      },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
-      "core_item_ids": [
-        3046,
-        3006,
-        3031
-      ],
-      "situational_item_ids": [
-        3072,
-        3026,
-        3053
-      ],
-      "skill_order": "QEW",
-      "counters": [
-        {
-          "champion": "Annie",
-          "win_rate": 46.7
-        },
-        {
-          "champion": "Pantheon",
-          "win_rate": 47.1
-        },
-        {
-          "champion": "Renekton",
-          "win_rate": 47.6
-        }
-      ],
-      "tips": [
-        "Windwall the ability that matters, not the first one thrown.",
-        "Keep a minion between you and skillshots — E is your dodge.",
-        "Third Q from range: knock-up into R only when they can't trade back."
-      ]
-    },
-    {
-      "champion": "Jinx",
-      "role": "bot",
-      "runes": {
-        "primary_tree_id": 8000,
-        "secondary_tree_id": 8200,
-        "rune_ids": [
-          8008,
-          9111,
-          9103,
-          8014,
-          8233,
-          8236
-        ]
-      },
-      "spell_ids": [
-        4,
-        7
-      ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
-      "core_item_ids": [
-        6672,
-        3006,
-        3085
-      ],
-      "situational_item_ids": [
-        3031,
-        3036,
-        3072
-      ],
-      "skill_order": "QWE",
-      "skill_levels": "QWQEQRQWQWRWWEEREE",
-      "counters": [
-        {
-          "champion": "Draven",
-          "win_rate": 46.5
-        },
-        {
-          "champion": "Lucian",
-          "win_rate": 47.3
-        },
-        {
-          "champion": "Tristana",
-          "win_rate": 47.8
-        }
-      ],
-      "strengths": [
-        "Resets the snowball hard with Get Excited!",
-        "Rocket range dominates teamfights",
-        "Chompers zone every melee engage"
-      ],
-      "weaknesses": [
-        "No mobility — easy to catch out",
-        "Weak laning before three items",
-        "Reliant on a peeling frontline"
-      ],
-      "insights": [
-        "Swap rockets and minigun by range on every trade.",
-        "One takedown starts the attack-speed and move-speed reset."
-      ],
-      "tips": [
-        "Rockets for poke, minigun for duels — swap constantly.",
-        "One takedown starts Get Excited!; chase the reset, not the kill.",
-        "Chompers behind you beat every engage support."
-      ]
-    },
-    {
-      "champion": "Caitlyn",
-      "role": "bot",
-      "runes": {
-        "primary_tree_id": 8000,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8021,
-          9111,
-          9103,
-          8017,
-          8304,
-          8345
-        ]
-      },
-      "spell_ids": [
-        4,
-        7
-      ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
-      "core_item_ids": [
-        3094,
-        3006,
-        3031
-      ],
-      "situational_item_ids": [
-        3036,
-        3072,
-        3026
-      ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Samira",
-          "win_rate": 47
-        },
-        {
-          "champion": "Draven",
-          "win_rate": 47.4
-        },
-        {
-          "champion": "Nilah",
-          "win_rate": 47.9
-        }
-      ],
-      "tips": [
-        "Your range is the lane: auto them on every last hit they take.",
-        "Trap under the wave pre-crash — the wave walks into it.",
-        "Headshot from brush stacks in one auto; weave through bushes."
-      ]
-    },
-    {
-      "champion": "Ezreal",
-      "role": "bot",
       "runes": {
         "primary_tree_id": 8000,
         "secondary_tree_id": 8200,
         "rune_ids": [
           8005,
           8009,
-          9103,
-          8014,
-          8226,
-          8210
+          9104,
+          8017,
+          8233,
+          8236
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
-        7
+        14
       ],
-      "starting_item_ids": [
-        3070,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        3004,
-        3158,
-        3078
+        6672,
+        3168,
+        2523
       ],
       "situational_item_ids": [
-        6694,
-        3026,
-        3072
+        1055,
+        3036,
+        3031
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Lucian",
-          "win_rate": 46.8
+          "champion": "Akali",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ekko",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ahri",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Yasuo",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 88,
+        "magic": 7,
+        "true": 4
+      },
+      "tips": []
+    },
+    {
+      "champion": "Aurora",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8106,
+          8226,
+          8237
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3175,
+        4645,
+        4646
+      ],
+      "situational_item_ids": [
+        1082,
+        3152,
+        1056
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Galio",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Yone",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 7,
+        "magic": 86,
+        "true": 7
+      },
+      "tips": []
+    },
+    {
+      "champion": "Malzahar",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8992,
+          8226,
+          8210,
+          8237,
+          8313,
+          8347
+        ],
+        "shard_ids": [
+          5008,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3175,
+        2503,
+        6653
+      ],
+      "situational_item_ids": [
+        3116,
+        3157,
+        1056
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Smolder",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 3,
+        "magic": 96,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Locke",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8106,
+          8473,
+          8453
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3100,
+        3175,
+        4645
+      ],
+      "situational_item_ids": [
+        1082,
+        1056,
+        3089
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Yone",
+          "win_rate": 50
+        },
+        {
+          "champion": "Katarina",
+          "win_rate": 50
+        },
+        {
+          "champion": "Riven",
+          "win_rate": 50
+        },
+        {
+          "champion": "Irelia",
+          "win_rate": 50
+        },
+        {
+          "champion": "Viktor",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Ahri",
+          "win_rate": 70
+        }
+      ],
+      "damage_share": {
+        "physical": 4,
+        "magic": 86,
+        "true": 10
+      },
+      "tips": []
+    },
+    {
+      "champion": "Akali",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8112,
+          8143,
+          8137,
+          8106,
+          8473,
+          8451
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3146,
+        3175,
+        4645
+      ],
+      "situational_item_ids": [
+        1082,
+        1058,
+        3089
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Akshan",
+          "win_rate": 50
+        },
+        {
+          "champion": "Yone",
+          "win_rate": 50
+        },
+        {
+          "champion": "Taliyah",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ryze",
+          "win_rate": 50
+        },
+        {
+          "champion": "Riven",
+          "win_rate": 50
+        },
+        {
+          "champion": "Zed",
+          "win_rate": 50
+        },
+        {
+          "champion": "Cassiopeia",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Irelia",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Sylas",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 6,
+        "magic": 87,
+        "true": 7
+      },
+      "tips": []
+    },
+    {
+      "champion": "Jayce",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8230,
+          8226,
+          8233,
+          8237,
+          8304,
+          8313
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3042,
+        1055,
+        3142
+      ],
+      "situational_item_ids": [
+        3171,
+        6699,
+        6694
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Galio",
+          "win_rate": 50
+        },
+        {
+          "champion": "Anivia",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ahri",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 84,
+        "magic": 14,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Karthus",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8992,
+          8224,
+          8210,
+          8237,
+          8009,
+          8299
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        3,
+        4
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2503,
+        4645,
+        1056
+      ],
+      "situational_item_ids": [
+        3089,
+        1082,
+        6653
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Ezreal",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Caitlyn",
+          "win_rate": 62.5
         },
         {
           "champion": "Draven",
-          "win_rate": 47.5
+          "win_rate": 62.5
         },
         {
-          "champion": "Nilah",
-          "win_rate": 47.7
+          "champion": "Ziggs",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Every Q lowers your cooldowns — poke is tempo, not just damage.",
-        "Hold E for their engage; it's the best escape in the lane.",
-        "You spike at Muramana + Trinity; farm safely until then."
-      ]
+      "damage_share": {
+        "physical": 1,
+        "magic": 96,
+        "true": 3
+      },
+      "tips": []
     },
     {
-      "champion": "Kaisa",
+      "champion": "Sivir",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8008,
+          8009,
+          9103,
+          8017,
+          8321,
+          8313
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6675,
+        3031,
+        1086
+      ],
+      "situational_item_ids": [
+        3508,
+        1036,
+        3032
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Ziggs",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 98,
+        "magic": 0,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "MasterYi",
       "role": "bot",
       "runes": {
         "primary_tree_id": 8100,
         "secondary_tree_id": 8000,
         "rune_ids": [
           9923,
-          8139,
-          8140,
+          8143,
+          8137,
           8135,
-          9104,
-          8014
+          9111,
+          9104
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
-        7
+        14
       ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
+        1055,
         6672,
-        3006,
-        3124
+        6676
       ],
       "situational_item_ids": [
-        3031,
         3036,
-        3026
+        1036,
+        3031
       ],
-      "skill_order": "QEW",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Draven",
-          "win_rate": 46.9
+          "champion": "Ezreal",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 69,
+        "magic": 0,
+        "true": 31
+      },
+      "tips": []
+    },
+    {
+      "champion": "Pantheon",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8005,
+          9111,
+          9105,
+          8017,
+          8210,
+          8226
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        1055,
+        6610,
+        6699
+      ],
+      "situational_item_ids": [
+        6695,
+        3071,
+        3123
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Ezreal",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 92,
+        "magic": 3,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Ashe",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8008,
+          8009,
+          9103,
+          8017,
+          8321,
+          8410
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        6
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2523,
+        3046,
+        3031
+      ],
+      "situational_item_ids": [
+        1086,
+        3033,
+        1018
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Seraphine",
+          "win_rate": 50
         },
         {
-          "champion": "Samira",
-          "win_rate": 47.2
+          "champion": "Nilah",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 91,
+        "magic": 8,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "Aphelios",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8005,
+          9111,
+          9103,
+          8017,
+          8321,
+          8313
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3031,
+        2523,
+        1086
+      ],
+      "situational_item_ids": [
+        3046,
+        3036,
+        3097
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 95,
+        "magic": 4,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Sylas",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8128,
+          8143,
+          8137,
+          8105,
+          9111,
+          8017
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3152,
+        1082,
+        1056
+      ],
+      "situational_item_ids": [
+        3157,
+        4633,
+        8010
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Trundle",
+          "win_rate": 50
+        },
+        {
+          "champion": "Mel",
+          "win_rate": 50
+        },
+        {
+          "champion": "Ziggs",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 3,
+        "magic": 94,
+        "true": 3
+      },
+      "tips": []
+    },
+    {
+      "champion": "Hwei",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8229,
+          8226,
+          8210,
+          8237,
+          8017,
+          9105
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2503,
+        1056,
+        4645
+      ],
+      "situational_item_ids": [
+        1058,
+        6653,
+        1082
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Jhin",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 5,
+        "magic": 94,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Fiora",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8005,
+          9111,
+          9104,
+          8299,
+          8143,
+          8135
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3074,
+        6697,
+        6333
+      ],
+      "situational_item_ids": [
+        1055,
+        2517,
+        3155
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Ezreal",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 63,
+        "magic": 3,
+        "true": 35
+      },
+      "tips": []
+    },
+    {
+      "champion": "Syndra",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8229,
+          8226,
+          8210,
+          8237,
+          9105,
+          8017
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2503,
+        1056,
+        3089
+      ],
+      "situational_item_ids": [
+        4629,
+        1058,
+        3152
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Kaisa",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Jhin",
+          "win_rate": 44.4
         },
         {
           "champion": "Twitch",
-          "win_rate": 47.6
+          "win_rate": 50
+        },
+        {
+          "champion": "Ezreal",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Yasuo",
+          "win_rate": 66.7
         }
       ],
-      "tips": [
-        "Plasma stacks win trades: dive only on four-stack targets.",
-        "R follows YOUR passive marks — engage after they're plasma'd.",
-        "Evolve Q first in most games; E evolve beats kiting comps."
-      ]
+      "damage_share": {
+        "physical": 4,
+        "magic": 90,
+        "true": 6
+      },
+      "tips": []
     },
     {
-      "champion": "Draven",
+      "champion": "Lucian",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8005,
+          8009,
+          9103,
+          8017,
+          8321,
+          8313
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3508,
+        6675,
+        1086
+      ],
+      "situational_item_ids": [
+        3031,
+        1055,
+        1036
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Jhin",
+          "win_rate": 44.4
+        },
+        {
+          "champion": "Yasuo",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 85,
+        "magic": 13,
+        "true": 1
+      },
+      "tips": []
+    },
+    {
+      "champion": "Xayah",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8008,
+          8009,
+          9103,
+          8017,
+          8313,
+          8347
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6675,
+        3031,
+        3032
+      ],
+      "situational_item_ids": [
+        1086,
+        3036,
+        3035
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 99,
+        "magic": 0,
+        "true": 0
+      },
+      "tips": []
+    },
+    {
+      "champion": "Twitch",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8005,
+          9111,
+          9104,
+          8017,
+          8224,
+          8236
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        6676,
+        3031,
+        1086
+      ],
+      "situational_item_ids": [
+        2512,
+        1036,
+        3085
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Syndra",
+          "win_rate": 50
+        },
+        {
+          "champion": "Tristana",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 85,
+        "magic": 0,
+        "true": 14
+      },
+      "tips": []
+    },
+    {
+      "champion": "Jinx",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8008,
+          8009,
+          9103,
+          8017,
+          8321,
+          8313
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        21
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2523,
+        3046,
+        1086
+      ],
+      "situational_item_ids": [
+        3031,
+        1120,
+        1018
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Ezreal",
+          "win_rate": 44.4
+        },
+        {
+          "champion": "KogMaw",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 96,
+        "magic": 2,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "Kalista",
       "role": "bot",
       "runes": {
         "primary_tree_id": 8000,
@@ -1523,391 +3807,893 @@
         "rune_ids": [
           8008,
           9111,
-          9103,
-          8299,
-          8139,
+          9104,
+          8017,
+          8143,
           8135
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
-        6
+        21
       ],
-      "starting_item_ids": [
-        1055,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        3072,
-        3006,
-        3031
+        3124,
+        3087,
+        1086
       ],
       "situational_item_ids": [
-        3036,
-        3026,
-        3046
+        3302,
+        6665,
+        3153
       ],
-      "skill_order": "QWE",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Caitlyn",
-          "win_rate": 47.1
+          "champion": "Ezreal",
+          "win_rate": 40
         },
         {
-          "champion": "MissFortune",
-          "win_rate": 47.5
+          "champion": "Jhin",
+          "win_rate": 50
         },
         {
-          "champion": "Ashe",
-          "win_rate": 47.8
+          "champion": "Ziggs",
+          "win_rate": 50
+        },
+        {
+          "champion": "Senna",
+          "win_rate": 55.6
         }
       ],
-      "tips": [
-        "Catch axes where YOU want to stand, not where they fall.",
-        "Cash your passive stacks with a kill before you die with them.",
-        "Two axes up beats any level-two all-in — force it early."
-      ]
-    },
-    {
-      "champion": "Thresh",
-      "role": "support",
-      "runes": {
-        "primary_tree_id": 8400,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8439,
-          8463,
-          8429,
-          8242,
-          8304,
-          8347
-        ]
+      "damage_share": {
+        "physical": 77,
+        "magic": 17,
+        "true": 5
       },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
-      "core_item_ids": [
-        3190,
-        3111,
-        3109
-      ],
-      "situational_item_ids": [
-        3107,
-        3050,
-        3075
-      ],
-      "skill_order": "QEW",
-      "skill_levels": "QEQWQRQEQEREEWWRWW",
-      "counters": [
-        {
-          "champion": "Morgana",
-          "win_rate": 46.6
-        },
-        {
-          "champion": "Lulu",
-          "win_rate": 47.3
-        },
-        {
-          "champion": "Janna",
-          "win_rate": 47.7
-        }
-      ],
-      "strengths": [
-        "Playmaking hooks swing lanes single-handedly",
-        "Lantern saves allies from dives and picks",
-        "Scales tanky for free by collecting souls"
-      ],
-      "weaknesses": [
-        "A missed hook wastes the whole lane",
-        "Low base damage until souls stack",
-        "Skillshot-reliant engage"
-      ],
-      "insights": [
-        "Souls stack tankiness for free — collect them between waves.",
-        "Lantern beats every dive — hold it for your carry, not yourself."
-      ],
-      "tips": [
-        "A missed hook is a lost lane minute — throw from brush or behind CC.",
-        "Lantern beats every dive: hold it for your carry, not yourself.",
-        "Collect souls between waves; your mid-game tankiness is stacked, not bought."
-      ]
+      "tips": []
     },
     {
-      "champion": "Nautilus",
-      "role": "support",
-      "runes": {
-        "primary_tree_id": 8400,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8439,
-          8446,
-          8429,
-          8451,
-          8306,
-          8347
-        ]
-      },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
-      "core_item_ids": [
-        3190,
-        3111,
-        3107
-      ],
-      "situational_item_ids": [
-        3109,
-        3050,
-        3075
-      ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Morgana",
-          "win_rate": 46.2
-        },
-        {
-          "champion": "Alistar",
-          "win_rate": 47.4
-        },
-        {
-          "champion": "Braum",
-          "win_rate": 47.9
-        }
-      ],
-      "tips": [
-        "Your auto roots — Q into auto is two stuns, not one.",
-        "R can't be blocked or dodged: open every dive with it.",
-        "Hook onto walls to close distance faster than they expect."
-      ]
-    },
-    {
-      "champion": "Lulu",
+      "champion": "Karma",
       "role": "support",
       "runes": {
         "primary_tree_id": 8200,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8214,
-          8226,
-          8210,
-          8237,
-          8345,
-          8347
-        ]
-      },
-      "spell_ids": [
-        4,
-        3
-      ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
-      "core_item_ids": [
-        6616,
-        3158,
-        3504
-      ],
-      "situational_item_ids": [
-        3107,
-        3222,
-        3190
-      ],
-      "skill_order": "EWQ",
-      "counters": [
-        {
-          "champion": "Pyke",
-          "win_rate": 46.4
-        },
-        {
-          "champion": "Blitzcrank",
-          "win_rate": 47.2
-        },
-        {
-          "champion": "Zyra",
-          "win_rate": 47.8
-        }
-      ],
-      "tips": [
-        "Polymorph the diver mid-dash — W is your answer to assassins.",
-        "Ult knock-up interrupts as it saves; use it aggressively too.",
-        "Pix on the carry pokes further than you can — E is free damage."
-      ]
-    },
-    {
-      "champion": "Pyke",
-      "role": "support",
-      "runes": {
-        "primary_tree_id": 8100,
-        "secondary_tree_id": 8000,
-        "rune_ids": [
-          9923,
-          8139,
-          8140,
-          8105,
-          9111,
-          8014
-        ]
-      },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
-      "core_item_ids": [
-        3179,
-        3158,
-        3142
-      ],
-      "situational_item_ids": [
-        3814,
-        6698,
-        6694
-      ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Morgana",
-          "win_rate": 45.8
-        },
-        {
-          "champion": "Taric",
-          "win_rate": 46.9
-        },
-        {
-          "champion": "Leona",
-          "win_rate": 47.6
-        }
-      ],
-      "tips": [
-        "You regen missing health out of sight — reset trades in fog.",
-        "R executes below the threshold: watch the marker, not the bar.",
-        "Your gold is shared on R kills; play like a fourth carry, not a shield."
-      ]
-    },
-    {
-      "champion": "Blitzcrank",
-      "role": "support",
-      "runes": {
-        "primary_tree_id": 8400,
-        "secondary_tree_id": 8300,
-        "rune_ids": [
-          8439,
-          8463,
-          8429,
-          8242,
-          8306,
-          8410
-        ]
-      },
-      "spell_ids": [
-        4,
-        14
-      ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
-      "core_item_ids": [
-        3190,
-        3111,
-        3050
-      ],
-      "situational_item_ids": [
-        3109,
-        3107,
-        3075
-      ],
-      "skill_order": "QWE",
-      "counters": [
-        {
-          "champion": "Morgana",
-          "win_rate": 45.5
-        },
-        {
-          "champion": "Janna",
-          "win_rate": 47
-        },
-        {
-          "champion": "Milio",
-          "win_rate": 47.5
-        }
-      ],
-      "tips": [
-        "A hook that grabs the tank loses the fight — wait for the squish.",
-        "Stand in brush; the fear of your Q zones harder than the Q.",
-        "Knock-up after the grab, silence with R to stop the counter-play."
-      ]
-    },
-    {
-      "champion": "Yuumi",
-      "role": "support",
-      "runes": {
-        "primary_tree_id": 8200,
-        "secondary_tree_id": 8300,
+        "secondary_tree_id": 8400,
         "rune_ids": [
           8214,
           8226,
           8210,
           8236,
-          8345,
-          8347
+          8463,
+          8453
+        ],
+        "shard_ids": [
+          5007,
+          5008,
+          5011
         ]
       },
       "spell_ids": [
         4,
         7
       ],
-      "starting_item_ids": [
-        3865,
-        2003
-      ],
+      "starting_item_ids": [],
       "core_item_ids": [
-        6616,
         3158,
-        3504
+        6620,
+        6617
       ],
       "situational_item_ids": [
+        3870,
         3107,
-        3222,
-        3869
+        3108
       ],
-      "skill_order": "EQW",
+      "skill_order": "",
       "counters": [
         {
-          "champion": "Blitzcrank",
-          "win_rate": 45.7
+          "champion": "Camille",
+          "win_rate": 44.4
+        },
+        {
+          "champion": "Zoe",
+          "win_rate": 50
+        },
+        {
+          "champion": "Bard",
+          "win_rate": 50
         },
         {
           "champion": "Pyke",
-          "win_rate": 46.8
+          "win_rate": 55.6
         },
         {
-          "champion": "Zyra",
-          "win_rate": 47.4
+          "champion": "Alistar",
+          "win_rate": 62.5
         }
       ],
-      "tips": [
-        "Detach to auto between spells — your passive shield is real gold.",
-        "Anchor to whoever the enemy is diving, not whoever is ahead.",
-        "Empowered Q slows enough to peel; steer it late for the hit."
-      ]
+      "damage_share": {
+        "physical": 12,
+        "magic": 85,
+        "true": 3
+      },
+      "tips": []
+    },
+    {
+      "champion": "Brand",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8992,
+          8226,
+          8210,
+          8237,
+          8017,
+          8009
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3116,
+        3871,
+        3020
+      ],
+      "situational_item_ids": [
+        6653,
+        2508,
+        1052
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 7,
+        "magic": 87,
+        "true": 6
+      },
+      "tips": []
+    },
+    {
+      "champion": "Janna",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8214,
+          8226,
+          8234,
+          8237,
+          8463,
+          8453
+        ],
+        "shard_ids": [
+          5008,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3009,
+        6617,
+        3870
+      ],
+      "situational_item_ids": [
+        3107,
+        1082,
+        1052
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Pantheon",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Rakan",
+          "win_rate": 50
+        },
+        {
+          "champion": "Senna",
+          "win_rate": 50
+        },
+        {
+          "champion": "Camille",
+          "win_rate": 50
+        },
+        {
+          "champion": "Bard",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Rell",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 16,
+        "magic": 78,
+        "true": 6
+      },
+      "tips": []
+    },
+    {
+      "champion": "Annie",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8128,
+          8126,
+          8137,
+          8105,
+          8226,
+          8237
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3152,
+        1082,
+        3869
+      ],
+      "situational_item_ids": [
+        3871,
+        3020,
+        3118
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 8,
+        "magic": 84,
+        "true": 8
+      },
+      "tips": []
+    },
+    {
+      "champion": "Rell",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8401,
+          8473,
+          8242,
+          8347,
+          8306
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3869,
+        3067,
+        3050
+      ],
+      "situational_item_ids": [
+        2525,
+        3190,
+        3109
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Janna",
+          "win_rate": 37.5
+        },
+        {
+          "champion": "Alistar",
+          "win_rate": 50
+        },
+        {
+          "champion": "Shaco",
+          "win_rate": 62.5
+        },
+        {
+          "champion": "Poppy",
+          "win_rate": 66.7
+        },
+        {
+          "champion": "Camille",
+          "win_rate": 66.7
+        }
+      ],
+      "damage_share": {
+        "physical": 24,
+        "magic": 72,
+        "true": 4
+      },
+      "tips": []
+    },
+    {
+      "champion": "Camille",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          9923,
+          8143,
+          8141,
+          8135,
+          8473,
+          8401
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3877,
+        6610,
+        3053
+      ],
+      "situational_item_ids": [
+        3111,
+        3047,
+        1028
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Rell",
+          "win_rate": 33.3
+        },
+        {
+          "champion": "Shen",
+          "win_rate": 33.3
+        },
+        {
+          "champion": "Pyke",
+          "win_rate": 40
+        },
+        {
+          "champion": "Leona",
+          "win_rate": 46.2
+        },
+        {
+          "champion": "Janna",
+          "win_rate": 50
+        },
+        {
+          "champion": "Skarner",
+          "win_rate": 50
+        },
+        {
+          "champion": "Alistar",
+          "win_rate": 50
+        },
+        {
+          "champion": "Thresh",
+          "win_rate": 50
+        },
+        {
+          "champion": "Lulu",
+          "win_rate": 50
+        },
+        {
+          "champion": "Seraphine",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nautilus",
+          "win_rate": 55.6
+        },
+        {
+          "champion": "Karma",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 69,
+        "magic": 2,
+        "true": 29
+      },
+      "tips": []
+    },
+    {
+      "champion": "Shen",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8439,
+          8401,
+          8473,
+          8242,
+          8141,
+          8106
+        ],
+        "shard_ids": [
+          5005,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2525,
+        3869,
+        3190
+      ],
+      "situational_item_ids": [
+        3067,
+        3158,
+        3877
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Camille",
+          "win_rate": 66.7
+        }
+      ],
+      "damage_share": {
+        "physical": 56,
+        "magic": 40,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Zilean",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8465,
+          8463,
+          8473,
+          8451,
+          8226,
+          8210
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3158,
+        3067,
+        2065
+      ],
+      "situational_item_ids": [
+        3190,
+        3876,
+        3869
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Thresh",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 22,
+        "magic": 75,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "Sylas",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8143,
+          8140,
+          8105,
+          8237,
+          8210
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3152,
+        1082,
+        3157
+      ],
+      "situational_item_ids": [
+        3869,
+        3871,
+        3020
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Nautilus",
+          "win_rate": 55.6
+        }
+      ],
+      "damage_share": {
+        "physical": 4,
+        "magic": 88,
+        "true": 9
+      },
+      "tips": []
+    },
+    {
+      "champion": "Senna",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8992,
+          8226,
+          8234,
+          8236,
+          8347,
+          8304
+        ],
+        "shard_ids": [
+          5005,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3071,
+        3877,
+        3009
+      ],
+      "situational_item_ids": [
+        3087,
+        1036,
+        3094
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Janna",
+          "win_rate": 50
+        },
+        {
+          "champion": "Nautilus",
+          "win_rate": 50
+        },
+        {
+          "champion": "Bard",
+          "win_rate": 60
+        },
+        {
+          "champion": "Lulu",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 90,
+        "magic": 8,
+        "true": 2
+      },
+      "tips": []
+    },
+    {
+      "champion": "Zoe",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8112,
+          8126,
+          8141,
+          8135,
+          9105,
+          8017
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3158,
+        4005,
+        3869
+      ],
+      "situational_item_ids": [
+        1082,
+        3877,
+        4646
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Rakan",
+          "win_rate": 50
+        },
+        {
+          "champion": "Karma",
+          "win_rate": 50
+        },
+        {
+          "champion": "Bard",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 12,
+        "magic": 63,
+        "true": 25
+      },
+      "tips": []
+    },
+    {
+      "champion": "Nami",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8214,
+          8226,
+          8210,
+          8237,
+          8473,
+          8453
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5001
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3158,
+        1082,
+        3876
+      ],
+      "situational_item_ids": [
+        2065,
+        6616,
+        6620
+      ],
+      "skill_order": "",
+      "counters": [],
+      "damage_share": {
+        "physical": 18,
+        "magic": 82,
+        "true": 0
+      },
+      "tips": []
+    },
+    {
+      "champion": "Leona",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8463,
+          8473,
+          8242,
+          8347,
+          8306
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        2525,
+        3877,
+        3047
+      ],
+      "situational_item_ids": [
+        3067,
+        3869,
+        3190
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Camille",
+          "win_rate": 53.8
+        }
+      ],
+      "damage_share": {
+        "physical": 33,
+        "magic": 62,
+        "true": 5
+      },
+      "tips": []
+    },
+    {
+      "champion": "Blitzcrank",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8300,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8351,
+          8306,
+          8345,
+          8347,
+          8275,
+          8234
+        ],
+        "shard_ids": [
+          5007,
+          5010,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3009,
+        3869,
+        3190
+      ],
+      "situational_item_ids": [
+        3067,
+        3109,
+        3877
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Thresh",
+          "win_rate": 62.5
+        }
+      ],
+      "damage_share": {
+        "physical": 33,
+        "magic": 59,
+        "true": 8
+      },
+      "tips": []
+    },
+    {
+      "champion": "Skarner",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          9923,
+          8126,
+          8141,
+          8105,
+          8242,
+          8473
+        ],
+        "shard_ids": [
+          5008,
+          5008,
+          5011
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [],
+      "core_item_ids": [
+        3877,
+        3067,
+        3748
+      ],
+      "situational_item_ids": [
+        1028,
+        1033,
+        2525
+      ],
+      "skill_order": "",
+      "counters": [
+        {
+          "champion": "Camille",
+          "win_rate": 50
+        }
+      ],
+      "damage_share": {
+        "physical": 78,
+        "magic": 13,
+        "true": 9
+      },
+      "tips": []
     }
-  ],
-  "generated_at": "2026-07-12T18:57:29.145Z",
-  "source": "curated+ddragon"
+  ]
 }
