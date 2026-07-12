@@ -3,21 +3,28 @@
 Public site + data endpoint for **Wardio**, a desktop League of Legends
 companion (private app repo: `thomasNDS/wardio-app`).
 
-Served by **GitHub Pages** from `main` (root):
+A **data explorer** — Angular 22 + Tailwind CSS 4 + spartan.ng, same Hextech
+palette as the app — reading the public dataset and Data Dragon:
 
-- **Site** — <https://thomasnds.github.io/wardio-pub/>
+- **Site** — <https://thomasnds.github.io/wardio-pub/> (home · tier list · champion pages)
 - **Dataset** — <https://thomasnds.github.io/wardio-pub/curated.json>
-  (runes / builds / tier list / counters — the app fetches this directly)
 
-## Don't hand-edit `curated.json`
+## Build & deploy
 
-It is **generated and pushed automatically** by the pipeline in `wardio-app`
-(`pipeline/generate.mjs` + the `publish-dataset` workflow), refreshed **weekly**.
-Manual edits here are overwritten on the next run — change the source in
-`wardio-app/data/curated.json` instead.
+GitHub Actions (`.github/workflows/deploy.yml`) builds the Angular app and
+deploys it to Pages on every push to `main`. One-time: **Settings › Pages ›
+Source = "GitHub Actions"**.
 
-## One-time setup
+Local dev (needs Node ≥ 20 and npm registry access):
 
-- **Pages**: Settings → Pages → Source = `main` / `/ (root)`.
-- The push comes from `wardio-app`'s Action using a repo secret
-  (`WARDIO_PUB_TOKEN`, a PAT with `repo` scope on this repo).
+```bash
+npm install
+npm start          # http://localhost:4200
+npm run build      # dist/wardio-pub/browser
+```
+
+## `public/curated.json` is generated
+
+It is produced and pushed automatically by the pipeline in `wardio-app`
+(`pipeline/generate.mjs` + the `publish-dataset` workflow), **weekly**. Don't
+hand-edit it — change the source in `wardio-app/data/curated.json`.
