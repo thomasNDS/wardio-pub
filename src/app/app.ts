@@ -93,9 +93,21 @@ export class App implements OnInit {
     this.transloco.setActiveLang(l);
     this.lang.set(l);
     document.documentElement.lang = l;
+    try {
+      localStorage.setItem('wardio.lang', l);
+    } catch {
+      /* private mode — fall back to per-session only */
+    }
   }
 
   private detectLang(): string {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem('wardio.lang');
+    } catch {
+      /* ignore */
+    }
+    if (saved && this.langs.includes(saved)) return saved;
     const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
     return this.langs.includes(nav) ? nav : 'en';
   }
