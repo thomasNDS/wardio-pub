@@ -1,0 +1,1832 @@
+{
+  "format": 1,
+  "patch": "16.13",
+  "tiers": {
+    "top": [
+      {
+        "champion": "Aatrox",
+        "tier": "S",
+        "win_rate": 51.8,
+        "wr_change": 0.4,
+        "pick_rate": 7.4,
+        "ban_rate": 12.1,
+        "matches": 142300
+      },
+      {
+        "champion": "Darius",
+        "tier": "A",
+        "win_rate": 51.1,
+        "wr_change": 0.2,
+        "pick_rate": 8.9,
+        "ban_rate": 15.3,
+        "matches": 168900
+      },
+      {
+        "champion": "Camille",
+        "tier": "A",
+        "win_rate": 50.6,
+        "wr_change": -0.3,
+        "pick_rate": 5.2,
+        "ban_rate": 4.7,
+        "matches": 98400
+      },
+      {
+        "champion": "Sett",
+        "tier": "B",
+        "win_rate": 50.2,
+        "wr_change": 0.1,
+        "pick_rate": 6.1,
+        "ban_rate": 3.9,
+        "matches": 116700
+      },
+      {
+        "champion": "Teemo",
+        "tier": "C",
+        "win_rate": 49.4,
+        "wr_change": -0.5,
+        "pick_rate": 3.8,
+        "ban_rate": 6.2,
+        "matches": 72500
+      }
+    ],
+    "jungle": [
+      {
+        "champion": "Viego",
+        "tier": "S",
+        "win_rate": 51.6,
+        "wr_change": 0.6,
+        "pick_rate": 9.1,
+        "ban_rate": 10.4,
+        "matches": 173400
+      },
+      {
+        "champion": "LeeSin",
+        "tier": "A",
+        "win_rate": 49.8,
+        "wr_change": -0.2,
+        "pick_rate": 11.7,
+        "ban_rate": 6,
+        "matches": 221800
+      },
+      {
+        "champion": "Khazix",
+        "tier": "A",
+        "win_rate": 51,
+        "wr_change": 0.3,
+        "pick_rate": 6.4,
+        "ban_rate": 5.1,
+        "matches": 121500
+      },
+      {
+        "champion": "Warwick",
+        "tier": "B",
+        "win_rate": 51.3,
+        "wr_change": 0,
+        "pick_rate": 4.9,
+        "ban_rate": 2.2,
+        "matches": 92700
+      },
+      {
+        "champion": "Amumu",
+        "tier": "C",
+        "win_rate": 50.1,
+        "wr_change": -0.1,
+        "pick_rate": 3.2,
+        "ban_rate": 1.5,
+        "matches": 60800
+      }
+    ],
+    "mid": [
+      {
+        "champion": "Syndra",
+        "tier": "S",
+        "win_rate": 52.1,
+        "wr_change": 0.5,
+        "pick_rate": 6.3,
+        "ban_rate": 2.1,
+        "matches": 119200
+      },
+      {
+        "champion": "Viktor",
+        "tier": "S",
+        "win_rate": 52.8,
+        "wr_change": 0.7,
+        "pick_rate": 4.8,
+        "ban_rate": 3,
+        "matches": 91500
+      },
+      {
+        "champion": "Ahri",
+        "tier": "A",
+        "win_rate": 51.4,
+        "wr_change": 0.2,
+        "pick_rate": 8.7,
+        "ban_rate": 4.2,
+        "matches": 164900
+      },
+      {
+        "champion": "Orianna",
+        "tier": "A",
+        "win_rate": 50.9,
+        "wr_change": -0.1,
+        "pick_rate": 5.1,
+        "ban_rate": 1.4,
+        "matches": 96700
+      },
+      {
+        "champion": "Zed",
+        "tier": "B",
+        "win_rate": 49.7,
+        "wr_change": -0.4,
+        "pick_rate": 9.9,
+        "ban_rate": 22.4,
+        "matches": 187600
+      },
+      {
+        "champion": "Yasuo",
+        "tier": "C",
+        "win_rate": 48.9,
+        "wr_change": -0.6,
+        "pick_rate": 11.2,
+        "ban_rate": 18.6,
+        "matches": 212300
+      }
+    ],
+    "bot": [
+      {
+        "champion": "Jinx",
+        "tier": "S",
+        "win_rate": 52.4,
+        "wr_change": 0.5,
+        "pick_rate": 12.8,
+        "ban_rate": 4.1,
+        "matches": 242700
+      },
+      {
+        "champion": "Caitlyn",
+        "tier": "A",
+        "win_rate": 50.7,
+        "wr_change": 0.1,
+        "pick_rate": 13.9,
+        "ban_rate": 6.7,
+        "matches": 263400
+      },
+      {
+        "champion": "Ezreal",
+        "tier": "A",
+        "win_rate": 49.9,
+        "wr_change": -0.2,
+        "pick_rate": 14.2,
+        "ban_rate": 3.3,
+        "matches": 269100
+      },
+      {
+        "champion": "Kaisa",
+        "tier": "B",
+        "win_rate": 50.3,
+        "wr_change": 0.2,
+        "pick_rate": 10.1,
+        "ban_rate": 2.8,
+        "matches": 191500
+      },
+      {
+        "champion": "Draven",
+        "tier": "C",
+        "win_rate": 50,
+        "wr_change": -0.3,
+        "pick_rate": 4.2,
+        "ban_rate": 8.9,
+        "matches": 79600
+      }
+    ],
+    "support": [
+      {
+        "champion": "Thresh",
+        "tier": "S",
+        "win_rate": 51,
+        "wr_change": 0.3,
+        "pick_rate": 11.3,
+        "ban_rate": 9.2,
+        "matches": 214600
+      },
+      {
+        "champion": "Nautilus",
+        "tier": "A",
+        "win_rate": 51.5,
+        "wr_change": 0.2,
+        "pick_rate": 8.6,
+        "ban_rate": 7.4,
+        "matches": 163200
+      },
+      {
+        "champion": "Lulu",
+        "tier": "A",
+        "win_rate": 51.9,
+        "wr_change": 0.4,
+        "pick_rate": 6.9,
+        "ban_rate": 3.1,
+        "matches": 131000
+      },
+      {
+        "champion": "Pyke",
+        "tier": "B",
+        "win_rate": 49.6,
+        "wr_change": -0.2,
+        "pick_rate": 7.1,
+        "ban_rate": 12,
+        "matches": 134700
+      },
+      {
+        "champion": "Blitzcrank",
+        "tier": "C",
+        "win_rate": 50.4,
+        "wr_change": 0.1,
+        "pick_rate": 5.5,
+        "ban_rate": 14.6,
+        "matches": 104300
+      },
+      {
+        "champion": "Yuumi",
+        "tier": "D",
+        "win_rate": 47.8,
+        "wr_change": -0.8,
+        "pick_rate": 2.9,
+        "ban_rate": 1.1,
+        "matches": 55100
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "champion": "Aatrox",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8299,
+          8444,
+          8453
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [
+        1054,
+        2003
+      ],
+      "core_item_ids": [
+        6610,
+        3047,
+        3053
+      ],
+      "situational_item_ids": [
+        3026,
+        3742,
+        3065
+      ],
+      "skill_order": "QEW",
+      "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "counters": [
+        {
+          "champion": "Fiora",
+          "win_rate": 45.3
+        },
+        {
+          "champion": "Vayne",
+          "win_rate": 45.9
+        },
+        {
+          "champion": "Quinn",
+          "win_rate": 46.4
+        },
+        {
+          "champion": "Fiddlesticks",
+          "win_rate": 46.8
+        },
+        {
+          "champion": "Darius",
+          "win_rate": 47.2
+        },
+        {
+          "champion": "Kayle",
+          "win_rate": 47.6
+        },
+        {
+          "champion": "Malphite",
+          "win_rate": 48.1
+        },
+        {
+          "champion": "Gwen",
+          "win_rate": 48.5
+        },
+        {
+          "champion": "Poppy",
+          "win_rate": 48.9
+        },
+        {
+          "champion": "Jax",
+          "win_rate": 49.2
+        },
+        {
+          "champion": "Renekton",
+          "win_rate": 49.6
+        },
+        {
+          "champion": "Gnar",
+          "win_rate": 49.9
+        }
+      ],
+      "strengths": [
+        "Strong all-in trades once World Ender is up",
+        "Sustains through waves and fights with Q healing",
+        "Flexible engage and disengage with E dashes"
+      ],
+      "weaknesses": [
+        "Weak in the early levels before item spikes",
+        "Reliant on landing the Q sweet spots",
+        "Kited hard by ranged top laners"
+      ],
+      "insights": [
+        "World Ender's revive resets on a takedown — force fights while it is up.",
+        "Short trades beat extended ones until Sundered Sky completes."
+      ],
+      "tips": [
+        "Land the sweet spots of Q — each cast is your trade window.",
+        "World Ender is a second life: force fights while it lasts.",
+        "Short trades beat extended ones until Sundered Sky completes."
+      ]
+    },
+    {
+      "champion": "Darius",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8299,
+          8444,
+          8242
+        ]
+      },
+      "spell_ids": [
+        4,
+        6
+      ],
+      "starting_item_ids": [
+        1054,
+        2003
+      ],
+      "core_item_ids": [
+        6631,
+        3047,
+        3053
+      ],
+      "situational_item_ids": [
+        3742,
+        3075,
+        3026
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Vayne",
+          "win_rate": 45.8
+        },
+        {
+          "champion": "Quinn",
+          "win_rate": 46.4
+        },
+        {
+          "champion": "Kayle",
+          "win_rate": 47.9
+        }
+      ],
+      "tips": [
+        "Hit the outer ring of Q to heal — inner hits waste the trade.",
+        "Ghost turns any even fight into five stacks and a dunk.",
+        "Track your passive stacks; all-in at three or more."
+      ]
+    },
+    {
+      "champion": "Camille",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8437,
+          8446,
+          8444,
+          8451,
+          9111,
+          9104
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [
+        1054,
+        2003
+      ],
+      "core_item_ids": [
+        3078,
+        3047,
+        6610
+      ],
+      "situational_item_ids": [
+        3053,
+        3026,
+        3110
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Jax",
+          "win_rate": 46.1
+        },
+        {
+          "champion": "Renekton",
+          "win_rate": 47.3
+        },
+        {
+          "champion": "Malphite",
+          "win_rate": 48
+        }
+      ],
+      "tips": [
+        "Wait for the second Q proc — the true damage is the trade.",
+        "E through a wall to gank-proof your lane and to engage.",
+        "Ult isolates the carry: save it for their escape, not the engage."
+      ]
+    },
+    {
+      "champion": "Sett",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8010,
+          9111,
+          9105,
+          8299,
+          8473,
+          8451
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        1054,
+        2003
+      ],
+      "core_item_ids": [
+        6610,
+        3111,
+        3053
+      ],
+      "situational_item_ids": [
+        3068,
+        3075,
+        3026
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Vayne",
+          "win_rate": 44.9
+        },
+        {
+          "champion": "Gwen",
+          "win_rate": 47
+        },
+        {
+          "champion": "Kennen",
+          "win_rate": 47.8
+        }
+      ],
+      "tips": [
+        "Your W shield scales with grit — trade right after taking damage.",
+        "E stuns only when you grab from both sides; position first.",
+        "Suplex the tank into their own carries with R."
+      ]
+    },
+    {
+      "champion": "Teemo",
+      "role": "top",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8214,
+          8226,
+          8210,
+          8237,
+          8139,
+          8106
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        1056,
+        2003
+      ],
+      "core_item_ids": [
+        3115,
+        3020,
+        6653
+      ],
+      "situational_item_ids": [
+        3135,
+        3116,
+        3157
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Pantheon",
+          "win_rate": 46.5
+        },
+        {
+          "champion": "Irelia",
+          "win_rate": 47.2
+        },
+        {
+          "champion": "Akshan",
+          "win_rate": 47.7
+        }
+      ],
+      "tips": [
+        "Blind the auto-attacker before their all-in, not after.",
+        "Seed the river and tri-brush — shrooms win the mid game.",
+        "Never push past the second brush without vision of the jungler."
+      ]
+    },
+    {
+      "champion": "Viego",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8014,
+          8143,
+          8135
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [
+        1102,
+        2003
+      ],
+      "core_item_ids": [
+        6672,
+        3111,
+        3153
+      ],
+      "situational_item_ids": [
+        3053,
+        3026,
+        3091
+      ],
+      "skill_order": "QEW",
+      "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "counters": [
+        {
+          "champion": "Belveth",
+          "win_rate": 46.8
+        },
+        {
+          "champion": "Udyr",
+          "win_rate": 47.5
+        },
+        {
+          "champion": "Rammus",
+          "win_rate": 47.9
+        }
+      ],
+      "strengths": [
+        "Snowballs off possession resets in fights",
+        "Duels most junglers after the first item",
+        "High mobility with W wall-dashes"
+      ],
+      "weaknesses": [
+        "Falls off without early takedowns",
+        "Chaining possessions is skill-intensive",
+        "Vulnerable to crowd control before ulting"
+      ],
+      "insights": [
+        "Possession copies the target's items and abilities — take their carry.",
+        "Q's passive marks refund the ability on a hit — weave autos."
+      ],
+      "tips": [
+        "Every possession resets your items and abilities — chain them.",
+        "Open fights on the frontline; finish them as their carry.",
+        "W through walls makes short-range ganks unpredictable."
+      ]
+    },
+    {
+      "champion": "LeeSin",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8010,
+          9111,
+          9104,
+          8299,
+          8143,
+          8105
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [
+        1102,
+        2003
+      ],
+      "core_item_ids": [
+        6610,
+        3111,
+        3071
+      ],
+      "situational_item_ids": [
+        3053,
+        3026,
+        3742
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Poppy",
+          "win_rate": 46.5
+        },
+        {
+          "champion": "Nunu",
+          "win_rate": 47.1
+        },
+        {
+          "champion": "Rammus",
+          "win_rate": 47.8
+        }
+      ],
+      "tips": [
+        "Full-clear fast — you out-pace most junglers before 20 minutes.",
+        "Ward-hop over walls to escape or to insec their carry.",
+        "Q second cast executes: cast it when they dip below half."
+      ]
+    },
+    {
+      "champion": "Khazix",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8128,
+          8143,
+          8140,
+          8135,
+          9111,
+          8014
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [
+        1101,
+        2003
+      ],
+      "core_item_ids": [
+        6698,
+        3158,
+        3814
+      ],
+      "situational_item_ids": [
+        6694,
+        6697,
+        3026
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Rammus",
+          "win_rate": 45.2
+        },
+        {
+          "champion": "Poppy",
+          "win_rate": 46.9
+        },
+        {
+          "champion": "Warwick",
+          "win_rate": 47.6
+        }
+      ],
+      "tips": [
+        "Isolated targets take massive bonus Q damage — hunt stragglers.",
+        "Evolve E when ahead to reset jumps on takedowns.",
+        "Path toward the lane that shoves — their jungler must answer."
+      ]
+    },
+    {
+      "champion": "Warwick",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8010,
+          9111,
+          9103,
+          8299,
+          8444,
+          8451
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [
+        1103,
+        2003
+      ],
+      "core_item_ids": [
+        3153,
+        3047,
+        3091
+      ],
+      "situational_item_ids": [
+        3065,
+        3068,
+        3075
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Kindred",
+          "win_rate": 47.1
+        },
+        {
+          "champion": "Belveth",
+          "win_rate": 47.4
+        },
+        {
+          "champion": "Trundle",
+          "win_rate": 48.2
+        }
+      ],
+      "tips": [
+        "W pings low-health enemies across the map — follow the trail.",
+        "Hold Q's second cast to follow flashes and dashes.",
+        "Your E fear breaks channels; save it for the divers."
+      ]
+    },
+    {
+      "champion": "Amumu",
+      "role": "jungle",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8446,
+          8429,
+          8451,
+          8304,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        11
+      ],
+      "starting_item_ids": [
+        1103,
+        2003
+      ],
+      "core_item_ids": [
+        3068,
+        3111,
+        3075
+      ],
+      "situational_item_ids": [
+        3742,
+        3065,
+        3157
+      ],
+      "skill_order": "EWQ",
+      "counters": [
+        {
+          "champion": "Kindred",
+          "win_rate": 46.3
+        },
+        {
+          "champion": "Graves",
+          "win_rate": 47
+        },
+        {
+          "champion": "Lillia",
+          "win_rate": 47.7
+        }
+      ],
+      "tips": [
+        "You have two Q charges — one to engage, one to follow.",
+        "A three-person Bandage Toss into R wins most objectives.",
+        "Full-clear with E max; you barely lose health to camps."
+      ]
+    },
+    {
+      "champion": "Syndra",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8300,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8369,
+          8304,
+          8345,
+          8347,
+          8226,
+          8237
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [
+        1056,
+        2003
+      ],
+      "core_item_ids": [
+        6655,
+        3020,
+        4645
+      ],
+      "situational_item_ids": [
+        3089,
+        3157,
+        3135
+      ],
+      "skill_order": "QEW",
+      "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "counters": [
+        {
+          "champion": "Fizz",
+          "win_rate": 46.2
+        },
+        {
+          "champion": "Yasuo",
+          "win_rate": 47.5
+        },
+        {
+          "champion": "Kassadin",
+          "win_rate": 47.9
+        }
+      ],
+      "strengths": [
+        "Bursts any carry with a full-stack ultimate",
+        "Long-range point-and-click stun with Q-E",
+        "Controls the wave and zones with tempo"
+      ],
+      "weaknesses": [
+        "Immobile — punished hard by assassins",
+        "Reliant on landing skillshots",
+        "Mana-hungry in the early game"
+      ],
+      "insights": [
+        "Bank spheres before a fight for a bigger, longer-range ultimate.",
+        "A Q-E cast from fog lands the stun instantly."
+      ],
+      "tips": [
+        "Bank splinters — a five-sphere R deletes any carry.",
+        "Q-E from fog: the stun is instant when the sphere lands behind.",
+        "Push level one and keep the wave crashing; you win with tempo."
+      ]
+    },
+    {
+      "champion": "Viktor",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8229,
+          8226,
+          8210,
+          8237,
+          8345,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [
+        1056,
+        2003
+      ],
+      "core_item_ids": [
+        6655,
+        3020,
+        3089
+      ],
+      "situational_item_ids": [
+        3157,
+        3135,
+        3102
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Fizz",
+          "win_rate": 45.9
+        },
+        {
+          "champion": "Zed",
+          "win_rate": 47.1
+        },
+        {
+          "champion": "Sylas",
+          "win_rate": 47.8
+        }
+      ],
+      "tips": [
+        "Aim E's laser through the wave into their mid — double value.",
+        "Q's shield and empowered auto win most short trades.",
+        "Upgrade E first; the augment spike is your win condition."
+      ]
+    },
+    {
+      "champion": "Ahri",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8112,
+          8143,
+          8140,
+          8106,
+          8226,
+          8237
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        1056,
+        2003
+      ],
+      "core_item_ids": [
+        6655,
+        3020,
+        4645
+      ],
+      "situational_item_ids": [
+        3089,
+        3157,
+        3135
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Fizz",
+          "win_rate": 44.1
+        },
+        {
+          "champion": "Kassadin",
+          "win_rate": 46.8
+        },
+        {
+          "champion": "Malzahar",
+          "win_rate": 47.5
+        }
+      ],
+      "tips": [
+        "Level 1–2 you're weak — respect trades until you hit 3.",
+        "Use Charm (E) defensively vs all-ins, not just to engage.",
+        "Ward the river at 2:30 to spot the first jungle gank."
+      ]
+    },
+    {
+      "champion": "Orianna",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8229,
+          8226,
+          8210,
+          8236,
+          8345,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        12
+      ],
+      "starting_item_ids": [
+        1056,
+        2003
+      ],
+      "core_item_ids": [
+        6655,
+        3020,
+        3003
+      ],
+      "situational_item_ids": [
+        3089,
+        3157,
+        3135
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Fizz",
+          "win_rate": 46
+        },
+        {
+          "champion": "Yasuo",
+          "win_rate": 47.2
+        },
+        {
+          "champion": "Naafiri",
+          "win_rate": 47.7
+        }
+      ],
+      "tips": [
+        "The ball zones as hard as it damages — park it where they farm.",
+        "Shield the diver, not yourself: E carries your ball to them.",
+        "A two-person Shockwave is enough; don't greed for five."
+      ]
+    },
+    {
+      "champion": "Zed",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          8112,
+          8143,
+          8140,
+          8105,
+          9111,
+          8014
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        3142,
+        3158,
+        6696
+      ],
+      "situational_item_ids": [
+        6694,
+        3814,
+        3026
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Kayle",
+          "win_rate": 45.5
+        },
+        {
+          "champion": "Malphite",
+          "win_rate": 46.9
+        },
+        {
+          "champion": "Lissandra",
+          "win_rate": 47.3
+        }
+      ],
+      "tips": [
+        "Double-Q through the wave with your shadow for poke energy.",
+        "Hold W after ulting — it's your only escape once R ends.",
+        "Roam on crashed waves; bot lane rarely respects your speed."
+      ]
+    },
+    {
+      "champion": "Yasuo",
+      "role": "mid",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8400,
+        "rune_ids": [
+          8008,
+          9111,
+          9104,
+          8299,
+          8473,
+          8242
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        3046,
+        3006,
+        3031
+      ],
+      "situational_item_ids": [
+        3072,
+        3026,
+        3053
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Annie",
+          "win_rate": 46.7
+        },
+        {
+          "champion": "Pantheon",
+          "win_rate": 47.1
+        },
+        {
+          "champion": "Renekton",
+          "win_rate": 47.6
+        }
+      ],
+      "tips": [
+        "Windwall the ability that matters, not the first one thrown.",
+        "Keep a minion between you and skillshots — E is your dodge.",
+        "Third Q from range: knock-up into R only when they can't trade back."
+      ]
+    },
+    {
+      "champion": "Jinx",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8008,
+          9111,
+          9103,
+          8014,
+          8233,
+          8236
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        6672,
+        3006,
+        3085
+      ],
+      "situational_item_ids": [
+        3031,
+        3036,
+        3072
+      ],
+      "skill_order": "QWE",
+      "skill_levels": "QWQEQRQWQWRWWEEREE",
+      "counters": [
+        {
+          "champion": "Draven",
+          "win_rate": 46.5
+        },
+        {
+          "champion": "Lucian",
+          "win_rate": 47.3
+        },
+        {
+          "champion": "Tristana",
+          "win_rate": 47.8
+        }
+      ],
+      "strengths": [
+        "Resets the snowball hard with Get Excited!",
+        "Rocket range dominates teamfights",
+        "Chompers zone every melee engage"
+      ],
+      "weaknesses": [
+        "No mobility — easy to catch out",
+        "Weak laning before three items",
+        "Reliant on a peeling frontline"
+      ],
+      "insights": [
+        "Swap rockets and minigun by range on every trade.",
+        "One takedown starts the attack-speed and move-speed reset."
+      ],
+      "tips": [
+        "Rockets for poke, minigun for duels — swap constantly.",
+        "One takedown starts Get Excited!; chase the reset, not the kill.",
+        "Chompers behind you beat every engage support."
+      ]
+    },
+    {
+      "champion": "Caitlyn",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8021,
+          9111,
+          9103,
+          8017,
+          8304,
+          8345
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        3094,
+        3006,
+        3031
+      ],
+      "situational_item_ids": [
+        3036,
+        3072,
+        3026
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Samira",
+          "win_rate": 47
+        },
+        {
+          "champion": "Draven",
+          "win_rate": 47.4
+        },
+        {
+          "champion": "Nilah",
+          "win_rate": 47.9
+        }
+      ],
+      "tips": [
+        "Your range is the lane: auto them on every last hit they take.",
+        "Trap under the wave pre-crash — the wave walks into it.",
+        "Headshot from brush stacks in one auto; weave through bushes."
+      ]
+    },
+    {
+      "champion": "Ezreal",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8200,
+        "rune_ids": [
+          8005,
+          8009,
+          9103,
+          8014,
+          8226,
+          8210
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [
+        3070,
+        2003
+      ],
+      "core_item_ids": [
+        3004,
+        3158,
+        3078
+      ],
+      "situational_item_ids": [
+        6694,
+        3026,
+        3072
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Lucian",
+          "win_rate": 46.8
+        },
+        {
+          "champion": "Draven",
+          "win_rate": 47.5
+        },
+        {
+          "champion": "Nilah",
+          "win_rate": 47.7
+        }
+      ],
+      "tips": [
+        "Every Q lowers your cooldowns — poke is tempo, not just damage.",
+        "Hold E for their engage; it's the best escape in the lane.",
+        "You spike at Muramana + Trinity; farm safely until then."
+      ]
+    },
+    {
+      "champion": "Kaisa",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          9923,
+          8139,
+          8140,
+          8135,
+          9104,
+          8014
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        6672,
+        3006,
+        3124
+      ],
+      "situational_item_ids": [
+        3031,
+        3036,
+        3026
+      ],
+      "skill_order": "QEW",
+      "counters": [
+        {
+          "champion": "Draven",
+          "win_rate": 46.9
+        },
+        {
+          "champion": "Samira",
+          "win_rate": 47.2
+        },
+        {
+          "champion": "Twitch",
+          "win_rate": 47.6
+        }
+      ],
+      "tips": [
+        "Plasma stacks win trades: dive only on four-stack targets.",
+        "R follows YOUR passive marks — engage after they're plasma'd.",
+        "Evolve Q first in most games; E evolve beats kiting comps."
+      ]
+    },
+    {
+      "champion": "Draven",
+      "role": "bot",
+      "runes": {
+        "primary_tree_id": 8000,
+        "secondary_tree_id": 8100,
+        "rune_ids": [
+          8008,
+          9111,
+          9103,
+          8299,
+          8139,
+          8135
+        ]
+      },
+      "spell_ids": [
+        4,
+        6
+      ],
+      "starting_item_ids": [
+        1055,
+        2003
+      ],
+      "core_item_ids": [
+        3072,
+        3006,
+        3031
+      ],
+      "situational_item_ids": [
+        3036,
+        3026,
+        3046
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Caitlyn",
+          "win_rate": 47.1
+        },
+        {
+          "champion": "MissFortune",
+          "win_rate": 47.5
+        },
+        {
+          "champion": "Ashe",
+          "win_rate": 47.8
+        }
+      ],
+      "tips": [
+        "Catch axes where YOU want to stand, not where they fall.",
+        "Cash your passive stacks with a kill before you die with them.",
+        "Two axes up beats any level-two all-in — force it early."
+      ]
+    },
+    {
+      "champion": "Thresh",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8463,
+          8429,
+          8242,
+          8304,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        3190,
+        3111,
+        3109
+      ],
+      "situational_item_ids": [
+        3107,
+        3050,
+        3075
+      ],
+      "skill_order": "QEW",
+      "skill_levels": "QEQWQRQEQEREEWWRWW",
+      "counters": [
+        {
+          "champion": "Morgana",
+          "win_rate": 46.6
+        },
+        {
+          "champion": "Lulu",
+          "win_rate": 47.3
+        },
+        {
+          "champion": "Janna",
+          "win_rate": 47.7
+        }
+      ],
+      "strengths": [
+        "Playmaking hooks swing lanes single-handedly",
+        "Lantern saves allies from dives and picks",
+        "Scales tanky for free by collecting souls"
+      ],
+      "weaknesses": [
+        "A missed hook wastes the whole lane",
+        "Low base damage until souls stack",
+        "Skillshot-reliant engage"
+      ],
+      "insights": [
+        "Souls stack tankiness for free — collect them between waves.",
+        "Lantern beats every dive — hold it for your carry, not yourself."
+      ],
+      "tips": [
+        "A missed hook is a lost lane minute — throw from brush or behind CC.",
+        "Lantern beats every dive: hold it for your carry, not yourself.",
+        "Collect souls between waves; your mid-game tankiness is stacked, not bought."
+      ]
+    },
+    {
+      "champion": "Nautilus",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8446,
+          8429,
+          8451,
+          8306,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        3190,
+        3111,
+        3107
+      ],
+      "situational_item_ids": [
+        3109,
+        3050,
+        3075
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Morgana",
+          "win_rate": 46.2
+        },
+        {
+          "champion": "Alistar",
+          "win_rate": 47.4
+        },
+        {
+          "champion": "Braum",
+          "win_rate": 47.9
+        }
+      ],
+      "tips": [
+        "Your auto roots — Q into auto is two stuns, not one.",
+        "R can't be blocked or dodged: open every dive with it.",
+        "Hook onto walls to close distance faster than they expect."
+      ]
+    },
+    {
+      "champion": "Lulu",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8214,
+          8226,
+          8210,
+          8237,
+          8345,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        3
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        6616,
+        3158,
+        3504
+      ],
+      "situational_item_ids": [
+        3107,
+        3222,
+        3190
+      ],
+      "skill_order": "EWQ",
+      "counters": [
+        {
+          "champion": "Pyke",
+          "win_rate": 46.4
+        },
+        {
+          "champion": "Blitzcrank",
+          "win_rate": 47.2
+        },
+        {
+          "champion": "Zyra",
+          "win_rate": 47.8
+        }
+      ],
+      "tips": [
+        "Polymorph the diver mid-dash — W is your answer to assassins.",
+        "Ult knock-up interrupts as it saves; use it aggressively too.",
+        "Pix on the carry pokes further than you can — E is free damage."
+      ]
+    },
+    {
+      "champion": "Pyke",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8100,
+        "secondary_tree_id": 8000,
+        "rune_ids": [
+          9923,
+          8139,
+          8140,
+          8105,
+          9111,
+          8014
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        3179,
+        3158,
+        3142
+      ],
+      "situational_item_ids": [
+        3814,
+        6698,
+        6694
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Morgana",
+          "win_rate": 45.8
+        },
+        {
+          "champion": "Taric",
+          "win_rate": 46.9
+        },
+        {
+          "champion": "Leona",
+          "win_rate": 47.6
+        }
+      ],
+      "tips": [
+        "You regen missing health out of sight — reset trades in fog.",
+        "R executes below the threshold: watch the marker, not the bar.",
+        "Your gold is shared on R kills; play like a fourth carry, not a shield."
+      ]
+    },
+    {
+      "champion": "Blitzcrank",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8400,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8439,
+          8463,
+          8429,
+          8242,
+          8306,
+          8410
+        ]
+      },
+      "spell_ids": [
+        4,
+        14
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        3190,
+        3111,
+        3050
+      ],
+      "situational_item_ids": [
+        3109,
+        3107,
+        3075
+      ],
+      "skill_order": "QWE",
+      "counters": [
+        {
+          "champion": "Morgana",
+          "win_rate": 45.5
+        },
+        {
+          "champion": "Janna",
+          "win_rate": 47
+        },
+        {
+          "champion": "Milio",
+          "win_rate": 47.5
+        }
+      ],
+      "tips": [
+        "A hook that grabs the tank loses the fight — wait for the squish.",
+        "Stand in brush; the fear of your Q zones harder than the Q.",
+        "Knock-up after the grab, silence with R to stop the counter-play."
+      ]
+    },
+    {
+      "champion": "Yuumi",
+      "role": "support",
+      "runes": {
+        "primary_tree_id": 8200,
+        "secondary_tree_id": 8300,
+        "rune_ids": [
+          8214,
+          8226,
+          8210,
+          8236,
+          8345,
+          8347
+        ]
+      },
+      "spell_ids": [
+        4,
+        7
+      ],
+      "starting_item_ids": [
+        3865,
+        2003
+      ],
+      "core_item_ids": [
+        6616,
+        3158,
+        3504
+      ],
+      "situational_item_ids": [
+        3107,
+        3222,
+        3869
+      ],
+      "skill_order": "EQW",
+      "counters": [
+        {
+          "champion": "Blitzcrank",
+          "win_rate": 45.7
+        },
+        {
+          "champion": "Pyke",
+          "win_rate": 46.8
+        },
+        {
+          "champion": "Zyra",
+          "win_rate": 47.4
+        }
+      ],
+      "tips": [
+        "Detach to auto between spells — your passive shield is real gold.",
+        "Anchor to whoever the enemy is diving, not whoever is ahead.",
+        "Empowered Q slows enough to peel; steer it late for the hit."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-12T08:41:48.429Z",
+  "source": "curated"
+}
