@@ -233,7 +233,7 @@ export class DataService {
   private active(): { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } {
     return (
       this.modeData.get(this.mode()) ??
-      this.modeData.get('ranked') ?? { tiers: {}, builds: new Map() }
+      this.modeData.get('ranked') ?? { tiers: {}, builds: new Map<string, BuildRaw>() }
     );
   }
 
@@ -317,10 +317,11 @@ export class DataService {
     const active = this.active();
     const isAram = this.mode() === 'aram';
     const keyL = key.toLowerCase();
+    // ARAM's pseudo-role "all" isn't a real Role; cast via unknown for the types.
     const rolesPlayed: Role[] = isAram
-      ? (['all'] as Role[])
+      ? (['all'] as unknown as Role[])
       : ROLES.filter((r) => (active.tiers[r] ?? []).some((t) => eqKey(t.champion, key)));
-    const wanted = isAram ? ('all' as Role) : (role ?? rolesPlayed[0]);
+    const wanted = isAram ? ('all' as unknown as Role) : (role ?? rolesPlayed[0]);
     const build =
       active.builds.get(`${keyL}|${wanted}`) ??
       rolesPlayed.map((r) => active.builds.get(`${keyL}|${r}`)).find(Boolean);
