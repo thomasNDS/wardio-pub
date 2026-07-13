@@ -1,4 +1,11 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostListener,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { DataService } from './core/data.service';
@@ -34,18 +41,40 @@ import { DataService } from './core/data.service';
             >
           </nav>
           <div class="ml-auto flex items-center gap-3">
-            <div class="flex items-center gap-0.5 text-[11px] font-bold">
-              @for (l of langs; track l) {
-                <button
-                  type="button"
-                  (click)="setLang(l)"
-                  class="rounded px-1.5 py-0.5 uppercase"
-                  [class]="
-                    l === lang() ? 'text-gold' : 'text-dim hover:text-ink'
-                  "
+            <div class="relative">
+              <button
+                type="button"
+                (click)="toggleLang($event)"
+                class="flex items-center gap-1.5 rounded-hex border border-line bg-card px-2 py-1 text-xs font-bold hover:border-cyan/40"
+                [attr.aria-expanded]="langOpen()"
+                aria-haspopup="listbox"
+              >
+                <img [src]="current().flag" [alt]="current().label" class="h-3.5 w-5 rounded-[2px] object-cover" />
+                <span class="uppercase text-dim">{{ current().code }}</span>
+                <span class="text-[9px] text-dim">▾</span>
+              </button>
+              @if (langOpen()) {
+                <ul
+                  class="absolute right-0 z-30 mt-1.5 w-40 overflow-hidden rounded-hex border border-line bg-bg shadow-lg"
+                  role="listbox"
                 >
-                  {{ l }}
-                </button>
+                  @for (l of langs; track l.code) {
+                    <li>
+                      <button
+                        type="button"
+                        (click)="setLang(l.code); langOpen.set(false)"
+                        class="flex w-full items-center gap-2.5 px-3 py-2 text-sm hover:bg-gold/10"
+                        [class]="l.code === lang() ? 'font-bold text-gold' : 'text-dim'"
+                        role="option"
+                        [attr.aria-selected]="l.code === lang()"
+                      >
+                        <img [src]="l.flag" [alt]="l.label" class="h-4 w-6 rounded-[2px] object-cover" />
+                        <span>{{ l.label }}</span>
+                        @if (l.code === lang()) { <span class="ml-auto text-cyan">✓</span> }
+                      </button>
+                    </li>
+                  }
+                </ul>
               }
             </div>
             <span class="text-xs text-dim">
@@ -78,16 +107,42 @@ import { DataService } from './core/data.service';
     </div>
   `,
 })
+interface LangOption {
+  code: string;
+  label: string;
+  flag: string;
+}
+
 export class App implements OnInit {
   readonly data = inject(DataService);
   private readonly transloco = inject(TranslocoService);
-  readonly langs = ['en', 'fr', 'es'];
+  readonly langs: LangOption[] = [
+    { code: 'en', label: 'English', flag: 'flags/gb.svg' },
+    { code: 'fr', label: 'Français', flag: 'flags/fr.svg' },
+    { code: 'es', label: 'Español', flag: 'flags/es.svg' },
+  ];
+  private readonly langCodes = this.langs.map((l) => l.code);
   readonly lang = signal(this.transloco.getActiveLang());
+  readonly langOpen = signal(false);
+  readonly current = computed(
+    () => this.langs.find((l) => l.code === this.lang()) ?? this.langs[0],
+  );
 
   ngOnInit(): void {
     // Set the language (and Data Dragon locale) before the first data load.
     this.setLang(this.detectLang());
     void this.data.load();
+  }
+
+  toggleLang(e: Event): void {
+    e.stopPropagation();
+    this.langOpen.update((v) => !v);
+  }
+
+  /** Any click outside the open toggle closes the menu. */
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    this.langOpen.set(false);
   }
 
   setLang(l: string): void {
@@ -109,8 +164,8 @@ export class App implements OnInit {
     } catch {
       /* ignore */
     }
-    if (saved && this.langs.includes(saved)) return saved;
+    if (saved && this.langCodes.includes(saved)) return saved;
     const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
-    return this.langs.includes(nav) ? nav : 'en';
+    return this.langCodes.includes(nav) ? nav : 'en';
   }
 }

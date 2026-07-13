@@ -16,6 +16,7 @@ import {
   ROLE_LABEL,
   RuneRow,
   SpellRow,
+  SynergyRow,
   TierRaw,
   TierRow,
   VariantRaw,
@@ -348,6 +349,19 @@ export class DataService {
     const weak = (build?.counters?.weak ?? []).map(toDuel).sort((a, b) => a.winRate - b.winRate);
     const strong = (build?.counters?.strong ?? []).map(toDuel).sort((a, b) => b.winRate - a.winRate);
 
+    // --- Synergies: best same-team partners ----------------------------------
+    const synergies: SynergyRow[] = (build?.synergies ?? [])
+      .map((s) => ({
+        key: s.champion,
+        name: this.name(s.champion),
+        portrait: this.portrait(s.champion),
+        role: (s.role ?? 'bot') as Role,
+        winRate: s.win_rate ?? 50,
+        games: s.games,
+      }))
+      .sort((a, b) => b.winRate - a.winRate)
+      .slice(0, 8);
+
     const similar = this.similarByTags(champ);
 
     // Win rate at each position the champion is played.
@@ -379,6 +393,7 @@ export class DataService {
         : undefined,
       weak,
       strong,
+      synergies,
       strengths: build?.strengths ?? [],
       weaknesses: build?.weaknesses ?? [],
       insights: build?.insights ?? [],

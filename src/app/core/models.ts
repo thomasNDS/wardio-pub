@@ -261,6 +261,16 @@ export interface RoleStat {
   winRate?: number;
 }
 
+// A best-duo partner (same team), with the pair's win rate.
+export interface SynergyRow {
+  key: string;
+  name: string;
+  portrait: string;
+  role: Role;
+  winRate: number;
+  games?: number;
+}
+
 export interface Detail {
   champ: Champ;
   role: Role;
@@ -279,6 +289,7 @@ export interface Detail {
   damage?: { physical: number; magic: number; true: number };
   weak: DuelRow[]; // champions that counter this one (worst first)
   strong: DuelRow[]; // champions this one is strong against (best first)
+  synergies: SynergyRow[]; // best same-team partners (best win rate first)
   strengths: string[];
   weaknesses: string[];
   insights: string[];

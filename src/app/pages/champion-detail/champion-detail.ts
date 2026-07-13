@@ -265,6 +265,22 @@ import { AbilityRow, DuelRow, Role, ROLE_LABEL } from '../../core/models';
             }
           </section>
 
+          @if (d.synergies.length) {
+            <section class="hex-panel p-4">
+              <h2 class="section-title">{{ 'detail.synergies' | transloco }}</h2>
+              <div class="mt-2 flex flex-col gap-1.5">
+                @for (s of d.synergies; track s.key) {
+                  <a [routerLink]="['/champions', s.key]" class="flex items-center gap-2.5 rounded-hex border border-line bg-card px-2 py-1.5 hover:border-cyan/40">
+                    <img [src]="s.portrait" alt="" class="h-7 w-7 rounded border border-line" />
+                    <span class="text-sm font-semibold">{{ s.name }}</span>
+                    <span class="text-[11px] text-dim">{{ label(s.role) }}</span>
+                    <span class="ml-auto w-12 text-right text-sm font-bold" [class]="s.winRate >= 50 ? 'text-pos' : 'text-neg'">{{ s.winRate.toFixed(1) }}%</span>
+                  </a>
+                }
+              </div>
+            </section>
+          }
+
           @if (d.similar.length) {
             <section class="hex-panel p-4">
               <h2 class="section-title">{{ 'detail.similar' | transloco }}</h2>
