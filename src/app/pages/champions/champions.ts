@@ -23,8 +23,10 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
       <select #q (change)="setQueue(q.value)" [class]="select">
         @for (m of queues; track m) { <option [selected]="m === queue()">{{ m }}</option> }
       </select>
-      <select #rk (change)="rank.set(rk.value)" [class]="select">
-        @for (r of ranks; track r) { <option [selected]="r === rank()">{{ r }}</option> }
+      <select #rk (change)="data.setSegment(rk.value)" [class]="select" [disabled]="data.mode() === 'aram'">
+        @for (s of data.segments(); track s.id) {
+          <option [value]="s.id" [selected]="s.id === data.segment()">{{ rankLabel(s.rank) }}</option>
+        }
       </select>
       <select #rg (change)="region.set(rg.value)" [class]="select">
         @for (r of regions; track r) { <option [selected]="r === region()">{{ r }}</option> }
@@ -137,13 +139,8 @@ export class Champions {
   readonly role = signal<Role | null>(null);
   readonly search = signal('');
   readonly queue = signal('Ranked');
-  readonly rank = signal('Emerald+');
   readonly region = signal('World');
   readonly queues = ['Ranked', 'ARAM', 'URF', 'Arena', 'Nexus Blitz'];
-  readonly ranks = [
-    'All ranks', 'Iron+', 'Bronze+', 'Silver+', 'Gold+', 'Platinum+',
-    'Emerald+', 'Diamond+', 'Master+',
-  ];
   readonly regions = [
     'World', 'EUW', 'EUNE', 'NA', 'KR', 'BR', 'LAN', 'LAS', 'OCE', 'TR', 'RU', 'JP',
   ];
@@ -204,6 +201,12 @@ export class Champions {
   }
   label(r: Role): string {
     return ROLE_LABEL[r];
+  }
+  /** Pretty label for a segment's rank bracket (e.g. "high_elo" → "High Elo"). */
+  rankLabel(rank?: string): string {
+    if (!rank) return 'All';
+    if (rank === 'high_elo') return 'High Elo';
+    return rank.charAt(0).toUpperCase() + rank.slice(1);
   }
 
   chip(active: boolean): string {

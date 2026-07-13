@@ -15,6 +15,7 @@ import {
   ROLES,
   ROLE_LABEL,
   RuneRow,
+  SegmentRaw,
   SpellRow,
   SynergyRow,
   TierRaw,
@@ -37,15 +38,19 @@ export class DataService {
   readonly patch = signal('');
 
   private dataset: DatasetRaw | null = null;
-  /** Normalized, format-agnostic views per game mode. "ranked" is the default
-   * SR segment; "aram" (and future modes) come from the format-2 `modes` map.
-   * ARAM tiers/builds are keyed by the pseudo-role "all". */
-  private readonly modeData = new Map<
+  /** Normalized, format-agnostic views. Ranked segments (rank/region brackets)
+   * are keyed by segment id; ARAM (pseudo-role "all") is a separate mode. */
+  private readonly segmentViews = new Map<
     string,
     { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> }
   >();
-  /** Active mode; components read it so their computeds react to a mode switch. */
+  private aramView: { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } | null =
+    null;
+  /** Segment metadata for the rank/region selector. */
+  readonly segments = signal<SegmentRaw[]>([]);
+  /** Active mode + ranked segment; components read them so computeds react. */
   readonly mode = signal<'ranked' | 'aram'>('ranked');
+  readonly segment = signal<string>('default');
   private version = '';
   private locale = 'en_US';
   private ddLoaded = false;
@@ -187,11 +192,6 @@ export class DataService {
     );
   }
 
-  private firstSegment<T>(map?: Record<string, T>): T | undefined {
-    if (!map) return undefined;
-    return map['default'] ?? Object.values(map)[0];
-  }
-
   /** Build one mode's `{ tiers, builds }` from a role→rows map + a key→build map. */
   private buildMode(
     tiersByRole: Record<string, TierRaw[]>,
@@ -205,44 +205,49 @@ export class DataService {
     return { tiers: tiersByRole ?? {}, builds: byKey };
   }
 
-  /** Flatten format 1 or the consolidated format 2 into per-mode views, so the
-   * rest of the service is format- and mode-agnostic. */
+  /** Flatten format 1 or the consolidated format 2 into per-segment ranked views
+   * plus the ARAM mode, so the rest of the service is format-agnostic. */
   private normalize(ds: DatasetRaw): void {
-    this.modeData.clear();
+    this.segmentViews.clear();
+    this.aramView = null;
     if ((ds.format ?? 1) >= 2) {
-      const tseg =
-        this.firstSegment<Record<string, TierRaw[]>>(
-          ds.tiers as Record<string, Record<string, TierRaw[]>> | undefined,
-        ) ?? {};
-      const bseg = this.firstSegment<Record<string, BuildRaw>>(ds.builds) ?? {};
-      this.modeData.set('ranked', this.buildMode(tseg, bseg));
-      for (const [name, m] of Object.entries(ds.modes ?? {}))
-        this.modeData.set(name, this.buildMode(m.tiers ?? {}, m.builds ?? {}));
+      const tiersBySeg = (ds.tiers ?? {}) as Record<string, Record<string, TierRaw[]>>;
+      const buildsBySeg = ds.builds ?? {};
+      for (const segId of Object.keys(tiersBySeg))
+        this.segmentViews.set(segId, this.buildMode(tiersBySeg[segId] ?? {}, buildsBySeg[segId] ?? {}));
+      const aram = ds.modes?.['aram'];
+      if (aram) this.aramView = this.buildMode(aram.tiers ?? {}, aram.builds ?? {});
+      this.segments.set(ds.segments ?? [{ id: 'default' }]);
     } else {
       const tiers = (ds.tiers ?? {}) as Record<string, TierRaw[]>;
       const builds: Record<string, BuildRaw> = {};
       for (const rec of ds.recommendations ?? [])
         builds[`${rec.champion}|${rec.role}`] = this.recToBuild(rec);
-      this.modeData.set('ranked', this.buildMode(tiers, builds));
+      this.segmentViews.set('default', this.buildMode(tiers, builds));
+      this.segments.set([{ id: 'default' }]);
     }
-    // A missing mode falls back to ranked when selected.
-    if (!this.modeData.has(this.mode())) this.mode.set('ranked');
+    // Fall back to a present segment / mode.
+    if (!this.segmentViews.has(this.segment()))
+      this.segment.set(this.segmentViews.has('default') ? 'default' : (this.segments()[0]?.id ?? 'default'));
+    if (this.mode() === 'aram' && !this.aramView) this.mode.set('ranked');
   }
 
-  /** The active mode's normalized views (ranked when the mode is absent). */
+  /** The active view: the ARAM mode, or the selected ranked segment. */
   private active(): { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } {
-    return (
-      this.modeData.get(this.mode()) ??
-      this.modeData.get('ranked') ?? { tiers: {}, builds: new Map<string, BuildRaw>() }
-    );
+    const empty = { tiers: {}, builds: new Map<string, BuildRaw>() };
+    if (this.mode() === 'aram') return this.aramView ?? this.segmentViews.get('default') ?? empty;
+    return this.segmentViews.get(this.segment()) ?? this.segmentViews.get('default') ?? empty;
   }
 
   /** Whether the dataset carries ARAM data (drives the mode toggle visibility). */
   hasAram(): boolean {
-    return this.modeData.has('aram');
+    return this.aramView != null;
   }
   setMode(m: 'ranked' | 'aram'): void {
     this.mode.set(m);
+  }
+  setSegment(id: string): void {
+    this.segment.set(id);
   }
 
   /** Adapt a legacy format-1 recommendation into the format-2 build shape. */
