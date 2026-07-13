@@ -1,19 +1,24 @@
 import { Injectable, signal } from '@angular/core';
 import {
   AbilityRow,
+  BuildRaw,
   BuildVariant,
   Champ,
+  CounterRaw,
   DatasetRaw,
   Detail,
   DuelRow,
   ItemRow,
+  RecRaw,
   Role,
   RoleStat,
   ROLES,
   ROLE_LABEL,
   RuneRow,
   SpellRow,
+  TierRaw,
   TierRow,
+  VariantRaw,
 } from './models';
 
 const DDRAGON = 'https://ddragon.leagueoflegends.com';
@@ -31,6 +36,10 @@ export class DataService {
   readonly patch = signal('');
 
   private dataset: DatasetRaw | null = null;
+  /** Normalized (format-agnostic) views built on load: format 1 and the
+   * consolidated format 2 both flatten into these. */
+  private tiersByRole: Partial<Record<Role, TierRaw[]>> = {};
+  private readonly buildByKey = new Map<string, BuildRaw>(); // "champLower|role"
   private version = '';
   private locale = 'en_US';
   private ddLoaded = false;
@@ -71,6 +80,7 @@ export class DataService {
         this.json<string[]>(`${DDRAGON}/api/versions.json`),
       ]);
       this.dataset = ds;
+      this.normalize(ds);
       this.version = versions[0];
       await this.loadDdragon();
       this.patch.set(ds.patch || this.version);
@@ -171,13 +181,82 @@ export class DataService {
     );
   }
 
-  /** Tier rows for a role (curated order = rank), or every role when null. */
+  private firstSegment<T>(map?: Record<string, T>): T | undefined {
+    if (!map) return undefined;
+    return map['default'] ?? Object.values(map)[0];
+  }
+
+  /** Flatten format 1 or the consolidated format 2 into `tiersByRole` +
+   * `buildByKey`, so the rest of the service is format-agnostic. */
+  private normalize(ds: DatasetRaw): void {
+    this.tiersByRole = {};
+    this.buildByKey.clear();
+    if ((ds.format ?? 1) >= 2) {
+      const tseg =
+        this.firstSegment<Partial<Record<Role, TierRaw[]>>>(
+          ds.tiers as Record<string, Partial<Record<Role, TierRaw[]>>> | undefined,
+        ) ?? {};
+      for (const r of ROLES) this.tiersByRole[r] = tseg[r] ?? [];
+      const bseg = this.firstSegment<Record<string, BuildRaw>>(ds.builds) ?? {};
+      for (const [k, b] of Object.entries(bseg)) {
+        const [champ, role] = k.split('|');
+        if (champ && role) this.buildByKey.set(`${champ.toLowerCase()}|${role}`, b);
+      }
+    } else {
+      const tiers = (ds.tiers ?? {}) as Partial<Record<Role, TierRaw[]>>;
+      for (const r of ROLES) this.tiersByRole[r] = tiers[r] ?? [];
+      for (const rec of ds.recommendations ?? [])
+        this.buildByKey.set(`${rec.champion.toLowerCase()}|${rec.role}`, this.recToBuild(rec));
+    }
+  }
+
+  /** Adapt a legacy format-1 recommendation into the format-2 build shape. */
+  private recToBuild(rec: RecRaw): BuildRaw {
+    const asVariant = (b: {
+      name?: string;
+      win_rate?: number;
+      runes?: RecRaw['runes'];
+      spell_ids?: number[];
+      starting_item_ids?: number[];
+      core_item_ids?: number[];
+      situational_item_ids?: number[];
+      skill_order?: string;
+      skill_levels?: string;
+    }): VariantRaw => ({
+      label: b.name,
+      win_rate: b.win_rate,
+      keystone_id: b.runes?.rune_ids?.[0],
+      runes: b.runes,
+      spells: b.spell_ids ? [{ spell_ids: b.spell_ids }] : [],
+      skills: { order: b.skill_order, levels: b.skill_levels },
+      items: {
+        starting: (b.starting_item_ids ?? []).map((id) => ({ id })),
+        core: (b.core_item_ids ?? []).map((id) => ({ id })),
+        situational: (b.situational_item_ids ?? []).map((id) => ({ id })),
+      },
+    });
+    const variants = rec.builds?.length ? rec.builds.map(asVariant) : [asVariant(rec)];
+    const counters = rec.counters ?? [];
+    return {
+      damage_share: rec.damage_share,
+      variants,
+      counters: {
+        weak: [...counters].sort((a, b) => a.win_rate - b.win_rate),
+        strong: [...counters].filter((c) => c.win_rate >= 50).sort((a, b) => b.win_rate - a.win_rate),
+      },
+      strengths: rec.strengths,
+      weaknesses: rec.weaknesses,
+      insights: rec.insights,
+      tips: rec.tips,
+    };
+  }
+
+  /** Tier rows for a role (rank order = list order), or every role when null. */
   tierList(role: Role | null): TierRow[] {
-    const tiers = this.dataset?.tiers ?? {};
     const rows: TierRow[] = [];
     const roles = role ? [role] : ROLES;
     for (const r of roles) {
-      (tiers[r] ?? []).forEach((t, i) => {
+      (this.tiersByRole[r] ?? []).forEach((t, i) => {
         rows.push({
           rank: i + 1,
           key: t.champion,
@@ -186,7 +265,7 @@ export class DataService {
           portrait: this.portrait(t.champion),
           tier: t.tier,
           winRate: t.win_rate,
-          wrChange: t.wr_change,
+          wrChange: t.d_win_rate ?? t.wr_change,
           pickRate: t.pick_rate,
           banRate: t.ban_rate,
           matches: t.matches,
@@ -198,23 +277,22 @@ export class DataService {
 
   detail(key: string, role?: Role): Detail | null {
     if (!this.dataset) return null;
-    const recs = this.dataset.recommendations ?? [];
-    const tiers = this.dataset.tiers ?? {};
+    const keyL = key.toLowerCase();
     const rolesPlayed = ROLES.filter((r) =>
-      (tiers[r] ?? []).some((t) => eqKey(t.champion, key)),
+      (this.tiersByRole[r] ?? []).some((t) => eqKey(t.champion, key)),
     );
     const wanted = role ?? rolesPlayed[0];
-    const rec =
-      recs.find((r) => eqKey(r.champion, key) && r.role === wanted) ??
-      recs.find((r) => eqKey(r.champion, key));
+    const build =
+      this.buildByKey.get(`${keyL}|${wanted}`) ??
+      rolesPlayed.map((r) => this.buildByKey.get(`${keyL}|${r}`)).find(Boolean);
     const champ =
       this.champByKey.get(key) ??
       [...this.champByKey.values()].find((c) => eqKey(c.key, key));
     if (!champ) return null;
-    const activeRole = rec?.role ?? wanted ?? rolesPlayed[0] ?? 'mid';
-    const tierRow = (tiers[activeRole] ?? []).find((t) => eqKey(t.champion, key));
+    const activeRole = wanted ?? rolesPlayed[0] ?? 'mid';
+    const tierRow = (this.tiersByRole[activeRole] ?? []).find((t) => eqKey(t.champion, key));
 
-    // --- Build variants (Blitz-style, sorted by win rate best-first) ---------
+    // --- Build variants (win-rate-sorted, best first) ------------------------
     const items = (ids?: number[]): ItemRow[] =>
       (ids ?? [])
         .map((id) => this.itemById.get(id))
@@ -224,8 +302,6 @@ export class DataService {
         .map((id) => this.spellById.get(id))
         .filter((s): s is SpellRow => !!s);
     const runesOf = (rn?: {
-      primary_tree_id?: number;
-      secondary_tree_id?: number;
       rune_ids?: number[];
     }): RuneRow[] =>
       (rn?.rune_ids ?? [])
@@ -240,79 +316,43 @@ export class DataService {
           } as RuneRow;
         })
         .filter((r): r is RuneRow => !!r);
-    const resolveBuild = (b: any, i: number): BuildVariant => ({
-      name: b.name || (i === 0 ? 'Build' : `Build ${i + 1}`),
-      winRate: b.win_rate,
-      primaryTree: this.treeById.get(b.runes?.primary_tree_id ?? -1) ?? '',
-      secondaryTree: this.treeById.get(b.runes?.secondary_tree_id ?? -1) ?? '',
-      runes: runesOf(b.runes),
-      spells: spellsOf(b.spell_ids),
-      starting: items(b.starting_item_ids),
-      core: items(b.core_item_ids),
-      situational: items(b.situational_item_ids),
-      skillPriority: (b.skill_order ?? '').split(''),
-      skillLevels: (b.skill_levels
-        ? b.skill_levels
-        : deriveSkillLevels(b.skill_order ?? '')
-      ).split(''),
-    });
-    const rawBuilds = rec?.builds?.length
-      ? rec.builds
-      : rec
-        ? [
-            {
-              runes: rec.runes,
-              spell_ids: rec.spell_ids,
-              starting_item_ids: rec.starting_item_ids,
-              core_item_ids: rec.core_item_ids,
-              situational_item_ids: rec.situational_item_ids,
-              skill_order: rec.skill_order,
-              skill_levels: rec.skill_levels,
-            },
-          ]
-        : [];
-    const variants = rawBuilds
-      .map((b, i) => resolveBuild(b, i))
+    const resolveVariant = (v: VariantRaw, i: number): BuildVariant => {
+      const order = v.skills?.order ?? '';
+      return {
+        name: v.label || (i === 0 ? 'Build' : `Build ${i + 1}`),
+        winRate: v.win_rate,
+        primaryTree: this.treeById.get(v.runes?.primary_tree_id ?? -1) ?? '',
+        secondaryTree: this.treeById.get(v.runes?.secondary_tree_id ?? -1) ?? '',
+        runes: runesOf(v.runes),
+        spells: spellsOf(v.spells?.[0]?.spell_ids),
+        starting: items(v.items?.starting?.map((e) => e.id)),
+        core: items(v.items?.core?.map((e) => e.id)),
+        situational: items(v.items?.situational?.map((e) => e.id)),
+        skillPriority: order.split(''),
+        skillLevels: (v.skills?.levels ? v.skills.levels : deriveSkillLevels(order)).split(''),
+      };
+    };
+    const variants = (build?.variants ?? [])
+      .map(resolveVariant)
       .sort((a, b) => (b.winRate ?? 0) - (a.winRate ?? 0))
       .slice(0, 3);
 
-    // --- Matchups: counters (weak) + strong-against (inverted) ---------------
-    const weak: DuelRow[] = (rec?.counters ?? [])
-      .map((c) => ({
-        key: c.champion,
-        name: this.name(c.champion),
-        portrait: this.portrait(c.champion),
-        winRate: c.win_rate,
-        favourable: c.win_rate >= 50,
-      }))
-      .sort((a, b) => a.winRate - b.winRate);
-    const seen = new Set(weak.map((d) => d.key.toLowerCase()));
-    const strong: DuelRow[] = [];
-    for (const other of recs) {
-      const c = (other.counters ?? []).find((x) => eqKey(x.champion, key));
-      if (c && !seen.has(other.champion.toLowerCase())) {
-        seen.add(other.champion.toLowerCase());
-        strong.push({
-          key: other.champion,
-          name: this.name(other.champion),
-          portrait: this.portrait(other.champion),
-          winRate: 100 - c.win_rate,
-          favourable: 100 - c.win_rate >= 50,
-        });
-      }
-    }
-    strong.sort((a, b) => b.winRate - a.winRate);
+    // --- Matchups: weak (counters) + strong-against, both from the build -----
+    const toDuel = (c: CounterRaw): DuelRow => ({
+      key: c.champion,
+      name: this.name(c.champion),
+      portrait: this.portrait(c.champion),
+      winRate: c.win_rate,
+      favourable: c.win_rate >= 50,
+    });
+    const weak = (build?.counters?.weak ?? []).map(toDuel).sort((a, b) => a.winRate - b.winRate);
+    const strong = (build?.counters?.strong ?? []).map(toDuel).sort((a, b) => b.winRate - a.winRate);
 
-    const similar: Champ[] =
-      rec?.similar && rec.similar.length
-        ? rec.similar
-            .map((k) => this.champByKey.get(k))
-            .filter((c): c is Champ => !!c)
-        : this.similarByTags(champ);
+    const similar = this.similarByTags(champ);
 
     // Win rate at each position the champion is played.
     const roleStats: RoleStat[] = rolesPlayed.map((r) => {
-      const tr = (tiers[r] ?? []).find((t) => eqKey(t.champion, key));
+      const tr = (this.tiersByRole[r] ?? []).find((t) => eqKey(t.champion, key));
       return { role: r, tier: tr?.tier, winRate: tr?.win_rate };
     });
 
@@ -325,25 +365,25 @@ export class DataService {
         : [{ role: activeRole, tier: tierRow?.tier, winRate: tierRow?.win_rate }],
       tier: tierRow?.tier,
       winRate: tierRow?.win_rate,
-      wrChange: tierRow?.wr_change,
+      wrChange: tierRow?.d_win_rate ?? tierRow?.wr_change,
       pickRate: tierRow?.pick_rate,
       banRate: tierRow?.ban_rate,
       matches: tierRow?.matches,
       variants,
-      damage: rec?.damage_share
+      damage: build?.damage_share
         ? {
-            physical: rec.damage_share.physical ?? 0,
-            magic: rec.damage_share.magic ?? 0,
-            true: rec.damage_share.true ?? 0,
+            physical: build.damage_share.physical ?? 0,
+            magic: build.damage_share.magic ?? 0,
+            true: build.damage_share.true ?? 0,
           }
         : undefined,
       weak,
       strong,
-      strengths: rec?.strengths ?? [],
-      weaknesses: rec?.weaknesses ?? [],
-      insights: rec?.insights ?? [],
+      strengths: build?.strengths ?? [],
+      weaknesses: build?.weaknesses ?? [],
+      insights: build?.insights ?? [],
       similar,
-      tips: rec?.tips ?? [],
+      tips: build?.tips ?? [],
     };
   }
 

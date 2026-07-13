@@ -14,7 +14,8 @@ export interface TierRaw {
   champion: string;
   tier: string;
   win_rate?: number;
-  wr_change?: number;
+  wr_change?: number; // format 1 spelling
+  d_win_rate?: number; // format 2 spelling
   pick_rate?: number;
   ban_rate?: number;
   matches?: number;
@@ -23,6 +24,7 @@ export interface TierRaw {
 export interface CounterRaw {
   champion: string;
   win_rate: number;
+  games?: number;
 }
 
 export interface RunesRaw {
@@ -31,6 +33,8 @@ export interface RunesRaw {
   rune_ids?: number[];
   shard_ids?: number[];
 }
+
+// ---- format 1 (legacy) -----------------------------------------------------
 
 // One build variant (Blitz-style, e.g. "AP" vs "Heal & Shield"), each with its
 // own runes / spells / items / skill order and a win rate.
@@ -50,8 +54,6 @@ export interface BuildVariantRaw {
 export interface RecRaw {
   champion: string;
   role: Role;
-  // Multiple named build variants (preferred). When absent, the top-level
-  // fields below form a single unnamed build (backward compatible).
   builds?: BuildVariantRaw[];
   runes?: RunesRaw;
   spell_ids?: number[];
@@ -61,7 +63,6 @@ export interface RecRaw {
   skill_order?: string;
   skill_levels?: string;
   counters?: CounterRaw[];
-  // Average damage-to-champions split (percentages), from Riot match data.
   damage_share?: { physical?: number; magic?: number; true?: number };
   strengths?: string[];
   weaknesses?: string[];
@@ -70,12 +71,95 @@ export interface RecRaw {
   tips?: string[];
 }
 
+// ---- format 2 (consolidated contract, docs/BLITZ-PARITY.md §3) -------------
+
+export interface ItemEntryRaw {
+  id: number;
+  win_rate?: number;
+  games?: number;
+}
+
+export interface SpellComboRaw {
+  spell_ids?: number[];
+  win_rate?: number;
+  games?: number;
+}
+
+export interface SkillsRaw {
+  order?: string;
+  levels?: string;
+  win_rate?: number;
+  games?: number;
+}
+
+export interface ItemsRaw {
+  starting?: ItemEntryRaw[];
+  boots?: ItemEntryRaw[];
+  core?: ItemEntryRaw[];
+  situational?: ItemEntryRaw[];
+}
+
+export interface VariantRaw {
+  label?: string;
+  keystone_id?: number;
+  win_rate?: number;
+  games?: number;
+  runes?: RunesRaw;
+  rune_alts?: unknown[];
+  spells?: SpellComboRaw[];
+  skills?: SkillsRaw;
+  items?: ItemsRaw;
+}
+
+export interface CountersRaw {
+  weak?: CounterRaw[];
+  strong?: CounterRaw[];
+}
+
+export interface SynergyRaw {
+  champion: string;
+  role?: Role;
+  win_rate?: number;
+  games?: number;
+}
+
+// One consolidated build (per champion|role), everything the build page needs.
+export interface BuildRaw {
+  win_rate?: number;
+  d_win_rate?: number;
+  pick_rate?: number;
+  ban_rate?: number;
+  matches?: number;
+  damage_share?: { physical?: number; magic?: number; true?: number };
+  variants?: VariantRaw[];
+  counters?: CountersRaw;
+  synergies?: SynergyRaw[];
+  pro_builds?: unknown[];
+  strengths?: string[];
+  weaknesses?: string[];
+  insights?: string[];
+  tips?: string[];
+}
+
+export interface SegmentRaw {
+  id: string;
+  queue?: string;
+  rank?: string;
+  region?: string;
+}
+
+// Served in curated.json. `tiers`/`builds` are polymorphic across formats:
+// format 1 → tiers is Role→rows and recommendations[] carries builds; format 2
+// → tiers is segId→Role→rows and builds is segId→"champ|role"→build. The
+// service normalizes both into one internal shape.
 export interface DatasetRaw {
   format: number;
   patch: string;
   generated_at?: string;
-  tiers?: Partial<Record<Role, TierRaw[]>>;
+  segments?: SegmentRaw[];
+  tiers?: Record<string, unknown>;
   recommendations?: RecRaw[];
+  builds?: Record<string, Record<string, BuildRaw>>;
 }
 
 // Resolved shapes for the UI (names/icons from Data Dragon).
