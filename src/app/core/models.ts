@@ -148,6 +148,13 @@ export interface SegmentRaw {
   region?: string;
 }
 
+// A game mode (ARAM…) carries its own tiers (role→rows, ARAM uses "all") + builds.
+export interface ModeRaw {
+  sample?: { matches?: number };
+  tiers?: Record<string, TierRaw[]>;
+  builds?: Record<string, BuildRaw>;
+}
+
 // Served in curated.json. `tiers`/`builds` are polymorphic across formats:
 // format 1 → tiers is Role→rows and recommendations[] carries builds; format 2
 // → tiers is segId→Role→rows and builds is segId→"champ|role"→build. The
@@ -160,6 +167,7 @@ export interface DatasetRaw {
   tiers?: Record<string, unknown>;
   recommendations?: RecRaw[];
   builds?: Record<string, Record<string, BuildRaw>>;
+  modes?: Record<string, ModeRaw>;
 }
 
 // Resolved shapes for the UI (names/icons from Data Dragon).

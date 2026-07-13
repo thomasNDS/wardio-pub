@@ -20,7 +20,7 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
     <!-- Blitz-style filter bar. Role + search filter live; queue / rank /
          region are the meta brackets (one bracket of data until aggregation). -->
     <div class="mt-4 flex flex-wrap items-center gap-2">
-      <select #q (change)="queue.set(q.value)" [class]="select">
+      <select #q (change)="setQueue(q.value)" [class]="select">
         @for (m of queues; track m) { <option [selected]="m === queue()">{{ m }}</option> }
       </select>
       <select #rk (change)="rank.set(rk.value)" [class]="select">
@@ -37,16 +37,18 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
       />
     </div>
 
-    <div class="mt-2 flex flex-wrap gap-1.5">
-      <button type="button" (click)="setRole(null)" [class]="chip(role() === null)">
-        {{ 'champions.allRoles' | transloco }}
-      </button>
-      @for (r of roles; track r) {
-        <button type="button" (click)="setRole(r)" [class]="chip(role() === r)">
-          {{ label(r) }}
+    @if (data.mode() !== 'aram') {
+      <div class="mt-2 flex flex-wrap gap-1.5">
+        <button type="button" (click)="setRole(null)" [class]="chip(role() === null)">
+          {{ 'champions.allRoles' | transloco }}
         </button>
-      }
-    </div>
+        @for (r of roles; track r) {
+          <button type="button" (click)="setRole(r)" [class]="chip(role() === r)">
+            {{ label(r) }}
+          </button>
+        }
+      </div>
+    }
 
     @if (data.loading()) {
       <p class="mt-10 text-center text-dim">{{ 'champions.loading' | transloco }}</p>
@@ -58,7 +60,9 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
               <th class="px-3 text-left">#</th>
               <th class="cursor-pointer px-2 text-left" (click)="sort('tier')">{{ 'cols.tier' | transloco }}</th>
               <th class="px-2 text-left">{{ 'cols.champion' | transloco }}</th>
-              <th class="px-2 text-left">{{ 'cols.role' | transloco }}</th>
+              @if (data.mode() !== 'aram') {
+                <th class="px-2 text-left">{{ 'cols.role' | transloco }}</th>
+              }
               <th class="cursor-pointer px-2 text-right" (click)="sort('win')">{{ 'cols.win' | transloco }}</th>
               <th class="cursor-pointer px-2 text-right" (click)="sort('wr')">{{ 'cols.wr' | transloco }}</th>
               <th class="cursor-pointer px-2 text-right" (click)="sort('pick')">{{ 'cols.pick' | transloco }}</th>
@@ -89,9 +93,11 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
                     <span class="font-semibold">{{ row.name }}</span>
                   </div>
                 </td>
-                <td class="border-y border-line bg-card px-2 text-sm text-dim group-hover:border-gold/40">
-                  {{ label(row.role) }}
-                </td>
+                @if (data.mode() !== 'aram') {
+                  <td class="border-y border-line bg-card px-2 text-sm text-dim group-hover:border-gold/40">
+                    {{ label(row.role) }}
+                  </td>
+                }
                 <td
                   class="border-y border-line bg-card px-2 text-right text-sm font-semibold group-hover:border-gold/40"
                   [class.text-pos]="(row.winRate ?? 0) >= 50"
@@ -181,6 +187,13 @@ export class Champions {
 
   setRole(r: Role | null): void {
     this.role.set(r);
+  }
+  /** The queue selector doubles as the mode toggle: ARAM has its own dataset;
+   * other queues fall back to Ranked until their aggregation lands. */
+  setQueue(v: string): void {
+    this.queue.set(v);
+    this.role.set(null);
+    this.data.setMode(v === 'ARAM' ? 'aram' : 'ranked');
   }
   sort(col: SortCol): void {
     if (this.sortCol() === col) this.sortDesc.update((d) => !d);

@@ -37,10 +37,15 @@ export class DataService {
   readonly patch = signal('');
 
   private dataset: DatasetRaw | null = null;
-  /** Normalized (format-agnostic) views built on load: format 1 and the
-   * consolidated format 2 both flatten into these. */
-  private tiersByRole: Partial<Record<Role, TierRaw[]>> = {};
-  private readonly buildByKey = new Map<string, BuildRaw>(); // "champLower|role"
+  /** Normalized, format-agnostic views per game mode. "ranked" is the default
+   * SR segment; "aram" (and future modes) come from the format-2 `modes` map.
+   * ARAM tiers/builds are keyed by the pseudo-role "all". */
+  private readonly modeData = new Map<
+    string,
+    { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> }
+  >();
+  /** Active mode; components read it so their computeds react to a mode switch. */
+  readonly mode = signal<'ranked' | 'aram'>('ranked');
   private version = '';
   private locale = 'en_US';
   private ddLoaded = false;
@@ -187,28 +192,57 @@ export class DataService {
     return map['default'] ?? Object.values(map)[0];
   }
 
-  /** Flatten format 1 or the consolidated format 2 into `tiersByRole` +
-   * `buildByKey`, so the rest of the service is format-agnostic. */
+  /** Build one mode's `{ tiers, builds }` from a role→rows map + a key→build map. */
+  private buildMode(
+    tiersByRole: Record<string, TierRaw[]>,
+    builds: Record<string, BuildRaw>,
+  ): { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } {
+    const byKey = new Map<string, BuildRaw>();
+    for (const [k, b] of Object.entries(builds ?? {})) {
+      const i = k.indexOf('|');
+      if (i > 0) byKey.set(`${k.slice(0, i).toLowerCase()}|${k.slice(i + 1)}`, b);
+    }
+    return { tiers: tiersByRole ?? {}, builds: byKey };
+  }
+
+  /** Flatten format 1 or the consolidated format 2 into per-mode views, so the
+   * rest of the service is format- and mode-agnostic. */
   private normalize(ds: DatasetRaw): void {
-    this.tiersByRole = {};
-    this.buildByKey.clear();
+    this.modeData.clear();
     if ((ds.format ?? 1) >= 2) {
       const tseg =
-        this.firstSegment<Partial<Record<Role, TierRaw[]>>>(
-          ds.tiers as Record<string, Partial<Record<Role, TierRaw[]>>> | undefined,
+        this.firstSegment<Record<string, TierRaw[]>>(
+          ds.tiers as Record<string, Record<string, TierRaw[]>> | undefined,
         ) ?? {};
-      for (const r of ROLES) this.tiersByRole[r] = tseg[r] ?? [];
       const bseg = this.firstSegment<Record<string, BuildRaw>>(ds.builds) ?? {};
-      for (const [k, b] of Object.entries(bseg)) {
-        const [champ, role] = k.split('|');
-        if (champ && role) this.buildByKey.set(`${champ.toLowerCase()}|${role}`, b);
-      }
+      this.modeData.set('ranked', this.buildMode(tseg, bseg));
+      for (const [name, m] of Object.entries(ds.modes ?? {}))
+        this.modeData.set(name, this.buildMode(m.tiers ?? {}, m.builds ?? {}));
     } else {
-      const tiers = (ds.tiers ?? {}) as Partial<Record<Role, TierRaw[]>>;
-      for (const r of ROLES) this.tiersByRole[r] = tiers[r] ?? [];
+      const tiers = (ds.tiers ?? {}) as Record<string, TierRaw[]>;
+      const builds: Record<string, BuildRaw> = {};
       for (const rec of ds.recommendations ?? [])
-        this.buildByKey.set(`${rec.champion.toLowerCase()}|${rec.role}`, this.recToBuild(rec));
+        builds[`${rec.champion}|${rec.role}`] = this.recToBuild(rec);
+      this.modeData.set('ranked', this.buildMode(tiers, builds));
     }
+    // A missing mode falls back to ranked when selected.
+    if (!this.modeData.has(this.mode())) this.mode.set('ranked');
+  }
+
+  /** The active mode's normalized views (ranked when the mode is absent). */
+  private active(): { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } {
+    return (
+      this.modeData.get(this.mode()) ??
+      this.modeData.get('ranked') ?? { tiers: {}, builds: new Map() }
+    );
+  }
+
+  /** Whether the dataset carries ARAM data (drives the mode toggle visibility). */
+  hasAram(): boolean {
+    return this.modeData.has('aram');
+  }
+  setMode(m: 'ranked' | 'aram'): void {
+    this.mode.set(m);
   }
 
   /** Adapt a legacy format-1 recommendation into the format-2 build shape. */
@@ -252,17 +286,19 @@ export class DataService {
     };
   }
 
-  /** Tier rows for a role (rank order = list order), or every role when null. */
+  /** Tier rows for the active mode. Ranked filters by role (or all roles when
+   * null); ARAM is a single champion-level list (pseudo-role "all"). */
   tierList(role: Role | null): TierRow[] {
+    const active = this.active();
+    const roleKeys: string[] = this.mode() === 'aram' ? ['all'] : role ? [role] : ROLES;
     const rows: TierRow[] = [];
-    const roles = role ? [role] : ROLES;
-    for (const r of roles) {
-      (this.tiersByRole[r] ?? []).forEach((t, i) => {
+    for (const rk of roleKeys) {
+      (active.tiers[rk] ?? []).forEach((t, i) => {
         rows.push({
           rank: i + 1,
           key: t.champion,
           name: this.name(t.champion),
-          role: r,
+          role: rk as Role,
           portrait: this.portrait(t.champion),
           tier: t.tier,
           winRate: t.win_rate,
@@ -278,20 +314,22 @@ export class DataService {
 
   detail(key: string, role?: Role): Detail | null {
     if (!this.dataset) return null;
+    const active = this.active();
+    const isAram = this.mode() === 'aram';
     const keyL = key.toLowerCase();
-    const rolesPlayed = ROLES.filter((r) =>
-      (this.tiersByRole[r] ?? []).some((t) => eqKey(t.champion, key)),
-    );
-    const wanted = role ?? rolesPlayed[0];
+    const rolesPlayed: Role[] = isAram
+      ? (['all'] as Role[])
+      : ROLES.filter((r) => (active.tiers[r] ?? []).some((t) => eqKey(t.champion, key)));
+    const wanted = isAram ? ('all' as Role) : (role ?? rolesPlayed[0]);
     const build =
-      this.buildByKey.get(`${keyL}|${wanted}`) ??
-      rolesPlayed.map((r) => this.buildByKey.get(`${keyL}|${r}`)).find(Boolean);
+      active.builds.get(`${keyL}|${wanted}`) ??
+      rolesPlayed.map((r) => active.builds.get(`${keyL}|${r}`)).find(Boolean);
     const champ =
       this.champByKey.get(key) ??
       [...this.champByKey.values()].find((c) => eqKey(c.key, key));
     if (!champ) return null;
     const activeRole = wanted ?? rolesPlayed[0] ?? 'mid';
-    const tierRow = (this.tiersByRole[activeRole] ?? []).find((t) => eqKey(t.champion, key));
+    const tierRow = (active.tiers[activeRole] ?? []).find((t) => eqKey(t.champion, key));
 
     // --- Build variants (win-rate-sorted, best first) ------------------------
     const items = (ids?: number[]): ItemRow[] =>
@@ -364,9 +402,9 @@ export class DataService {
 
     const similar = this.similarByTags(champ);
 
-    // Win rate at each position the champion is played.
+    // Win rate at each position the champion is played (single "all" in ARAM).
     const roleStats: RoleStat[] = rolesPlayed.map((r) => {
-      const tr = (this.tiersByRole[r] ?? []).find((t) => eqKey(t.champion, key));
+      const tr = (active.tiers[r] ?? []).find((t) => eqKey(t.champion, key));
       return { role: r, tier: tr?.tier, winRate: tr?.win_rate };
     });
 

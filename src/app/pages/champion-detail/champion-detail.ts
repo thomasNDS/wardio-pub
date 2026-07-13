@@ -30,7 +30,12 @@ import { AbilityRow, DuelRow, Role, ROLE_LABEL } from '../../core/models';
       <div class="mt-4 flex items-center gap-4 hex-panel p-4">
         <img [src]="d.champ.portrait" alt="" class="h-16 w-16 rounded-lg border border-gold" />
         <div>
-          <h1 class="text-2xl font-extrabold">{{ d.champ.name }}</h1>
+          <div class="flex items-center gap-2">
+            <h1 class="text-2xl font-extrabold">{{ d.champ.name }}</h1>
+            @if (data.mode() === 'aram') {
+              <span class="rounded-full border border-cyan/50 bg-cyan/10 px-2 py-0.5 text-[11px] font-bold text-cyan">ARAM</span>
+            }
+          </div>
           @if (d.champ.title) { <p class="text-sm text-dim">{{ d.champ.title }}</p> }
         </div>
         <div class="ml-auto flex flex-wrap gap-1.5">
@@ -381,7 +386,7 @@ export class ChampionDetail {
       this.meta.updateTag({
         name: 'description',
         content:
-          `${d.champ.name} ${ROLE_LABEL[d.role]} build: best runes, items, ` +
+          `${d.champ.name} ${ROLE_LABEL[d.role] ?? 'ARAM'} build: best runes, items, ` +
           `skill order and counters${d.tier ? ` (${d.tier} tier${wr})` : ''}.`,
       });
     });
@@ -414,7 +419,7 @@ export class ChampionDetail {
     this.page.update((p) => Math.min(this.pageCount() - 1, p + 1));
   }
   label(r: Role): string {
-    return ROLE_LABEL[r];
+    return ROLE_LABEL[r] ?? 'ARAM';
   }
 
   chip(active: boolean): string {
