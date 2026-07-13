@@ -10,6 +10,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { DataService } from './core/data.service';
 
+interface LangOption {
+  code: string;
+  label: string;
+  flag: string;
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, TranslocoPipe],
@@ -107,12 +113,6 @@ import { DataService } from './core/data.service';
     </div>
   `,
 })
-interface LangOption {
-  code: string;
-  label: string;
-  flag: string;
-}
-
 export class App implements OnInit {
   readonly data = inject(DataService);
   private readonly transloco = inject(TranslocoService);
