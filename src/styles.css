@@ -5,7 +5,8 @@
   --color-bg: #0d0e12;
   --color-surface: #161820;
   --color-card: #1f222d;
-  --color-line: #2b2f3a;
+  --color-line: #27473b; /* emerald-slate structural borders (mockup ruling) */
+  --color-edge: #00ff88; /* hex-crystal emerald — panel/frame edges */
   --color-row: #232734;
   --color-gold: #f0c05a;
   --color-cyan: #00f0ff;
@@ -13,7 +14,7 @@
   --color-dim: #9aa0ad;
   --color-pos: #00f0ff;
   --color-neg: #ff5d6c;
-  --radius-hex: 6px;
+  --radius-hex: 8px; /* rounded hextech corners */
 }
 
 /* Hextech "high magic" components — double borders, gilded gradients, glow. */
@@ -92,11 +93,11 @@
   position: relative;
   border-radius: var(--radius-hex);
   background: var(--color-surface);
-  border: 1px solid var(--color-line);
+  border: 1px solid rgba(0, 255, 136, 0.3);
   box-shadow:
-    inset 0 1px 0 rgba(0, 240, 255, 0.05),
-    inset 0 0 0 1px rgba(240, 192, 90, 0.04),
-    inset 0 -1px 0 rgba(0, 240, 255, 0.03);
+    inset 0 1px 0 rgba(0, 255, 136, 0.06),
+    inset 0 0 0 1px rgba(240, 192, 90, 0.03),
+    inset 0 -1px 0 rgba(0, 255, 136, 0.04);
 }
 
 /* Hextech green/blue rune-accent on every section heading. */
