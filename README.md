@@ -1,13 +1,13 @@
 # wardio-pub
 
 Public site + data endpoint for **Wardio**, a desktop League of Legends
-companion (private app repo: `thomasNDS/wardio-app`).
+companion (private app repo: `ygar-studio/wardio-app`).
 
 A **data explorer** — Angular 22 + Tailwind CSS 4 + spartan.ng, same Hextech
 palette as the app — reading the public dataset and Data Dragon:
 
-- **Site** — <https://thomasnds.github.io/wardio-pub/> (home · tier list · champion pages)
-- **Dataset** — <https://thomasnds.github.io/wardio-pub/curated.json>
+- **Site** — <https://ygar-studio.github.io/wardio-pub/> (home · tier list · champion pages)
+- **Dataset** — <https://ygar-studio.github.io/wardio-pub/curated.json>
 
 ## Build & deploy
 

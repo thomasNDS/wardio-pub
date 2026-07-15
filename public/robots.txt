@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thomasnds.github.io/wardio-pub/sitemap.xml
+Sitemap: https://ygar-studio.github.io/wardio-pub/sitemap.xml
