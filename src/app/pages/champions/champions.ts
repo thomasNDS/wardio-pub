@@ -35,7 +35,7 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
         #s
         (input)="search.set(s.value)"
         [placeholder]="'champions.search' | transloco"
-        class="min-w-[150px] flex-1 rounded-hex border border-line bg-card px-3 py-1.5 text-sm text-ink placeholder:text-dim/70 focus:border-cyan/50 focus:outline-none"
+        class="min-w-[150px] flex-1 rounded-hex border border-line bg-card px-3 py-1.5 text-sm text-ink placeholder:text-dim/70 transition-colors focus:border-gold/60 focus:outline-none"
       />
     </div>
 

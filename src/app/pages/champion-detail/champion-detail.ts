@@ -251,7 +251,7 @@ import { AbilityRow, DuelRow, Role, ROLE_LABEL } from '../../core/models';
             @if (pageRows().length) {
               <div class="mt-3 flex flex-col gap-1.5">
                 @for (m of pageRows(); track m.key) {
-                  <a [routerLink]="['/champions', m.key]" class="flex items-center gap-2.5 rounded-hex border border-line bg-card px-2 py-1.5 hover:border-cyan/40">
+                  <a [routerLink]="['/champions', m.key]" class="flex items-center gap-2.5 rounded-hex border border-line bg-card px-2 py-1.5 transition-colors hover:border-gold/40">
                     <img [src]="m.portrait" alt="" class="h-7 w-7 rounded border border-line" />
                     <span class="text-sm font-semibold">{{ m.name }}</span>
                     <span class="ml-auto w-12 text-right text-sm font-bold" [class]="m.favourable ? 'text-pos' : 'text-neg'">{{ m.winRate.toFixed(1) }}%</span>
@@ -275,7 +275,7 @@ import { AbilityRow, DuelRow, Role, ROLE_LABEL } from '../../core/models';
               <h2 class="section-title">{{ 'detail.synergies' | transloco }}</h2>
               <div class="mt-2 flex flex-col gap-1.5">
                 @for (s of d.synergies; track s.key) {
-                  <a [routerLink]="['/champions', s.key]" class="flex items-center gap-2.5 rounded-hex border border-line bg-card px-2 py-1.5 hover:border-cyan/40">
+                  <a [routerLink]="['/champions', s.key]" class="flex items-center gap-2.5 rounded-hex border border-line bg-card px-2 py-1.5 transition-colors hover:border-gold/40">
                     <img [src]="s.portrait" alt="" class="h-7 w-7 rounded border border-line" />
                     <span class="text-sm font-semibold">{{ s.name }}</span>
                     <span class="text-[11px] text-dim">{{ label(s.role) }}</span>
@@ -291,7 +291,7 @@ import { AbilityRow, DuelRow, Role, ROLE_LABEL } from '../../core/models';
               <h2 class="section-title">{{ 'detail.similar' | transloco }}</h2>
               <div class="mt-2 flex flex-wrap gap-2">
                 @for (c of d.similar; track c.key) {
-                  <a [routerLink]="['/champions', c.key]" class="flex w-16 flex-col items-center gap-1.5 rounded-hex border border-line bg-card p-1.5 hover:border-cyan/40">
+                  <a [routerLink]="['/champions', c.key]" class="flex w-16 flex-col items-center gap-1.5 rounded-hex border border-line bg-card p-1.5 transition-colors hover:border-gold/40">
                     <img [src]="c.portrait" alt="" class="h-11 w-11 rounded" />
                     <span class="truncate text-[11px] font-semibold">{{ c.name }}</span>
                   </a>
@@ -448,7 +448,7 @@ export class ChampionDetail {
   pager(disabled: boolean): string {
     return (
       'grid h-7 w-8 place-items-center rounded-[6px] border border-line text-cyan ' +
-      (disabled ? 'opacity-40' : 'bg-card hover:border-cyan/40')
+      (disabled ? 'opacity-40' : 'bg-card hover:border-gold/40')
     );
   }
   pct(v?: number): string {

@@ -37,13 +37,13 @@ interface LangOption {
               routerLink="/"
               routerLinkActive="text-gold bg-gold/10"
               [routerLinkActiveOptions]="{ exact: true }"
-              class="rounded-hex px-3 py-1.5 text-dim hover:text-ink"
+              class="rounded-hex px-3 py-1.5 text-dim transition-colors hover:text-gold"
               >{{ 'nav.home' | transloco }}</a
             >
             <a
               routerLink="/champions"
               routerLinkActive="text-gold bg-gold/10"
-              class="rounded-hex px-3 py-1.5 text-dim hover:text-ink"
+              class="rounded-hex px-3 py-1.5 text-dim transition-colors hover:text-gold"
               >{{ 'nav.champions' | transloco }}</a
             >
           </nav>
@@ -62,7 +62,7 @@ interface LangOption {
               <button
                 type="button"
                 (click)="toggleLang($event)"
-                class="flex items-center gap-1.5 rounded-hex border border-line bg-card px-2 py-1 text-xs font-bold hover:border-cyan/40"
+                class="flex items-center gap-1.5 rounded-hex border border-line bg-card px-2 py-1 text-xs font-bold transition-colors hover:border-gold/40"
                 [attr.aria-expanded]="langOpen()"
                 aria-haspopup="listbox"
               >

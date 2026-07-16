@@ -32,7 +32,7 @@ import { ReleaseService } from '../../core/release.service';
       @if (release.latest(); as rel) {
         <p class="mt-3 text-xs text-dim">
           v{{ rel.version }} · Windows ·
-          <a [href]="rel.pageUrl" class="underline hover:text-ink">{{
+          <a [href]="rel.pageUrl" class="underline transition-colors hover:text-gold">{{
             'download.allVersions' | transloco
           }}</a>
         </p>
