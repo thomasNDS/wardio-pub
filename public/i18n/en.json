@@ -30,7 +30,9 @@
     "search": "Search champions…",
     "allRoles": "All roles",
     "noData": "No tier data for this role yet.",
-    "loading": "Loading champions…"
+    "loading": "Loading champions…",
+    "queue": "Queue",
+    "rank": "Rank"
   },
   "cols": {
     "tier": "Tier",

@@ -17,27 +17,37 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
       >
     </div>
 
-    <!-- Blitz-style filter bar. Role + search filter live; queue / rank /
-         region are the meta brackets (one bracket of data until aggregation). -->
+    <!-- Only the modes and brackets that actually have data are offered. A
+         selector that changes nothing is worse than no selector: it tells the
+         reader they are looking at a segment they are not. -->
     <div class="mt-4 flex flex-wrap items-center gap-2">
-      <select #q (change)="setQueue(q.value)" [class]="select">
+      <label class="sr-only" for="f-queue">{{ 'champions.queue' | transloco }}</label>
+      <select id="f-queue" #q (change)="setQueue(q.value)" [class]="select">
         @for (m of queues; track m) { <option [selected]="m === queue()">{{ m }}</option> }
       </select>
-      <select #rk (change)="data.setSegment(rk.value)" [class]="select" [disabled]="data.mode() === 'aram'">
-        @for (s of data.segments(); track s.id) {
-          <option [value]="s.id" [selected]="s.id === data.segment()">{{ rankLabel(s.rank) }}</option>
-        }
-      </select>
-      <select #rg (change)="region.set(rg.value)" [class]="select">
-        @for (r of regions; track r) { <option [selected]="r === region()">{{ r }}</option> }
-      </select>
+      @if (data.mode() !== 'aram' && data.segments().length > 1) {
+        <label class="sr-only" for="f-rank">{{ 'champions.rank' | transloco }}</label>
+        <select id="f-rank" #rk (change)="data.setSegment(rk.value)" [class]="select">
+          @for (s of data.segments(); track s.id) {
+            <option [value]="s.id" [selected]="s.id === data.segment()">{{ rankLabel(s.rank) }}</option>
+          }
+        </select>
+      }
+      <label class="sr-only" for="f-search">{{ 'champions.search' | transloco }}</label>
       <input
+        id="f-search"
         #s
         (input)="search.set(s.value)"
         [placeholder]="'champions.search' | transloco"
         class="min-w-[150px] flex-1 rounded-hex border border-line bg-card px-3 py-1.5 text-sm text-ink placeholder:text-dim/70 transition-colors focus:border-gold/60 focus:outline-none"
       />
     </div>
+
+    <!-- Which population these figures describe, and how big it is. Stating it
+         is the only thing that makes a one-decimal win rate readable. -->
+    @if (data.provenance(); as prov) {
+      <p class="mt-2 text-xs text-dim">{{ prov }}</p>
+    }
 
     @if (data.mode() !== 'aram') {
       <div class="mt-2 flex flex-wrap gap-1.5">
@@ -59,41 +69,59 @@ type SortCol = 'tier' | 'win' | 'wr' | 'pick' | 'ban' | 'matches';
         <table class="w-full min-w-[720px] border-separate border-spacing-y-1.5">
           <thead>
             <tr class="text-[11px] font-semibold uppercase tracking-wide text-dim">
-              <th class="px-3 text-left">#</th>
-              <th class="cursor-pointer px-2 text-left" (click)="sort('tier')">{{ 'cols.tier' | transloco }}</th>
-              <th class="px-2 text-left">{{ 'cols.champion' | transloco }}</th>
+              <th scope="col" class="px-3 text-left">#</th>
+              <!-- Sortable headers are buttons, and they announce their state:
+                   a bare (click) on a <th> is invisible to keyboard and to a
+                   screen reader, which is how this table shipped. -->
+              <th scope="col" class="px-2 text-left" [attr.aria-sort]="ariaSort('tier')">
+                <button type="button" class="cursor-pointer uppercase tracking-wide" (click)="sort('tier')">
+                  {{ 'cols.tier' | transloco }}
+                </button>
+              </th>
+              <th scope="col" class="px-2 text-left">{{ 'cols.champion' | transloco }}</th>
               @if (data.mode() !== 'aram') {
-                <th class="px-2 text-left">{{ 'cols.role' | transloco }}</th>
+                <th scope="col" class="px-2 text-left">{{ 'cols.role' | transloco }}</th>
               }
-              <th class="cursor-pointer px-2 text-right" (click)="sort('win')">{{ 'cols.win' | transloco }}</th>
-              <th class="cursor-pointer px-2 text-right" (click)="sort('wr')">{{ 'cols.wr' | transloco }}</th>
-              <th class="cursor-pointer px-2 text-right" (click)="sort('pick')">{{ 'cols.pick' | transloco }}</th>
-              <th class="cursor-pointer px-2 text-right" (click)="sort('ban')">{{ 'cols.ban' | transloco }}</th>
-              <th class="cursor-pointer px-3 text-right" (click)="sort('matches')">{{ 'cols.matches' | transloco }}</th>
+              @for (c of sortable; track c.col) {
+                <th
+                  scope="col"
+                  [class]="c.col === 'matches' ? 'px-3 text-right' : 'px-2 text-right'"
+                  [attr.aria-sort]="ariaSort(c.col)"
+                >
+                  <button type="button" class="cursor-pointer uppercase tracking-wide" (click)="sort(c.col)">
+                    {{ c.label | transloco }}
+                  </button>
+                </th>
+              }
             </tr>
           </thead>
           <tbody>
             @for (row of rows(); track row.key + row.role) {
-              <tr
-                class="group cursor-pointer"
-                [routerLink]="['/champions', row.key]"
-              >
+              <tr class="group">
                 <td class="rounded-l-hex border-y border-l border-line bg-card px-3 text-sm text-dim group-hover:border-gold/40">
-                  {{ row.rank }}
+                  {{ $index + 1 }}
                 </td>
                 <td class="border-y border-line bg-card px-2 group-hover:border-gold/40">
                   <span [class]="tierBadge(row.tier)">{{ row.tier }}</span>
                 </td>
                 <td class="border-y border-line bg-card px-2 py-2 group-hover:border-gold/40">
-                  <div class="flex items-center gap-2.5">
+                  <!-- A real anchor, not a clickable <tr>: RouterLink on a row
+                       emits no href, so the champion pages were reachable
+                       neither by keyboard nor by a crawler. -->
+                  <a
+                    [routerLink]="['/champions', row.key]"
+                    class="flex items-center gap-2.5 rounded-hex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold/70"
+                  >
                     <img
                       [src]="row.portrait"
                       alt=""
                       loading="lazy"
+                      width="28"
+                      height="28"
                       class="h-7 w-7 rounded border border-line"
                     />
                     <span class="font-semibold">{{ row.name }}</span>
-                  </div>
+                  </a>
                 </td>
                 @if (data.mode() !== 'aram') {
                   <td class="border-y border-line bg-card px-2 text-sm text-dim group-hover:border-gold/40">
@@ -139,16 +167,24 @@ export class Champions {
   readonly role = signal<Role | null>(null);
   readonly search = signal('');
   readonly queue = signal('Ranked');
-  readonly region = signal('World');
-  readonly queues = ['Ranked', 'ARAM', 'URF', 'Arena', 'Nexus Blitz'];
-  readonly regions = [
-    'World', 'EUW', 'EUNE', 'NA', 'KR', 'BR', 'LAN', 'LAS', 'OCE', 'TR', 'RU', 'JP',
-  ];
+  // The two modes the pipeline actually aggregates. URF, Arena and Nexus
+  // Blitz used to be offered and silently served ranked solo data; the region
+  // selector offered twelve regions and filtered by none of them.
+  readonly queues = ['Ranked', 'ARAM'];
   // Hextech-styled native select (double edge via ring + inner border).
   readonly select =
     'rounded-hex border border-line bg-card px-3 py-1.5 text-sm font-semibold ' +
     'text-ink shadow-[inset_0_0_0_1px_rgba(240,192,90,0.08)] ' +
     'hover:border-gold/40 focus:border-gold/60 focus:outline-none';
+  // The numeric columns, declared once so the header row and the sort state
+  // cannot drift apart.
+  readonly sortable: ReadonlyArray<{ col: SortCol; label: string }> = [
+    { col: 'win', label: 'cols.win' },
+    { col: 'wr', label: 'cols.wr' },
+    { col: 'pick', label: 'cols.pick' },
+    { col: 'ban', label: 'cols.ban' },
+    { col: 'matches', label: 'cols.matches' },
+  ];
   // Default: sort by win rate, highest first.
   private readonly sortCol = signal<SortCol | null>('win');
   private readonly sortDesc = signal(true);
@@ -198,6 +234,11 @@ export class Champions {
       this.sortCol.set(col);
       this.sortDesc.set(true);
     }
+  }
+  /** What a screen reader reads out of the header cell. */
+  ariaSort(col: SortCol): 'ascending' | 'descending' | 'none' {
+    if (this.sortCol() !== col) return 'none';
+    return this.sortDesc() ? 'descending' : 'ascending';
   }
   label(r: Role): string {
     return ROLE_LABEL[r];

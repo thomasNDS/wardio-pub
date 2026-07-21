@@ -30,7 +30,9 @@
     "search": "Buscar campeonesâ€¦",
     "allRoles": "Todos los roles",
     "noData": "AÃºn no hay datos de tier para este rol.",
-    "loading": "Cargando campeonesâ€¦"
+    "loading": "Cargando campeonesâ€¦",
+    "queue": "Cola",
+    "rank": "Rango"
   },
   "cols": {
     "tier": "Tier",

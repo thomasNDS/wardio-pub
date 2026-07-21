@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 import {
   AbilityRow,
   BuildRaw,
@@ -51,6 +51,12 @@ export class DataService {
   /** Active mode + ranked segment; components read them so computeds react. */
   readonly mode = signal<'ranked' | 'aram'>('ranked');
   readonly segment = signal<string>('default');
+  /** Sample metadata straight from the published file, so a reader can weigh
+   * a one-decimal win rate: which population, how many games, how fresh. */
+  readonly sample = signal<{ players?: number; matches?: number } | null>(null);
+  /** ARAM is aggregated separately and has its own, much smaller sample. */
+  readonly aramSample = signal<{ matches?: number } | null>(null);
+  readonly generatedAt = signal<string>('');
   private version = '';
   private locale = 'en_US';
   private ddLoaded = false;
@@ -210,6 +216,11 @@ export class DataService {
   private normalize(ds: DatasetRaw): void {
     this.segmentViews.clear();
     this.aramView = null;
+    // Provenance comes from the file, never from a constant: a figure is only
+    // readable next to the population and the sample it came from.
+    this.sample.set(ds.sample ?? null);
+    this.generatedAt.set(ds.generated_at ?? '');
+    this.aramSample.set(ds.modes?.['aram']?.sample ?? null);
     if ((ds.format ?? 1) >= 2) {
       const tiersBySeg = (ds.tiers ?? {}) as Record<string, Record<string, TierRaw[]>>;
       const buildsBySeg = ds.builds ?? {};
@@ -231,6 +242,27 @@ export class DataService {
       this.segment.set(this.segmentViews.has('default') ? 'default' : (this.segments()[0]?.id ?? 'default'));
     if (this.mode() === 'aram' && !this.aramView) this.mode.set('ranked');
   }
+
+  /** One line naming the population behind every figure on the page. Empty
+   * when the file says nothing — never a guess. */
+  readonly provenance = computed(() => {
+    if (this.mode() === 'aram') {
+      const n = this.aramSample()?.matches;
+      const at = this.generatedAt();
+      return [n ? `ARAM · ${n.toLocaleString()} games` : 'ARAM', at ? at.slice(0, 10) : '']
+        .filter(Boolean)
+        .join(' · ');
+    }
+    const meta = this.segments().find((s) => s.id === this.segment());
+    const parts: string[] = [];
+    if (meta?.rank) parts.push(String(meta.rank).replace(/_/g, ' '));
+    if (meta?.region) parts.push(String(meta.region).toUpperCase());
+    const n = this.sample()?.matches;
+    if (n) parts.push(`${n.toLocaleString()} games`);
+    const at = this.generatedAt();
+    if (at) parts.push(at.slice(0, 10));
+    return parts.join(' · ');
+  });
 
   /** The active view: the ARAM mode, or the selected ranked segment. */
   private active(): { tiers: Record<string, TierRaw[]>; builds: Map<string, BuildRaw> } {

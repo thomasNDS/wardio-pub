@@ -30,7 +30,9 @@
     "search": "Rechercher des champions…",
     "allRoles": "Tous les rôles",
     "noData": "Pas encore de données de tier pour ce rôle.",
-    "loading": "Chargement des champions…"
+    "loading": "Chargement des champions…",
+    "queue": "File",
+    "rank": "Palier"
   },
   "cols": {
     "tier": "Tier",

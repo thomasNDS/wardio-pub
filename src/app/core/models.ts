@@ -163,6 +163,8 @@ export interface DatasetRaw {
   format: number;
   patch: string;
   generated_at?: string;
+  /** How much data is behind every figure — shown, not assumed. */
+  sample?: { players?: number; matches?: number };
   segments?: SegmentRaw[];
   tiers?: Record<string, unknown>;
   recommendations?: RecRaw[];
