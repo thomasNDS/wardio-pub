@@ -31,13 +31,6 @@ import { TranslocoPipe } from '@jsverse/transloco';
         </div>
       }
     </section>
-
-    <section class="mt-8">
-      <div class="hex-panel p-4">
-        <h3 class="text-sm font-bold text-gold">{{ 'home.method.t' | transloco }}</h3>
-        <p class="mt-1 text-sm text-dim">{{ 'home.method.b' | transloco }}</p>
-      </div>
-    </section>
   `,
 })
 export class Home {

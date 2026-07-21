@@ -23,10 +23,6 @@
         "t": "Modos",
         "b": "Grieta del Invocador y ARAM, agregados por separado — el Abismo de los Lamentos tiene su propio equilibrio y sus propias cifras."
       }
-    },
-    "method": {
-      "t": "Cómo se producen estas cifras",
-      "b": "Un proceso por lotes consulta la API pública de Riot en cada ciclo de parche, agrega partidas clasificatorias y publica un archivo estático. Las tasas de victoria se acercan al 50 % según el tamaño de la muestra, para que un puñado de partidas no se lea como una certeza. Nada se extrapola: lo que falta queda vacío."
     }
   },
   "champions": {

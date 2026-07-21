@@ -23,10 +23,6 @@
         "t": "Modes",
         "b": "Summoner's Rift and ARAM, aggregated separately — the Howling Abyss has its own balance, so it gets its own numbers."
       }
-    },
-    "method": {
-      "t": "How these numbers are produced",
-      "b": "A batch job queries Riot's public API each patch cycle, aggregates ranked games and publishes a static file. Win rates are shrunk toward 50 % by sample size, so a handful of games does not read as a certainty. Nothing is extrapolated: what is missing stays empty."
     }
   },
   "champions": {

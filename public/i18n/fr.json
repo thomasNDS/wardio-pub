@@ -23,10 +23,6 @@
         "t": "Modes",
         "b": "Faille de l'invocateur et ARAM, agrégés séparément — la Faille hurlante a ses propres équilibrages, donc ses propres chiffres."
       }
-    },
-    "method": {
-      "t": "Comment ces chiffres sont produits",
-      "b": "Un traitement par lots interroge l'API publique de Riot à chaque cycle de patch, agrège les parties classées et publie un fichier statique. Les taux de victoire sont ramenés vers 50 % en fonction de la taille de l'échantillon, pour qu'une poignée de parties ne se lise pas comme une certitude. Rien n'est extrapolé : ce qui manque reste vide."
     }
   },
   "champions": {
